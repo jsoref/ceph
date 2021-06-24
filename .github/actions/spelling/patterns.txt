@@ -1,0 +1,181 @@
+# See https://github.com/check-spelling/check-spelling/wiki/Configuration-Examples:-patterns
+
+# mailto urls
+mailto:[-a-zA-Z=;:/?%&0-9+]*
+
+# Amazon
+# Amazon
+\bamazon\.com/[-\w]+/(?:dp/[0-9A-Z]+|)
+# AWS S3
+\b\w*\.s3[^.]*\.amazonaws\.com/[-\w/&#%_?:=]*
+# AWS execute-api
+\b[0-9a-z]{10}\.execute-api\.[-0-9a-z]+\.amazonaws\.com\b
+# AWS ELB
+\b\w+\.[-0-9a-z]+\.elb\.amazonaws\.com\b
+# AWS SNS
+\bsns\.[-0-9a-z]+.amazonaws\.com/[-\w/&#%_?:=]*
+
+# YouTube
+https?://(?:(?:www\.|)youtube\.com|youtu.be)/(?:channel/|embed/|playlist\?list=|watch\?v=|v/|)[-a-zA-Z0-9?&=_]*
+<\s*youtube\s+id=['"][-a-zA-Z0-9?_]*['"]
+\bimg\.youtube\.com/vi/[-a-zA-Z0-9?&=_]*
+# Google Accounts
+\baccounts.google.com/[-_/?=.:;+%&0-9a-zA-Z]*
+# Google Analytics
+\bgoogle-analytics\.com/collect.[-0-9a-zA-Z?%=&_.~]*
+# Google APIs
+\bgoogleapis\.com/[a-z]+/(?:v\d+/|)[a-z]+/[@:./?=\w]+
+\b[-a-zA-Z0-9.]*\bstorage\d*\.googleapis\.com(?:/\S*|)
+# Google Calendar
+\bcalendar\.google\.com/calendar(?:/u/\d+|)/embed\?src=[@./?=\w&%]+
+\w+\@group\.calendar\.google\.com\b
+# Google DataStudio
+\bdatastudio\.google\.com/(?:(?:c/|)u/\d+/|)(?:embed/|)(?:open|reporting|datasources|s)/[-0-9a-zA-Z]+(?:/page/[-0-9a-zA-Z]+|)
+# The leading `/` here is as opposed to the `\b` above
+# ... a short way to match `https://` or `http://` since most urls have one of those prefixes
+# Google Docs
+/docs\.google\.com/[a-z]+/(?:u/\d+|d/(?:e/|)[0-9a-zA-Z_-]+/)?(?:edit\?[-\w=#.]*|/\?[\w=&]*|)
+# Google Drive
+\bdrive\.google\.com/(?:file/d/|open)[-0-9a-zA-Z_?=]*
+# Google Groups
+\bgroups\.google\.com/(?:(?:forum/#!|d/)(?:msg|topics|searchin)|a)/[^/]+/[-a-zA-Z0-9]+(?:/[-a-zA-Z0-9]+)*
+# Google Maps
+\bmaps\.google\.com/maps\?[\w&;=]*
+# Google themes
+themes\.googleusercontent\.com/static/fonts/[^/]+/v\d+/[^.]+.
+# Google CDN
+\bclients2\.google(?:usercontent|)\.com[-0-9a-zA-Z/.]*
+# Goo.gl
+/goo\.gl/[a-zA-Z0-9]+
+# Google Chrome Store
+\bchrome\.google\.com/webstore/detail/[-\w]*(?:/\w*|)
+# Google Books
+\bbooks\.google\.(?:\w{2,4})/books\?[-\w\d=&#.]*
+# Google Fonts
+\bfonts\.(?:googleapis|gstatic)\.com/[-/?=:;+&0-9a-zA-Z]*
+# Google Forms
+\bforms\.gle/\w+
+
+# GitHub SHAs
+\bapi.github\.com/repos/[^/]+/[^/]+/[^/]+/[0-9a-f]+\b
+(?:\[`?[0-9a-f]+`?\]\(https:/|)/(?:www\.|)github\.com/[^/)]+/[^/)]+(?:/[^/)]+/[0-9a-f]+(?:[-0-9a-zA-Z/#.]*|)\b|)
+\bgithub\.com/[^/]+/[^/]+[@#][0-9a-f]+\b
+# githubusercontent
+/[-a-z0-9]+\.githubusercontent\.com/[-a-zA-Z0-9?&=_\/.]*
+# gist github
+\bgist\.github\.com/[^/]+/[0-9a-f]+
+# git.io
+\bgit\.io/[0-9a-zA-Z]+
+# GitHub JSON
+"node_id": "[-a-zA-Z=;:/0-9+]*"
+# Contributor
+\[[^\]]+]\(https://github\.com/[^/]+\)
+# GHSA
+GHSA(?:-[0-9a-z]{4}){3}
+
+# medium
+link\.medium\.com/[a-zA-Z0-9]+
+\bmedium\.com/\@[^/]+/[-\w]+
+
+# microsoft
+\b(?:https?://|)(?:(?:download\.visualstudio|docs|msdn2?)\.microsoft|blogs\.msdn)\.com/[-_a-zA-Z0-9()=./%]*
+# powerbi
+\bapp\.powerbi\.com/reportEmbed/[^"' ]*
+
+# w3
+\bw3\.org/[-0-9a-zA-Z/#.]+
+
+# HyperKitty lists
+/archives/list/[^@/]+\@[^/]*/message/[^/]*/
+
+# auth v3
+/v3/users/[0-9a-f]+(?:/credentials/[^/]+/[0-9a-f]+|)
+
+# uuid:
+\b(?:pfx|)[0-9a-fA-F]{8}-(?:[0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}\b
+# wwn
+wwn['"=: ]*['"][0-9a-fA-F]{8}-(?:[0-9a-fA-F]{4}-){3}[0-9a-fA-F]{8,}
+
+container_id"?: (['"])[0-9a-f]+\g{-1}
+
+# IPv6
+\b(?:[0-9a-f]{0,4}:){5}[0-9a-f]{0,4}\b
+
+# /dev/ devices
+/(?:dev/disk|by-id|by-path|by-uuid)/[-$:/,\w]*
+
+# base64 junk
+^[-a-zA-Z=;:/0-9+]{72}$
+(?:^| )[-a-zA-Z=;:/0-9+]{1,70}==$
+
+# hexdumps
+\b[0-9a-f]{6,7}(?: [0-9a-f]{4}){8}\b
+
+# secrets
+"(?:cephx_secret|token)": ".*"
+secret=[-a-zA-Z=;:/0-9+]{1,70}==
+'new_password': '.*'
+[Kk]ey[:=(\s"]*?(['"])[-a-zA-Z=;:/0-9+]+\g{-1}
+
+# mantle?
+\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}\.\d+\s[0-9a-f]{12}
+
+# soid?
+\b\d+:[0-9a-f]{8}::
+
+# commits
+\b[0-9a-f]{40}\b
+Merge: [0-9a-f]{7,40} [0-9a-f]{7,40}\b
+
+# URL escaped characters
+\%[0-9A-F]{2}
+\%[0-9a-f]{2}
+
+# hex digits including css/html color classes:
+(?:[\\0][xX]|\\u|[uU]\+|#x?|\%23)[0-9a-fA-FgGrR_]{2,}(?:[uUlL]{0,3}|u\d+)\b
+
+# Update Lorem based on your content (requires `ge` and `w` from https://github.com/jsoref/spelling; and `review` from https://github.com/check-spelling/check-spelling/wiki/Looking-for-items-locally )
+# grep lorem .github/actions/spelling/patterns.txt|perl -pne 's/.*i..\?://;s/\).*//' |tr '|' "\n"|sort -f |xargs -n1 ge|perl -pne 's/^[^:]*://'|sort -u|w|sed -e 's/ .*//'|w|review -
+# Warning, while `(?i)` is very neat and fancy, if you have some binary files that aren't proper unicode, you might run into:
+## Operation "substitution (s///)" returns its argument for non-Unicode code point 0x1C19AE (the code point will vary).
+## You could manually change `(?i)X...` to use `[Xx]...`
+## or you could add the files to your `excludes` file (a version after 0.0.19 should identify the file path)
+# Lorem
+(?:\w|\s|[,.])*\b(?i)(?:amet|consectetur|cursus|dolor|eros|ipsum|lacus|libero|ligula|lorem|magna|neque|nulla|suscipit|tempus)\b(?:\w|\s|[,.])*
+
+# commit / sha / ...
+\b[0-9a-f]{32,}\b
+
+# tar arguments
+\b(?:\\n|)tar(?:\.exe|)(?:(?:\s+--[-a-zA-Z]+|\s+-[a-zA-Z]+|\s[a-z]+)(?:=[^ ]*|))+
+
+# Compiler flags
+[\t "'`=(#]-D(?!escription|estination|irection|isk|isplay|istribution)
+[\t "'`=(]-[WX]
+[\t "'`=(:;]-f(?!ake|inal|ingerprint|orce|ormat)
+[\t "'`=(]-l(?!egacy|ength|oop)
+
+# Python stringprefix / binaryprefix
+\b(?:B|BR|Br|F|FR|Fr|R|RB|RF|Rb|Rf|U|UR|Ur|b|bR|br|f|fR|fr|r|rB|rF|rb|rf|u|uR|ur)'
+
+# ...
+\bfoo'+bars\b
+
+# ellipsis
+\w+(?:…|\.\.\.)
+# spelling notes
+ s/\w+/
+# typo
+typo:? (['"]|)\w+\g{-1} to\s
+
+# version suffix <word>v#
+[Vv]\d+(?:\b|(?=[a-zA-Z_]))
+
+# acceptable duplicates
+[-bcdlpsw](?:[-r][-w][-sx]){3}\.?\s+\d+\s+(\S+)\s+\g{-1}\s+\d+\s+
+\s(anywhere|asdf|badgers|bla|ceph|Cheng|clone|derp|hdd|iocb|iscsi|key|long|LONG|many|next|root|ssd|start|transparent|venv|very) \g{-1}\s
+\@param\s+(\w+)\s+\g{-1}\s
+\s+osd\s+pool\s+(?:delete|rm)\s+(\w+)\s+\g{-1}\s
+
+# ignore long runs of a single character:
+\b([A-Za-z])\g{-1}{3,}\b
