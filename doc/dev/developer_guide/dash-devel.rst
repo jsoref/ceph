@@ -31,7 +31,7 @@ introduced in this chapter are based on a so called ``vstart`` environment.
 
 .. note::
 
-  Every ``vstart`` environment needs Ceph `to be compiled`_ from its Github
+  Every ``vstart`` environment needs Ceph `to be compiled`_ from its GitHub
   repository, though Docker environments simplify that step by providing a
   shell script that contains those instructions.
 
@@ -96,7 +96,7 @@ based on vstart. Those are:
 
   `ceph-dev`_ is an exception to this rule as one of the options it provides
   is `build-free`_. This is accomplished through a Ceph installation using
-  RPM system packages. You will still be able to work with a local Github
+  RPM system packages. You will still be able to work with a local GitHub
   repository like you are used to.
 
 
@@ -2340,7 +2340,7 @@ If that checker failed, it means that the current Pull Request is modifying the
 Ceph API and therefore:
 
 #. The versioned OpenAPI specification should be updated explicitly: ``tox -e openapi-fix``.
-#. The team @ceph/api will be requested for reviews (this is automated via Github CODEOWNERS), in order to asses the impact of changes.
+#. The team @ceph/api will be requested for reviews (this is automated via GitHub CODEOWNERS), in order to asses the impact of changes.
 
 Additionally, Sphinx documentation can be generated from the OpenAPI
 specification with ``tox -e openapi-doc``.

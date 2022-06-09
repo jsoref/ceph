@@ -101,7 +101,7 @@ use the following Powershell command:
 
 In order to mount Ceph filesystems, you will have to install Dokany.
 You may fetch the installer as well as the source code from the Dokany
-Github repository: https://github.com/dokan-dev/dokany/releases
+GitHub repository: https://github.com/dokan-dev/dokany/releases
 
 The minimum supported Dokany version is 1.3.1. At the time of the writing,
 Dokany 2.0 is in Beta stage and is unsupported.

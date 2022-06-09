@@ -477,13 +477,13 @@ This consists of two parts:
 Using a browser extension to auto-fill the merge  message
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-If you use a browser for merging Github PRs, the easiest way to fill in
-the merge message is with the `"Ceph Github Helper Extension"
+If you use a browser for merging GitHub PRs, the easiest way to fill in
+the merge message is with the `"Ceph GitHub Helper Extension"
 <https://github.com/tspmelo/ceph-github-helper>`_ (available for `Chrome
 <https://chrome.google.com/webstore/detail/ceph-github-helper/ikpfebikkeabmdnccbimlomheocpgkmn>`_
 and `Firefox <https://addons.mozilla.org/en-US/firefox/addon/ceph-github-helper/>`_).
 
-After enabling this extension, if you go to a Github PR page, a vertical helper
+After enabling this extension, if you go to a GitHub PR page, a vertical helper
 will be displayed at the top-right corner. If you click on the user silhouette button
 the merge message input will be automatically populated.
 
