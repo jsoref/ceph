@@ -627,7 +627,7 @@ export class CephfsDirectoriesComponent implements OnInit, OnChanges {
     }
     const node = this.getNode(parent);
     if (!node) {
-      // Node will not be found for new sub sub directories - this is the intended behaviour
+      // Node will not be found for new sub directories - this is the intended behaviour
       return;
     }
     const children = this.getChildren(parent);
