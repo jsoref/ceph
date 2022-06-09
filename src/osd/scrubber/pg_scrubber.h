@@ -127,7 +127,7 @@ class ReplicaReservations {
   /**
    *  quietly discard all knowledge about existing reservations. No messages
    *  are sent to peers.
-   *  To be used upon interval change, as we know the the running scrub is no
+   *  To be used upon interval change, as we know the running scrub is no
    *  longer relevant, and that the replicas had reset the reservations on
    *  their side.
    */

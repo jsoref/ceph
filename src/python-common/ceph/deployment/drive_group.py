@@ -51,7 +51,7 @@ class DeviceSelection(object):
         self.vendor = vendor
 
         #: Size specification of format LOW:HIGH.
-        #: Can also take the the form :HIGH, LOW:
+        #: Can also take the form :HIGH, LOW:
         #: or an exact value (as ceph-volume inventory reports)
         self.size:  Optional[str] = size
 
