@@ -366,7 +366,7 @@ a script (``ceph-backport.sh --milestones``) which scans all PRs targeting stabl
 branches and automatically adds the correct Milestone tag if it is missing.
 
 Next, check which component label was applied to the master PR corresponding to
-this backport, and double-check that that label is applied to the backport PR as
+this backport, and double-check that label is applied to the backport PR as
 well. For example, if the master PR carries the component label "core", the
 backport PR should also get that label.
 
