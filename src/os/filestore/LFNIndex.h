@@ -282,7 +282,7 @@ protected:
     const std::vector<std::string> &path ///< [in] Path to sync
     ); ///< @return Error Code, 0 on success
 
-  /// Link an object from from into to
+  /// Link an object from into to
   int link_object(
     const std::vector<std::string> &from,   ///< [in] Source subdirectory.
     const std::vector<std::string> &to,     ///< [in] Dest subdirectory.
@@ -347,7 +347,7 @@ protected:
     int *hardlink		///< [out] hardlink for this file, hardlink=0 mean no-exist
     );
 
-  /// do move subdir from from to dest
+  /// do move subdir from to dest
   static int move_subdir(
     LFNIndex &from,             ///< [in] from index
     LFNIndex &dest,             ///< [in] to index
@@ -355,7 +355,7 @@ protected:
     std::string dir                  ///< [in] dir to move
     );
 
-  /// do move object from from to dest
+  /// do move object from to dest
   static int move_object(
     LFNIndex &from,             ///< [in] from index
     LFNIndex &dest,             ///< [in] to index
