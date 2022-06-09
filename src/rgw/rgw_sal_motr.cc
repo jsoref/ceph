@@ -2092,7 +2092,7 @@ int MotrAtomicWriter::complete(size_t accounted_size, const std::string& etag,
   bufferlist bl;
   rgw_bucket_dir_entry ent;
 
-  // Set rgw_bucet_dir_entry. Some of the member of this structure may not
+  // Set rgw_bucket_dir_entry. Some of the member of this structure may not
   // apply to motr. For example the storage_class.
   //
   // Checkout AtomicObjectProcessor::complete() in rgw_putobj_processor.cc
