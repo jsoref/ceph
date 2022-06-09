@@ -1319,7 +1319,7 @@ notification on the frontend. Run through the following scenarios to debug.
    found by searching for keywords, such as *500 Internal Server Error*,
    followed by ``traceback``. The end of a traceback contains more details about
    what exact error occurred.
-#. Check your web browser's Javascript Console for any errors.
+#. Check your web browser's JavaScript Console for any errors.
 
 
 Ceph Dashboard Logs
