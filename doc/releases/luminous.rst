@@ -662,7 +662,7 @@ Notable Changes
 
 OSD
 
-* 12.2.9 contains the pg hard hard limit patches (https://tracker.ceph.com/issues/23979).
+* 12.2.9 contains the pg hard limit patches (https://tracker.ceph.com/issues/23979).
   A partial upgrade during recovery/backfill, can cause the osds on the
   previous version, to fail with assert(trim_to <= info.last_complete). The
   workaround for users is to upgrade and restart all OSDs to a version with the
