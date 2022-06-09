@@ -86,7 +86,7 @@ Authorization
 
 Auditing
     Auditing takes the results from both *authentication and authorization* and
-    records them into an audit log. The audit log records records all actions
+    records them into an audit log. The audit log records all actions
     taking by/during the authentication and authorization for later review by
     the administrators. While authentication and authorization are preventive
     systems (in which unauthorized access is prevented), auditing is a reactive
