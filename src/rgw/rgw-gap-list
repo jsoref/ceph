@@ -2,7 +2,7 @@
 
 # version 7
 
-# NOTE: This script based based on rgw-orphan-list but doing the
+# NOTE: This script based on rgw-orphan-list but doing the
 # reverse calculation.
 
 # NOTE: The awk included in this script replaces the 'ceph-diff-sorted'
