@@ -18,7 +18,7 @@
 
 # rbd-recover-tool is an offline recover tool for rbd image in replicated pool
 # when ceph cluster is stopped.
-# it is a simple disater recovery policy, just for urgent condition
+# it is a simple disaster recovery policy, just for urgent condition
 
 my_dir=$(dirname "$0")
 
