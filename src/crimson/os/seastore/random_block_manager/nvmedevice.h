@@ -296,7 +296,7 @@ public:
    * block_size : IO unit size in byte. Caller should follow every IO command
    * aligned with block size.
    *
-   * preffered_write_granularity(PWG), preffered_write_alignment(PWA) : IO unit
+   * preferred_write_granularity(PWG), preferred_write_alignment(PWA) : IO unit
    * size for write in byte. Caller should request every write IO sized multiple
    * times of PWG and aligned starting address by PWA. Available only if NVMe
    * Device supports NVMe protocol 1.4 or later versions.
@@ -308,8 +308,8 @@ public:
   std::size_t get_size() const { return size; }
   seastore_off_t get_block_size() const { return block_size; }
 
-  uint64_t get_preffered_write_granularity() const { return write_granularity; }
-  uint64_t get_preffered_write_alignment() const { return write_alignment; }
+  uint64_t get_preferred_write_granularity() const { return write_granularity; }
+  uint64_t get_preferred_write_alignment() const { return write_alignment; }
 
   uint64_t get_atomic_write_unit() const { return atomic_write_unit; }
 
