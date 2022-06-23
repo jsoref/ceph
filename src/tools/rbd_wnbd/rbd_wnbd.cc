@@ -938,7 +938,7 @@ Unmap options:
 
 Service options:
   --hard-disconnect           Skip attempting a soft disconnect
-  --soft-disconnect-timeout   Cummulative soft disconnect timeout in seconds,
+  --soft-disconnect-timeout   Cumulative soft disconnect timeout in seconds,
                               used when disconnecting existing mappings. A hard
                               disconnect will be issued when hitting the timeout
   --service-thread-count      The number of workers used when mapping or
