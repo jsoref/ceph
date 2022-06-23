@@ -1374,7 +1374,7 @@ Upgrading
   increased from 4 MB to 128 MB.  This will increase the memory
   footprint of that process but tends to increase performance of omap
   (key/value) objects (used for CephFS and the radosgw).  If memory in your
-  deployment is tight, you can preserve the old behavio by adding::
+  deployment is tight, you can preserve the old behavior by adding::
 
     leveldb write buffer size = 0
     leveldb cache size = 0
