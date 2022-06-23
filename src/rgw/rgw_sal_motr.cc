@@ -2570,7 +2570,7 @@ int MotrMultipartUpload::complete(const DoutPrefixProvider *dpp,
   // Update the dir entry and insert it to the bucket index so
   // the object will be seen when listing the bucket.
   bufferlist update_bl;
-  target_obj->get_key().get_index_key(&ent.key);  // Change to offical name :)
+  target_obj->get_key().get_index_key(&ent.key);  // Change to official name :)
   ent.meta.size = off;
   ent.meta.accounted_size = accounted_size;
   ldpp_dout(dpp, 20) << "MotrMultipartUpload::complete(): obj size=" << ent.meta.size
