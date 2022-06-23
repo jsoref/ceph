@@ -565,7 +565,7 @@ ssize_t ProtocolV2::write_message(Message *m, bool more) {
     connection->logger->inc(
         l_msgr_send_bytes, total_send_size - connection->outgoing_bl.length());
     ldout(cct, 10) << __func__ << " sending " << m
-                   << (rc ? " continuely." : " done.") << dendl;
+                   << (rc ? " continually." : " done.") << dendl;
   }
 
 #if defined(WITH_EVENTTRACE)
