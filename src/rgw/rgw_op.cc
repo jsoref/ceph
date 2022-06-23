@@ -7183,7 +7183,7 @@ RGWBulkUploadOp::parse_path(const std::string_view& path)
   const size_t start_pos = path.find_first_not_of('/');
 
   if (std::string_view::npos != start_pos) {
-    /* Seperator is the first slash after the leading ones. */
+    /* Separator is the first slash after the leading ones. */
     const size_t sep_pos = path.substr(start_pos).find('/');
 
     if (std::string_view::npos != sep_pos) {
