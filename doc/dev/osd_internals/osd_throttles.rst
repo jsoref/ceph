@@ -68,7 +68,7 @@ changed.
 Setting these properly should help to smooth out op latencies by
 mostly avoiding the hard limit.
 
-See FileStore::throttle_ops and FileSTore::thottle_bytes.
+See FileStore::throttle_ops and FileSTore::throttle_bytes.
 
 journal usage throttle
 ----------------------
