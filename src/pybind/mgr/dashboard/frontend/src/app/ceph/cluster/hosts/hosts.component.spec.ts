@@ -167,7 +167,7 @@ describe('HostsComponent', () => {
     expect(spans[2].textContent).toContain('rgw: 1');
   });
 
-  it('should test if host facts are tranformed correctly if orch available', () => {
+  it('should test if host facts are transformed correctly if orch available', () => {
     const features = [OrchestratorFeature.HOST_FACTS];
     const payload = [
       {
