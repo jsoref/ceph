@@ -1030,7 +1030,7 @@ In order to get a new MIT KDC Server running:
 
 
 6. Name Resolution
-    As mentioned earlier, Kerberos *relies heavly on name resolution*. Most of
+    As mentioned earlier, Kerberos *relies heavily on name resolution*. Most of
     the Kerberos issues are usually related to name resolution, since Kerberos
     is *very picky* on both *systems names* and *host lookups*.
 
