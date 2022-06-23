@@ -199,7 +199,7 @@ connection_ptr_t& create_connection(connection_ptr_t& conn) {
     return conn;
   }
 
-  // get list of brokers based on the bootsrap broker
+  // get list of brokers based on the bootstrap broker
   if (rd_kafka_conf_set(conn->temp_conf, "bootstrap.servers", conn->broker.c_str(), errstr, sizeof(errstr)) != RD_KAFKA_CONF_OK) goto conf_error;
 
   if (conn->use_ssl) {
