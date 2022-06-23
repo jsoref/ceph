@@ -230,7 +230,7 @@ Crash consistency
   #. Crash occurs right after writing Data blocks
 
      - Data partition --> | Data blocks |
-     - We don't need to care this case. Data is not alloacted yet in reality. The blocks will be reused.
+     - We don't need to care this case. Data is not allocated yet in reality. The blocks will be reused.
   #. Crash occurs right after WAL
 
      - Data partition --> | Data blocks |
