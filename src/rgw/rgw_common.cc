@@ -341,7 +341,7 @@ void set_req_state_err(req_state* s, int err_no, const string& err_msg)
       /* TODO(rzarzynski): there never ever should be a check like this one.
        * It's here only for the sake of the patch's backportability. Further
        * commits will move the logic to a per-RGWHandler replacement of
-       * the end_header() function. Alternativaly, we might consider making
+       * the end_header() function. Alternatively, we might consider making
        * that just for the dump(). Please take a look on @cbodley's comments
        * in PR #10690 (https://github.com/ceph/ceph/pull/10690). */
       s->err.err_code = err_msg;
