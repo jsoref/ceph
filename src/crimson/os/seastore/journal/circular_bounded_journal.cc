@@ -173,7 +173,7 @@ CircularBoundedJournal::write_ertr::future<> CircularBoundedJournal::append_reco
     writes.push_back(std::make_pair(addr, bl));
   } else {
     // write remaining data---in this case,
-    // data is splited into two parts before due to the end of CircularBoundedJournal.
+    // data is split into two parts before due to the end of CircularBoundedJournal.
     // the following code is to write the second part
     bufferlist first_write, next_write;
     first_write.substr_of(bl, 0, get_journal_end() - addr);
