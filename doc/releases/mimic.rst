@@ -2341,7 +2341,7 @@ Detailed Changelog
 * common: fix BoundedKeyCounter const_pointer_iterator (`issue#22139 <http://tracker.ceph.com/issues/22139>`_, `pr#18953 <https://github.com/ceph/ceph/pull/18953>`_, Casey Bodley)
 * common: fix daemon abnormal exit at parsing invalid arguments (`issue#21365 <http://tracker.ceph.com/issues/21365>`_, `issue#21338 <http://tracker.ceph.com/issues/21338>`_, `pr#17664 <https://github.com/ceph/ceph/pull/17664>`_, Yan Jun)
 * common: fix potential memory leak in HTMLFormatter (`pr#20699 <https://github.com/ceph/ceph/pull/20699>`_, Yao Zongyou)
-* common: fix typo deamon in comments (`pr#17687 <https://github.com/ceph/ceph/pull/17687>`_, yonghengdexin735)
+* common: fix typo daemon in comments (`pr#17687 <https://github.com/ceph/ceph/pull/17687>`_, yonghengdexin735)
 * common: fix typo in options.cc (`pr#20549 <https://github.com/ceph/ceph/pull/20549>`_, songweibin)
 * common: FreeBSD wants the correct struct selection for ipv6 (`issue#21813 <http://tracker.ceph.com/issues/21813>`_, `pr#21143 <https://github.com/ceph/ceph/pull/21143>`_, Willem Jan Withagen)
 * common: global: output usage on -h, --help, or no args before contacting mons (`pr#20812 <https://github.com/ceph/ceph/pull/20812>`_, Sage Weil)
