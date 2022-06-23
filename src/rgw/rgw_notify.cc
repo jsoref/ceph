@@ -440,7 +440,7 @@ class Manager : public DoutPrefixProvider {
           // start processing this queue
           spawn::spawn(io_context, [this, &queue_gc, &queue_gc_lock, queue_name](yield_context yield) {
             process_queue(queue_name, yield);
-            // if queue processing ended, it measn that the queue was removed or not owned anymore
+            // if queue processing ended, it means that the queue was removed or not owned anymore
             // mark it for deletion
             std::lock_guard lock_guard(queue_gc_lock);
             queue_gc.push_back(queue_name);
