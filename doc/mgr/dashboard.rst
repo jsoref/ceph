@@ -596,7 +596,7 @@ The format of url is : `<protocol>:<IP-address>:<port>`
 If you are using a self-signed certificate for Grafana,
 disable certificate verification in the dashboard to avoid refused connections,
 which can be a result of certificates signed by an unknown CA or that do not
-matchn the host name::
+match the host name::
 
   $ ceph dashboard set-grafana-api-ssl-verify False
 
