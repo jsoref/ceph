@@ -1884,7 +1884,7 @@ def test_ps_versioned_deletion():
         assert_equal(str(event['event']), event_type2)
 
     # cleanup
-    # follwing is needed for the cleanup in the case of 3-zones
+    # following is needed for the cleanup in the case of 3-zones
     # see: http://tracker.ceph.com/issues/39142
     realm = get_realm()
     zonegroup = realm.master_zonegroup()

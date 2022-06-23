@@ -700,7 +700,7 @@ public:
     int get_conf(rgw_pubsub_sub_config* result);
     
     static const int DEFAULT_MAX_EVENTS = 100;
-    // followint virtual methods should only be called in derived
+    // following virtual methods should only be called in derived
     virtual int list_events(const DoutPrefixProvider *dpp, const std::string& marker, int max_events) {ceph_assert(false);}
     virtual int remove_event(const DoutPrefixProvider *dpp, const std::string& event_id) {ceph_assert(false);}
     virtual void dump(Formatter* f) const {ceph_assert(false);}
