@@ -1506,7 +1506,7 @@ namespace rgw {
     if (factory == nullptr) {
       return false;
     }
-    /* make sure the reclaiming object is the same partiton with newobject factory,
+    /* make sure the reclaiming object is the same partition with newobject factory,
      * then we can recycle the object, and replace with newobject */
     if (!fs->fh_cache.is_same_partition(factory->fhk.fh_hk.object, fh.fh_hk.object)) {
       return false;
