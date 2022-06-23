@@ -1417,9 +1417,9 @@ public:
 #endif
 #endif
 
-  /// \brief Calls `f` if the expectd is in the unexpected state
+  /// \brief Calls `f` if the expected is in the unexpected state
   /// \requires `F` is invokable with `E`, and `std::invoke_result_t<F>`
-  /// must be void or convertible to `expcted<T,E>`.
+  /// must be void or convertible to `expected<T,E>`.
   /// \effects If `*this` has a value, returns `*this`.
   /// Otherwise, if `f` returns `void`, calls `std::forward<F>(f)(E)` and returns
   /// `std::nullopt`. Otherwise, returns `std::forward<F>(f)(E)`.
