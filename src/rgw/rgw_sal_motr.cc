@@ -3346,7 +3346,7 @@ int MotrStore::open_motr_idx(struct m0_uint128 *id, struct m0_idx *idx)
   return 0;
 }
 
-// The following marcos are from dix/fid_convert.h which are not exposed.
+// The following macros are from dix/fid_convert.h which are not exposed.
 enum {
       M0_DIX_FID_DEVICE_ID_OFFSET   = 32,
       M0_DIX_FID_DIX_CONTAINER_MASK = (1ULL << M0_DIX_FID_DEVICE_ID_OFFSET)
