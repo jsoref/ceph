@@ -128,7 +128,7 @@ Inkscape
 --------
 
 You can use Inkscape to generate scalable vector graphics.
-https://inkscape.org/en/ for restructedText documents.
+https://inkscape.org/en/ for restructuredText documents.
 
 If you generate diagrams with Inkscape, you should
 commit both the Scalable Vector Graphics (SVG) file and export a
