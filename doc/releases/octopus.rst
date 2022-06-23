@@ -2002,7 +2002,7 @@ Upgrade compatibility notes
   from this change, as they won't be blocked by the full pools which they are
   not writing to. In this release, ``ceph {set,unset} full`` is now considered
   as an invalid command. And the clients will continue honoring both the
-  cluster-wide and per-pool flags to be backward comaptible with pre-infernalis
+  cluster-wide and per-pool flags to be backward compatible with pre-infernalis
   clusters.
 
 * The telemetry module now reports more information.
