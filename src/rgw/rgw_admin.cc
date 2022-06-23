@@ -2857,11 +2857,11 @@ static int bucket_sync_status(rgw::sal::RadosStore* store, const RGWBucketInfo& 
 
   for (auto& zone_id : zone_ids) {
     auto z = static_cast<rgw::sal::RadosStore*>(store)->svc()->zone->get_zonegroup().zones.find(zone_id.id);
-    if (z == static_cast<rgw::sal::RadosStore*>(store)->svc()->zone->get_zonegroup().zones.end()) { /* should't happen */
+    if (z == static_cast<rgw::sal::RadosStore*>(store)->svc()->zone->get_zonegroup().zones.end()) { /* shouldn't happen */
       continue;
     }
     auto c = zone_conn_map.find(zone_id.id);
-    if (c == zone_conn_map.end()) { /* should't happen */
+    if (c == zone_conn_map.end()) { /* shouldn't happen */
       continue;
     }
 
