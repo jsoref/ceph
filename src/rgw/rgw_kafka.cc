@@ -420,7 +420,7 @@ private:
         
         auto& conn = conn_it->second;
 
-        // Checking the connection idlesness
+        // Checking the connection idleness
         if(conn->timestamp.sec() + max_idle_time < ceph_clock_now()) {
           ldout(conn->cct, 20) << "Time for deleting a connection due to idle behaviour: " << ceph_clock_now() << dendl;
           ERASE_AND_CONTINUE(conn_it, connections);
