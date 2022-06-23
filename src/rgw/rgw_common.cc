@@ -2416,7 +2416,7 @@ void RGWBucketEnt::dump(Formatter *f) const
   encode_json("size", size, f);
   encode_json("size_rounded", size_rounded, f);
   utime_t ut(creation_time);
-  encode_json("mtime", ut, f); /* mtime / creation time discrepency needed for backward compatibility */
+  encode_json("mtime", ut, f); /* mtime / creation time discrepancy needed for backward compatibility */
   encode_json("count", count, f);
   encode_json("placement_rule", placement_rule.to_str(), f);
 }
