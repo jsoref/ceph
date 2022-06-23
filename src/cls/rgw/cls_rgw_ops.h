@@ -686,7 +686,7 @@ WRITE_CLASS_ENCODER(rgw_cls_bi_put_op)
 
 struct rgw_cls_bi_list_op {
   uint32_t max;
-  std::string name_filter; // limit resultto one object and its instances
+  std::string name_filter; // limit result to one object and its instances
   std::string marker;
 
   rgw_cls_bi_list_op() : max(0) {}
