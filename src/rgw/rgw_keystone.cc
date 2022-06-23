@@ -345,7 +345,7 @@ int TokenEnvelope::parse(const DoutPrefixProvider *dpp,
          * speaks in v2 disregarding the promise to go with v3. */
         decode_v3(*token_iter);
 
-        /* Identity v3 conveys the token inforamtion not as a part of JSON but
+        /* Identity v3 conveys the token information not as a part of JSON but
          * in the X-Subject-Token HTTP header we're getting from caller. */
         token.id = token_str;
       } else {
