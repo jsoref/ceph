@@ -14,7 +14,7 @@ object data is complete, this tool does flush osd journal on each osd node befor
 -need ssh service and unobstructed network 
 -osd data must be accessed on local disk
 -clone image is not supported, while snapshot is supported
--only support relicated pool
+-only support replicated pool
 
 before you run this tool, you should make sure that:
 1). all processes (ceph-osd, ceph-mon, ceph-mds) are shutdown
