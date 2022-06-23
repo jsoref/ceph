@@ -232,7 +232,7 @@ ref
     the set packages under the ``<project>/<branch>``. It is a good practice to
     version the packaging recipes, like the ``debian`` directory for building deb
     packages and the ``spec`` for building rpm packages, and use the sha1 of the
-    packaging receipe for the ``ref``. But you could also use a random string for
+    packaging recipe for the ``ref``. But you could also use a random string for
     ``ref``, like the tag name of the built source tree.
 
 distro
