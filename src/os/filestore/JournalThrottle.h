@@ -48,8 +48,8 @@ public:
    * explanation.
    */
   bool set_params(
-    double low_threshhold,
-    double high_threshhold,
+    double low_threshold,
+    double high_threshold,
     double expected_throughput,
     double high_multiple,
     double max_multiple,

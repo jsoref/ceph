@@ -1872,8 +1872,8 @@ int FileJournal::set_throttle_params()
 {
   stringstream ss;
   bool valid = throttle.set_params(
-    cct->_conf->journal_throttle_low_threshhold,
-    cct->_conf->journal_throttle_high_threshhold,
+    cct->_conf->journal_throttle_low_threshold,
+    cct->_conf->journal_throttle_high_threshold,
     cct->_conf->filestore_expected_throughput_bytes,
     cct->_conf->journal_throttle_high_multiple,
     cct->_conf->journal_throttle_max_multiple,
@@ -1891,8 +1891,8 @@ int FileJournal::set_throttle_params()
 const char** FileJournal::get_tracked_conf_keys() const
 {
   static const char *KEYS[] = {
-    "journal_throttle_low_threshhold",
-    "journal_throttle_high_threshhold",
+    "journal_throttle_low_threshold",
+    "journal_throttle_high_threshold",
     "journal_throttle_high_multiple",
     "journal_throttle_max_multiple",
     "filestore_expected_throughput_bytes",
