@@ -41,7 +41,7 @@ no tracker issue exists, create one. There is only one case in which you do not
 have to create a Redmine tracker issue: the case of minor documentation changes.
 
 Simple documentation cleanup does not require a corresponding tracker issue.
-Major documenatation changes do require a tracker issue. Major documentation
+Major documentation changes do require a tracker issue. Major documentation
 changes include adding new documentation chapters or files, and making 
 substantial changes to the structure or content of the documentation.
 
