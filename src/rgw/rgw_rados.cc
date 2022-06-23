@@ -8673,7 +8673,7 @@ int RGWRados::cls_bucket_list_ordered(const DoutPrefixProvider *dpp,
   for (auto& r : shard_list_results) {
     results_trackers.emplace_back(r.first, r.second, shard_oids[r.first]);
 
-    // if any *one* shard's result is trucated, the entire result is
+    // if any *one* shard's result is truncated, the entire result is
     // truncated
     *is_truncated = *is_truncated || r.second.is_truncated;
 
