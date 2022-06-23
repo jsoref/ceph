@@ -64,7 +64,7 @@ Possible -op commands::
 * set-inc-osdmap
 * mark-complete
 * reset-last-complete
-* apply-layour-settings
+* apply-layout-settings
 * update-mon-db
 * dump-export
 * trim-pg-log
