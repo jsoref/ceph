@@ -513,7 +513,7 @@ CircularBoundedJournal::read_record_ret CircularBoundedJournal::read_record(padd
      *        <---- 1 block ----><--
      * -- 2 block --->
      *
-     *  If record has logner than read_length and its data is located across
+     *  If record has longer than read_length and its data is located across
      *  the end of journal and the beginning of journal, we need three reads
      *  ---reads of header, other remaining data before the end, and
      *  the other remaining data from the beginning.
