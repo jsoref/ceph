@@ -1045,7 +1045,7 @@ namespace jwt {
 		std::unordered_map<std::string, claim> header_claims;
 	public:
 		/**
-		 * Check if algortihm is present ("alg")
+		 * Check if algorithm is present ("alg")
 		 * \return true if present, false otherwise
 		 */
 		bool has_algorithm() const noexcept { return has_header_claim("alg"); }
