@@ -283,7 +283,7 @@ of the cluster.
 .. note::  Each osd will require 5GiB of space.
 
 After bootstrapping the cluster you can go inside the seed box in which you'll be
-able to run cehpadm commands::
+able to run cephadm commands::
 
   box -v cluster sh
   [root@8d52a7860245] cephadm --help
