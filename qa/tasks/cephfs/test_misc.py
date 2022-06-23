@@ -215,7 +215,7 @@ class TestMisc(CephFSTestCase):
         info = self.fs.mds_asok(['dump', 'inode', '1'])
         assert(info['path'] == "/")
 
-    def test_dump_inode_hexademical(self):
+    def test_dump_inode_hexadecimal(self):
         self.mount_a.run_shell(["mkdir", "-p", "foo"])
         ino = self.mount_a.path_to_ino("foo")
         assert type(ino) is int
