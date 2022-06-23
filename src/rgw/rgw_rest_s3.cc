@@ -217,7 +217,7 @@ ldpp_dout(s, 20) << "get_encryption_defaults: found kms_attr " << kms_attr << " 
     }
     kms_attr_seen = true;
   } else if (!rest_only && kms_master_key_id != "") {
-ldpp_dout(s, 20) << "get_encryption_defaults: no kms_attr, but kms_master_key_id = " << kms_master_key_id << ", settig kms_attr_seen" << dendl;
+ldpp_dout(s, 20) << "get_encryption_defaults: no kms_attr, but kms_master_key_id = " << kms_master_key_id << ", setting kms_attr_seen" << dendl;
     kms_attr_seen = true;
     rgw_set_amz_meta_header(s->info.crypt_attribute_map, kms_attr, kms_master_key_id, OVERWRITE);
   }
