@@ -69,7 +69,7 @@ struct connection_t {
   CallbackList callbacks;
   const std::string broker;
   const bool use_ssl;
-  const bool verify_ssl; // TODO currently iognored, not supported in librdkafka v0.11.6
+  const bool verify_ssl; // TODO currently ignored, not supported in librdkafka v0.11.6
   const boost::optional<std::string> ca_location;
   const std::string user;
   const std::string password;
