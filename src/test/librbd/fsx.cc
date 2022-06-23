@@ -1,7 +1,7 @@
 // -*- mode:C++; tab-width:8; c-basic-offset:8; indent-tabs-mode:t -*-
 // vim: ts=8 sw=8 smarttab
 /*
- *	Copyright (C) 1991, NeXT Computer, Inc.  All Rights Reserverd.
+ *	Copyright (C) 1991, NeXT Computer, Inc.  All Rights Reserved.
  *
  *	File:	fsx.cc
  *	Author:	Avadis Tevanian, Jr.
