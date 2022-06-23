@@ -313,7 +313,7 @@ public:
 
 /* Abstract class for stacking sub-engines to expose them as a single
  * Engine. It is responsible for ordering its sub-engines and managing
- * fall-backs between them. Derivatee is supposed to encapsulate engine
+ * fall-backs between them. Derivative is supposed to encapsulate engine
  * instances and add them using the add_engine() method in the order it
  * wants to be tried during the call to authenticate().
  *
