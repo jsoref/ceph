@@ -133,7 +133,7 @@ NOTE: False positives are possible. False positives would likely
       intact. All results should therefore be verified.
 
 NOTE: Parallel listing may increase performance but may also increase
-      the risk of false positives when the cluster is undergong
+      the risk of false positives when the cluster is undergoing
       modifications during the listing processes. In addition to the
       above, false positives might also include objects that were
       intentionally deleted.
