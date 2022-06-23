@@ -468,7 +468,7 @@ private:
     const std::string &mangled_name	///< [in] Filename of object to remove.
     );
 
-  ///Transate a file into and ghobject_t.
+  ///Translate a file into and ghobject_t.
   int lfn_translate(
     const std::vector<std::string> &path, ///< [in] Path containing the file.
     const std::string &short_name,	///< [in] Filename to translate.
