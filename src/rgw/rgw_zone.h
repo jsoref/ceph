@@ -1090,7 +1090,7 @@ struct RGWPeriodConfig
 };
 WRITE_CLASS_ENCODER(RGWPeriodConfig)
 
-/* for backward comaptability */
+/* for backward compatibility */
 struct RGWRegionMap {
 
   std::map<std::string, RGWZoneGroup> regions;

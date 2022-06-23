@@ -2892,7 +2892,7 @@ class CheckBucketShardStatusIsIncremental : public RGWReadBucketPipeSyncStatusCo
 
 class CheckAllBucketShardStatusIsIncremental : public RGWShardCollectCR {
   // start with 1 shard, and only spawn more if we detect an existing shard.
-  // this makes the backward compatilibility check far less expensive in the
+  // this makes the backward compatibility check far less expensive in the
   // general case where no shards exist
   static constexpr int initial_concurrent_shards = 1;
   static constexpr int max_concurrent_shards = 16;
