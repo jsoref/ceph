@@ -821,7 +821,7 @@ namespace jwt {
 		/**
 		 * Get type of contained object
 		 * \return Type
-		 * \throws std::logic_error An internal error occured
+		 * \throws std::logic_error An internal error occurred
 		 */
 		type get_type() const {
 			if (val.is<picojson::null>()) return type::null;
