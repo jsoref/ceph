@@ -293,7 +293,7 @@ public:
   void _renamesnap_finish(MDRequestRef& mdr, CInode *diri, snapid_t snapid);
 
   // helpers
-  bool _rename_prepare_witness(MDRequestRef& mdr, mds_rank_t who, std::set<mds_rank_t> &witnesse,
+  bool _rename_prepare_witness(MDRequestRef& mdr, mds_rank_t who, std::set<mds_rank_t> &witness,
 			       std::vector<CDentry*>& srctrace, std::vector<CDentry*>& dsttrace, CDentry *straydn);
   version_t _rename_prepare_import(MDRequestRef& mdr, CDentry *srcdn, bufferlist *client_map_bl);
   bool _need_force_journal(CInode *diri, bool empty);
