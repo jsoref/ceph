@@ -1744,7 +1744,7 @@ void FileJournal::commit_start(uint64_t seq)
 }
 
 /*
- *send discard command to joural block device
+ *send discard command to journal block device
  */
 void FileJournal::do_discard(int64_t offset, int64_t end)
 {
