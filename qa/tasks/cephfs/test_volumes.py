@@ -4267,7 +4267,7 @@ class TestSubvolumeSnapshots(TestVolumesHelper):
         except CommandFailedError as ce:
             self.assertEqual(ce.exitstatus, errno.EINVAL, msg="invalid error code when removing inherited snapshot")
         else:
-            self.fail("expected removing inheirted snapshot to fail")
+            self.fail("expected removing inherited snapshot to fail")
 
         # remove ancestral snapshots
         self.mount_a.run_shell(['rmdir', ancestral_snappath1], sudo=True)
