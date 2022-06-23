@@ -894,7 +894,7 @@ bool HashIndex::must_merge(const subdir_info_s &info) {
 
 bool HashIndex::must_split(const subdir_info_s &info, int target_level) {
   // target_level is used for ceph-objectstore-tool to split dirs offline.
-  // if it is set (defalult is 0) and current hash level < target_level, 
+  // if it is set (default is 0) and current hash level < target_level, 
   // this dir would be split no matters how many objects it has.
   return (info.hash_level < (unsigned)MAX_HASH_LEVEL &&
          ((target_level > 0 && info.hash_level < (unsigned)target_level) ||
