@@ -405,7 +405,7 @@ class Manager : public DoutPrefixProvider {
 
       for (const auto& queue_name : queues) {
         // try to lock the queue to check if it is owned by this rgw
-        // or if ownershif needs to be taken
+        // or if ownership needs to be taken
         librados::ObjectWriteOperation op;
         op.assert_exists();
         rados::cls::lock::lock(&op, queue_name+"_lock", 
