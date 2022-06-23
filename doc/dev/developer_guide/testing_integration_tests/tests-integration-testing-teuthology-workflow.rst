@@ -110,7 +110,7 @@ run), and ``--subset`` (used to reduce the number of tests that are triggered). 
 
 .. _teuthology_testing_qa_changes:
 
-Testing QA changes (without re-building binaires)
+Testing QA changes (without re-building binaries)
 *************************************************
 
 If you are making changes only in the ``qa/`` directory, you do not have to
