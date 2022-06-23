@@ -89,8 +89,8 @@ the latest ``FSMap`` and the health metrics reported by MDS daemons.
 But it's noteworthy that ``MgrStatMonitor`` does *not* prepare the reports by itself,
 it just stores whatever the health reports received from mgr!
 
-ceph-mgr -- A Delegate Aggegator
---------------------------------
+ceph-mgr -- A Delegate Aggregator
+---------------------------------
 
 In Ceph, mgr is created to share the burden of monitor, which is used to establish
 the consensus of information which is critical to keep the cluster function.
