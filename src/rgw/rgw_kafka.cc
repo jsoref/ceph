@@ -23,7 +23,7 @@
 // (2) check performance of emptying queue to local list, and go over the list and publish
 // (3) use std::shared_mutex (c++17) or equivalent for the connections lock
 
-// cmparisson operator between topic pointer and name
+// comparison operator between topic pointer and name
 bool operator==(const rd_kafka_topic_t* rkt, const std::string& name) {
     return name == std::string_view(rd_kafka_topic_name(rkt)); 
 }

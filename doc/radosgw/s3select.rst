@@ -242,7 +242,7 @@ NULL
 ~~~~
 | NULL is a legit value in ceph-s3select systems similar to other DB systems, i.e. systems needs to handle the case where a value is NULL.
 | The definition of NULL in our context, is missing/unknown, in that sense **NULL can not produce a value on ANY arithmetic operations** ( a + NULL will produce NULL value).
-| The Same is with arithmetic comaprision, **any comparison to NULL is NULL**, i.e. unknown.
+| The Same is with arithmetic comparison, **any comparison to NULL is NULL**, i.e. unknown.
 | Below is a truth table contains the NULL use-case.
 
 +---------------------------------+-----------------------------+
