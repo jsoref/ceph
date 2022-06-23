@@ -392,7 +392,7 @@ int MotrUser::store_user(const DoutPrefixProvider* dpp,
   orig_info.user_id.id = info.user_id.id;
   // XXX: we open and close motr idx 2 times in this method:
   // 1) on load_user_from_idx() here and 2) on do_idx_op_by_name(PUT) below.
-  // Maybe this can be optimised later somewhow.
+  // Maybe this can be optimised later somehow.
   int rc = load_user_from_idx(dpp, store, orig_info, nullptr, &objv_tr);
   ldpp_dout(dpp, 10) << "Get user: rc = " << rc << dendl;
 
