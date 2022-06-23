@@ -42,7 +42,7 @@ The general format for function documentation is
    *
    * Detailed description when necessary
    *
-   * preconditons, postconditions, warnings, bugs or other notes
+   * preconditions, postconditions, warnings, bugs or other notes
    *
    * parameter reference
    * return value (if non-void)
