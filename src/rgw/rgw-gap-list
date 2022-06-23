@@ -142,7 +142,7 @@ EOF
   exit 1
 }
 
-# Create an awk script in a file for parsing the two command outoputs.
+# Create an awk script in a file for parsing the two command outputs.
 
 cat <<"EOF" >$incremental_grep_awk
 # This awk script is used by rgw-gap-list and will sequence through
