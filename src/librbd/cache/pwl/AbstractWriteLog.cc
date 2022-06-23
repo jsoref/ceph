@@ -515,7 +515,7 @@ void AbstractWriteLog<I>::pwl_init(Context *on_finish, DeferredContexts &later) 
   if ((!m_cache_state->present) &&
       (access(m_log_pool_name.c_str(), F_OK) == 0)) {
     ldout(cct, 5) << "There's an existing pool file " << m_log_pool_name
-                  << ", While there's no cache in the image metatata." << dendl;
+                  << ", While there's no cache in the image metadata." << dendl;
     if (remove(m_log_pool_name.c_str()) != 0) {
       lderr(cct) << "failed to remove the pool file " << m_log_pool_name
                  << dendl;

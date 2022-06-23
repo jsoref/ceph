@@ -32,7 +32,7 @@ preventing it from being trimmed from the cache.  Notification of
 expiration of the replicas is required to allow previously replicated
 objects from eventually being trimmed from the cache as well.
 
-Each metdata object has a authority bit that indicates whether it is
+Each metadata object has a authority bit that indicates whether it is
 authoritative or a replica.  
 
 
