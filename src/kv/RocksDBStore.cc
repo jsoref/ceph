@@ -2582,7 +2582,7 @@ public:
 	      r = shards_seek_to_first();
 	    }
 	  } else {
-	    //if we have resurected shards, kill it
+	    //if we have resurrected shards, kill it
 	    if (shards_valid()) {
 	      shards_next();
 	    }
