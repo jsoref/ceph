@@ -74,7 +74,7 @@ namespace jwt {
 	namespace helper {
 		inline
 		std::string extract_pubkey_from_cert(const std::string& certstr, const std::string& pw = "") {
-			// TODO: Cannot find the exact version this change happended
+			// TODO: Cannot find the exact version this change happened
 #if OPENSSL_VERSION_NUMBER <= 0x1000114fL
 			std::unique_ptr<BIO, decltype(&BIO_free_all)> certbio(BIO_new_mem_buf(const_cast<char*>(certstr.data()), certstr.size()), BIO_free_all);
 #else
