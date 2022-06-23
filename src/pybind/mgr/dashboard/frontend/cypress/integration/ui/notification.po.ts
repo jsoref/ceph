@@ -1,7 +1,7 @@
 import { PageHelper } from '../page-helper.po';
 
 export class NotificationSidebarPageHelper extends PageHelper {
-  getNotificatinoIcon() {
+  getNotificationIcon() {
     return cy.get('cd-notifications a');
   }
 
@@ -26,7 +26,7 @@ export class NotificationSidebarPageHelper extends PageHelper {
   }
 
   open() {
-    this.getNotificatinoIcon().click();
+    this.getNotificationIcon().click();
     this.getSidebar().should('be.visible');
   }
 
