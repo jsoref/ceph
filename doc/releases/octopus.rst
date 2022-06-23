@@ -3421,7 +3421,7 @@ Changelog
 * core: osd/OSD: keep synchronizing with mon if stuck at booting (`pr#28404 <https://github.com/ceph/ceph/pull/28404>`_, xie xingguo)
 * core: osd/OSD: Log slow ops/types to cluster logs (`pr#33328 <https://github.com/ceph/ceph/pull/33328>`_, Sridhar Seshasayee)
 * core: osd/OSD: only wake up empty pqueue (`pr#28832 <https://github.com/ceph/ceph/pull/28832>`_, Jianpeng Ma)
-* core: osd/OSD: prevent down osds from immediately rejoining the culster (`pr#33039 <https://github.com/ceph/ceph/pull/33039>`_, xie xingguo)
+* core: osd/OSD: prevent down osds from immediately rejoining the cluster (`pr#33039 <https://github.com/ceph/ceph/pull/33039>`_, xie xingguo)
 * core: osd/osd: Refactor get_iface_numa_node (`pr#31965 <https://github.com/ceph/ceph/pull/31965>`_, Dai zhiwei, luo rixin)
 * core: osd/OSD: remove unused func enqueue_peering_evt_front (`pr#32496 <https://github.com/ceph/ceph/pull/32496>`_, Jianpeng Ma)
 * core: osd/OSD: remove unused parameter osdmap_lock_name (`pr#32514 <https://github.com/ceph/ceph/pull/32514>`_, Jianpeng Ma)
