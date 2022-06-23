@@ -235,7 +235,7 @@ int ceph_memzero_s(void *dest, size_t destsz, size_t count);
 #include "include/win32/fs_compat.h"
 
 // There are a few name collisions between Windows headers and Ceph.
-// Updating Ceph definitions would be the prefferable fix in order to avoid
+// Updating Ceph definitions would be the preferable fix in order to avoid
 // confusion, unless it requires too many changes, in which case we're going
 // to redefine Windows values by adding the "WIN32_" prefix.
 #define WIN32_DELETE 0x00010000L
