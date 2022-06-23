@@ -208,7 +208,7 @@ NVMeManager::find_block_ret NVMeManager::find_free_block(Transaction &t, size_t 
 			       convert_bitmap_block_no_to_block_id(i, addr), i);
 		if (allocated != 0 && alloc_extent.range_end() != block_id) {
 		  /*
-		   * if not continous block, just restart to find continuous blocks
+		   * if not continuous block, just restart to find continuous blocks
 		   * at the next block.
 		   * in-memory allocator can handle this efficiently.
 		   */
