@@ -1748,7 +1748,7 @@ void AbstractWriteLog<I>::process_writeback_dirty_entries() {
     std::lock_guard locker(m_lock);
     while (flushed < IN_FLIGHT_FLUSH_WRITE_LIMIT) {
       if (m_shutting_down) {
-        ldout(cct, 5) << "Flush during shutdown supressed" << dendl;
+        ldout(cct, 5) << "Flush during shutdown suppressed" << dendl;
         /* Do flush complete only when all flush ops are finished */
         all_clean = !m_flush_ops_in_flight;
         break;
