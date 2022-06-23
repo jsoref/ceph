@@ -381,7 +381,7 @@ Journal::replay_ret CircularBoundedJournal::replay(
 	  }
 	  auto [r_header, bl] = *ret;
 	  if (last_seq > r_header.committed_to.segment_seq) {
-	    DEBUG("found invalide record. stop replaying");
+	    DEBUG("found invalid record. stop replaying");
 	    return replay_ertr::make_ready_future<
 	      seastar::stop_iteration>(seastar::stop_iteration::yes);
 	  }
