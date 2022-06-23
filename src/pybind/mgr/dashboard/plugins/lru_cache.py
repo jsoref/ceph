@@ -19,7 +19,7 @@ def lru_cache(maxsize=128, typed=False):
         stats = [0, 0]
         rlock = RLock()
         setattr(function, 'cache_info', lambda:
-                "hits={}, misses={}, maxsize={}, currsize={}".format(
+                "hits={}, misses={}, maxsize={}, cursize={}".format(
                     stats[0], stats[1], maxsize, len(cache)))
 
         @wraps(function)

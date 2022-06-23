@@ -24,7 +24,7 @@ def ttl_cache(ttl, maxsize=128, typed=False):
         stats = [0, 0, 0]
         rlock = RLock()
         setattr(function, 'cache_info', lambda:
-                "hits={}, misses={}, expired={}, maxsize={}, currsize={}".format(
+                "hits={}, misses={}, expired={}, maxsize={}, cursize={}".format(
                     stats[0], stats[1], stats[2], maxsize, len(cache)))
 
         @wraps(function)
