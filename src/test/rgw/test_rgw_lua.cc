@@ -523,7 +523,7 @@ TEST(TestRGWLua, UseFunction)
 {
 	const std::string script = R"(
 		function print_owner(owner)
-  		print("Owner Dispaly Name: " .. owner.DisplayName)
+  		print("Owner Display Name: " .. owner.DisplayName)
   		print("Owner Id: " .. owner.User.Id)
   		print("Owner Tenanet: " .. owner.User.Tenant)
 		end
