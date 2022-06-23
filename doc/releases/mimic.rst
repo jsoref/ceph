@@ -4040,7 +4040,7 @@ Detailed Changelog
 * rgw: fix the max-uploads parameter not work (`issue#22825 <http://tracker.ceph.com/issues/22825>`_, `pr#20158 <https://github.com/ceph/ceph/pull/20158>`_, Xin Liao)
 * rgw: fix the return type is wrong (`pr#19773 <https://github.com/ceph/ceph/pull/19773>`_, hechuang)
 * rgw: fix total_time to msec as per AWS S3 (`pr#17541 <https://github.com/ceph/ceph/pull/17541>`_, Jiaying Ren)
-* rgw: fix typo anynoymous to anonymous (`pr#19281 <https://github.com/ceph/ceph/pull/19281>`_, Bingyin Zhang)
+* rgw: fix typo anonymous to anonymous (`pr#19281 <https://github.com/ceph/ceph/pull/19281>`_, Bingyin Zhang)
 * rgw: fix typo compete to complete (`pr#19675 <https://github.com/ceph/ceph/pull/19675>`_, Bingyin Zhang)
 * rgw: Fix typo in comment (`pr#21032 <https://github.com/ceph/ceph/pull/21032>`_, Simran Singhal)
 * rgw: fix typo in GetOmapKeysCR (`pr#19713 <https://github.com/ceph/ceph/pull/19713>`_, lvshanchun)
