@@ -3186,7 +3186,7 @@ void RGWPostObj_ObjStore_S3::send_response()
        * What we really would like is to quaily the bucket name, so
        * that the client could simply copy it and paste into next request.
        * Unfortunately, in S3 we cannot know if the client will decide
-       * to come through DNS, with "bucket.tenant" sytanx, or through
+       * to come through DNS, with "bucket.tenant" syntax, or through
        * URL with "tenant\bucket" syntax. Therefore, we provide the
        * tenant separately.
        */
