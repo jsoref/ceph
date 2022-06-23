@@ -763,11 +763,11 @@ int dump_body(req_state* const s,
               const char* const buf,
               const size_t len)
 {
-  bool healthchk = false;
+  bool healthcheck = false;
   // we dont want to limit health checks
   if(s->op_type == RGW_OP_GET_HEALTH_CHECK)
-    healthchk = true;
-  if(len > 0 && !healthchk) {
+    healthcheck = true;
+  if(len > 0 && !healthcheck) {
     const char *method = s->info.method;
     s->ratelimit_data->decrease_bytes(method, s->ratelimit_user_name, len, &s->user_ratelimit);
     if(!rgw::sal::Bucket::empty(s->bucket.get()))
@@ -800,11 +800,11 @@ int recv_body(req_state* const s,
   } catch (rgw::io::Exception& e) {
     return -e.code().value();
   }
-  bool healthchk = false;
+  bool healthcheck = false;
   // we dont want to limit health checks
   if(s->op_type ==  RGW_OP_GET_HEALTH_CHECK)
-    healthchk = true;
-  if(len > 0 && !healthchk) {
+    healthcheck = true;
+  if(len > 0 && !healthcheck) {
     const char *method = s->info.method;
     s->ratelimit_data->decrease_bytes(method, s->ratelimit_user_name, len, &s->user_ratelimit);
     if(!rgw::sal::Bucket::empty(s->bucket.get()))
