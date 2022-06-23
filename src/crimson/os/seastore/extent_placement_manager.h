@@ -151,7 +151,7 @@ public:
   ) {
     assert(hint < placement_hint_t::NUM_HINTS);
 
-    // XXX: bp might be extended to point to differnt memory (e.g. PMem)
+    // XXX: bp might be extended to point to different memory (e.g. PMem)
     // according to the allocator.
     auto bp = ceph::bufferptr(
       buffer::create_page_aligned(length));
