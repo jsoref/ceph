@@ -3310,7 +3310,7 @@ done_cancel:
 
   /* we lost in a race. There are a few options:
    * - existing object was rewritten (ECANCELED)
-   * - non existing object was created (EEXIST)
+   * - nonexistent object was created (EEXIST)
    * - object was removed (ENOENT)
    * should treat it as a success
    */
