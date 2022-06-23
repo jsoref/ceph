@@ -514,9 +514,9 @@ CircularBoundedJournal::read_record_ret CircularBoundedJournal::read_record(padd
      * -- 2 block --->
      *
      *  If record has logner than read_length and its data is located across
-     *  the end of journal and the begining of journal, we need three reads
+     *  the end of journal and the beginning of journal, we need three reads
      *  ---reads of header, other remaining data before the end, and
-     *  the other remaining data from the begining.
+     *  the other remaining data from the beginning.
      *
      */
     if (h.mdlength + h.dlength > read_length) {
@@ -527,7 +527,7 @@ CircularBoundedJournal::read_record_ret CircularBoundedJournal::read_record(padd
       if (get_journal_end() < next_read_addr + next_read) {
 	// In this case, need two more reads.
 	// The first is to read remain bytes to the end of cbjournal
-	// The second is to read the data at the begining of cbjournal
+	// The second is to read the data at the beginning of cbjournal
 	next_read = get_journal_end() - (addr + read_length);
       }
       DEBUG("read_entry: additional reading addr {} length {}",
