@@ -92,8 +92,8 @@ private:
    * STATE_NOTIFY_UPDATE
    *    |
    *    v
-   * STATE_REALEASE_EXCLUSIVE_LOCK (skip if not
-   *    |                           required)
+   * STATE_RELEASE_EXCLUSIVE_LOCK (skip if not
+   *    |                          required)
    *    | (unblock writes)
    *    v
    * <finish>
