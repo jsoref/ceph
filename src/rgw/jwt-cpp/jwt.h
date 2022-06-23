@@ -203,7 +203,7 @@ namespace jwt {
 				return alg_name;
 			}
 		private:
-			/// HMAC secrect
+			/// HMAC secret
 			const std::string secret;
 			/// HMAC hash generator
 			const EVP_MD*(*md)();
