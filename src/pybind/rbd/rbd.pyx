@@ -2126,7 +2126,7 @@ class RBD(object):
         :param name: the name of the image
         :type name: str
         :param snapshot: which snapshot to read from
-        :type snaphshot: str
+        :type snapshot: str
         :param read_only: whether to open the image in read-only mode
         :type read_only: bool
         :param image_id: the id of the image
@@ -2808,7 +2808,7 @@ cdef class Image(object):
         :param name: the name of the image
         :type name: str
         :param snapshot: which snapshot to read from
-        :type snaphshot: str
+        :type snapshot: str
         :param read_only: whether to open the image in read-only mode
         :type read_only: bool
         :param image_id: the id of the image

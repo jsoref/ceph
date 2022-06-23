@@ -138,7 +138,7 @@ void RemotePoolPoller<I>::handle_mirror_peer_ping(int r) {
   dout(10) << "r=" << r << dendl;
 
   if (r == -EOPNOTSUPP) {
-    // older OSD that doesn't support snaphot-based mirroring, so no need
+    // older OSD that doesn't support snapshot-based mirroring, so no need
     // to query remote peers
     dout(10) << "remote peer does not support snapshot-based mirroring"
              << dendl;

@@ -6800,7 +6800,7 @@ int mirror_image_snapshot_unlink_peer(cls_method_context_t hctx, bufferlist *in,
 /**
  * Input:
  * @param snap_id: snapshot id
- * @param complete: true if shapshot fully copied/complete
+ * @param complete: true if snapshot fully copied/complete
  * @param last_copied_object_number: last copied object number
  *
  * Output:
