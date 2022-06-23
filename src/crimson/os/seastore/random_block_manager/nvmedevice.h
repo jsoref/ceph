@@ -225,7 +225,7 @@ struct io_context_t {
  * Interface between NVMe SSD and its user.
  *
  * NVMeBlockDevice provides not only the basic APIs for IO, but also helper APIs
- * to accelerate SSD IO performance and reduce system overhead. By aggresively
+ * to accelerate SSD IO performance and reduce system overhead. By aggressively
  * utilizing and abstract useful features of latest NVMe SSD, it helps user ease
  * to get high performance of NVMe SSD and low system overhead.
  *
