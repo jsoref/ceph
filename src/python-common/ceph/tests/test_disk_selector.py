@@ -123,19 +123,19 @@ class TestSizeMatcher(object):
         assert matcher.low[1] == 'GB'
 
     def test_to_byte_GB(self):
-        """ Pretty nonesense test.."""
+        """ Pretty nonsense test.."""
 
         ret = drive_selection.SizeMatcher('size', '10G').to_byte(('10', 'GB'))
         assert ret == 10 * 1e+9
 
     def test_to_byte_MB(self):
-        """ Pretty nonesense test.."""
+        """ Pretty nonsense test.."""
 
         ret = drive_selection.SizeMatcher('size', '10M').to_byte(('10', 'MB'))
         assert ret == 10 * 1e+6
 
     def test_to_byte_TB(self):
-        """ Pretty nonesense test.."""
+        """ Pretty nonsense test.."""
 
         ret = drive_selection.SizeMatcher('size', '10T').to_byte(('10', 'TB'))
         assert ret == 10 * 1e+12
