@@ -495,10 +495,10 @@ function TEST_just_deep_scrubs() {
     # unset the 'no scrub'. Deep scrubbing should start now.
     ceph osd unset noscrub || return 1
     sleep 5
-    declare -A expct_qry_duration=( ['query_last_duration']="0" ['query_last_duration_neg']="not0" )
+    declare -A expect_qry_duration=( ['query_last_duration']="0" ['query_last_duration_neg']="not0" )
     sc_data_2=()
     echo "test counter @ should be higher than before the unset: " ${sc_data_2['query_scrub_seq']}
-    wait_any_cond $pgid 10 $saved_last_stamp expct_qry_duration "WaitingAfterScrub " sc_data_2 || return 1
+    wait_any_cond $pgid 10 $saved_last_stamp expect_qry_duration "WaitingAfterScrub " sc_data_2 || return 1
 }
 
 function TEST_dump_scrub_schedule() {
@@ -547,10 +547,10 @@ function TEST_dump_scrub_schedule() {
     # a time in the future:
     # e.g. 'periodic scrub scheduled @ 2021-10-12T20:32:43.645168+0000'
 
-    declare -A expct_starting=( ['query_active']="false" ['query_is_future']="true" ['query_schedule']="scrub scheduled" )
+    declare -A expect_starting=( ['query_active']="false" ['query_is_future']="true" ['query_schedule']="scrub scheduled" )
     declare -A sched_data
     extract_published_sch $pgid $now_is "2019-10-12T20:32:43.645168+0000" sched_data
-    schedule_against_expected sched_data expct_starting "initial"
+    schedule_against_expected sched_data expect_starting "initial"
     (( ${sched_data['dmp_last_duration']} == 0)) || return 1
     echo "last-scrub  --- " ${sched_data['query_last_scrub']}
 
@@ -568,12 +568,12 @@ function TEST_dump_scrub_schedule() {
 
     sleep 5
     sched_data=()
-    declare -A expct_qry_duration=( ['query_last_duration']="0" ['query_last_duration_neg']="not0" )
-    wait_any_cond $pgid 10 $saved_last_stamp expct_qry_duration "WaitingAfterScrub " sched_data || return 1
+    declare -A expect_qry_duration=( ['query_last_duration']="0" ['query_last_duration_neg']="not0" )
+    wait_any_cond $pgid 10 $saved_last_stamp expect_qry_duration "WaitingAfterScrub " sched_data || return 1
     # verify that 'pg dump' also shows the change in last_scrub_duration
     sched_data=()
-    declare -A expct_dmp_duration=( ['dmp_last_duration']="0" ['dmp_last_duration_neg']="not0" )
-    wait_any_cond $pgid 10 $saved_last_stamp expct_dmp_duration "WaitingAfterScrub_dmp " sched_data || return 1
+    declare -A expect_dmp_duration=( ['dmp_last_duration']="0" ['dmp_last_duration_neg']="not0" )
+    wait_any_cond $pgid 10 $saved_last_stamp expect_dmp_duration "WaitingAfterScrub_dmp " sched_data || return 1
 
     sleep 2
 
@@ -591,14 +591,14 @@ function TEST_dump_scrub_schedule() {
     ceph pg $pgid scrub
     sleep 1
     sched_data=()
-    declare -A expct_scrub_peri_sched=( ['query_is_future']="false" )
-    wait_any_cond $pgid 10 $saved_last_stamp expct_scrub_peri_sched "waitingBeingScheduled" sched_data || return 1
+    declare -A expect_scrub_peri_sched=( ['query_is_future']="false" )
+    wait_any_cond $pgid 10 $saved_last_stamp expect_scrub_peri_sched "waitingBeingScheduled" sched_data || return 1
 
     # note: the induced change in 'last_scrub_stamp' that we've caused above, is by itself not a publish-stats
     # trigger. Thus it might happen that the information in 'pg dump' will not get updated here. Do not expect
     # 'dmp_is_future' to follow 'query_is_future' without a good reason
-    ## declare -A expct_scrub_peri_sched_dmp=( ['dmp_is_future']="false" )
-    ## wait_any_cond $pgid 15 $saved_last_stamp expct_scrub_peri_sched_dmp "waitingBeingScheduled" sched_data || echo "must be fixed"
+    ## declare -A expect_scrub_peri_sched_dmp=( ['dmp_is_future']="false" )
+    ## wait_any_cond $pgid 15 $saved_last_stamp expect_scrub_peri_sched_dmp "waitingBeingScheduled" sched_data || echo "must be fixed"
 
     #
     # step 3: allow scrubs. Watch for the conditions during the scrubbing
