@@ -558,12 +558,12 @@ CircularBoundedJournal::read_record_ret CircularBoundedJournal::read_record(padd
 	).safe_then([this, h=h, last_bptr=std::move(last_bptr),
 	  bl=std::move(bl), FNAME]() mutable {
 	  bl.append(last_bptr);
-	  DEBUG("read_record: complte size {}", bl.length());
+	  DEBUG("read_record: complete size {}", bl.length());
 	  return return_record(h, bl);
 	});
       });
     } else {
-      DEBUG("read_record: complte size {}", bl.length());
+      DEBUG("read_record: complete size {}", bl.length());
       return return_record(h, bl);
     }
   });
