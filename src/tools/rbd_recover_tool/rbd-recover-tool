@@ -185,7 +185,7 @@ function usage()
   echo "$cmd_name database
 		 	gather pg info, object info, image metadata, 
 		 	and epoch info from all osd nodes,
-		    	this will cosume a long time, just be patient, 
+		    	this will consume a long time, just be patient, 
 			especially when scale up to 1000+ osds"
   echo "$cmd_name list
 		    	list all rbd images of all replicated pools, 
