@@ -584,7 +584,7 @@ In order to configure connections (from Ceph nodes) to the KDC:
 
 
     Given that the *keytab client file* is/should already be copied and available at the
-    Kerberos client (Ceph cluster node), we should be able to athenticate using it before
+    Kerberos client (Ceph cluster node), we should be able to authenticate using it before
     going forward:  ::
 
         # kdestroy -A && kinit -k -t /etc/gss_client_mon1.ktab -f 'ceph/ceph-mon1@MYDOMAIN.COM' && klist -f
