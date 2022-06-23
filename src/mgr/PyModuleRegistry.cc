@@ -246,7 +246,7 @@ void PyModuleRegistry::shutdown()
   //
   //    Fatal Python error: Py_EndInterpreter: not the last thread
   //
-  // This can happen when using CherryPy in a module, becuase CherryPy
+  // This can happen when using CherryPy in a module, because CherryPy
   // runs an extra thread as a timeout monitor, which spends most of its
   // life inside a time.sleep(60).  Unless you are very, very lucky with
   // the timing calling this destructor, that thread will still be stuck
