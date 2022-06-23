@@ -303,7 +303,7 @@ class TestSnapSchedules(CephFSTestCase):
         self.mount_a.run_shell(['rmdir', TestSnapSchedules.TEST_DIRECTORY])
 
     def test_snap_schedule_with_retention(self):
-        """Test scheduled snapshots along with rentention policy"""
+        """Test scheduled snapshots along with retention policy"""
         self.mount_a.run_shell(['mkdir', '-p', TestSnapSchedules.TEST_DIRECTORY])
 
         # set a schedule on the dir
