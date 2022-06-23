@@ -738,7 +738,7 @@ TEST_F(cls_rgw, bi_list)
       "bi list test with filters should return correct truncation indicator";
   }
 
-  // test whether combined segment count is correcgt
+  // test whether combined segment count is correct
   is_truncated = false;
   entries.clear();
   marker.clear();
