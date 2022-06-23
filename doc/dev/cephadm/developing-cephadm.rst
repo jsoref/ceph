@@ -282,7 +282,7 @@ of the cluster.
    create loopback devices capable of holding osds.
 .. note::  Each osd will require 5GiB of space.
 
-After bootstraping the cluster you can go inside the seed box in which you'll be
+After bootstrapping the cluster you can go inside the seed box in which you'll be
 able to run cehpadm commands::
 
   box -v cluster sh
