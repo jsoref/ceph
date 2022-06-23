@@ -1911,7 +1911,7 @@ int RGWRados::Bucket::List::list_objects_ordered(
       if (cur_end_marker_valid && cur_end_marker <= index_key) {
         truncated = false;
 	ldpp_dout(dpp, 10) << __PRETTY_FUNCTION__ <<
-	  ": finished due to gitting end marker of \"" << cur_end_marker <<
+	  ": finished due to getting end marker of \"" << cur_end_marker <<
 	  "\" with \"" << entry.key << "\"" << dendl;
         goto done;
       }
