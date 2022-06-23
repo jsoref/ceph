@@ -595,7 +595,7 @@ class DBOp {
       REFERENCES '{}' (BucketName) ON DELETE CASCADE ON UPDATE CASCADE \n);";
 
     static constexpr std::string_view CreateObjectViewQ =
-      /* This query creats temporary view with entries from ObjectData table which have
+      /* This query creates temporary view with entries from ObjectData table which have
        * corresponding head object (i.e, with same ObjName, ObjInstance, ObjNS, ObjID)
        * in the Object table.
        *

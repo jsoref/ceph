@@ -213,7 +213,7 @@ private:
   // prevent creating new osd operations when system is shutting down,
   // this is necessary because there are chances that a new operation
   // is created, after the interruption of all ongoing operations, and
-  // creats and waits on a new and may-never-resolve future, in which
+  // creates and waits on a new and may-never-resolve future, in which
   // case the shutdown may never succeed.
   bool stopping = false;
 public:
