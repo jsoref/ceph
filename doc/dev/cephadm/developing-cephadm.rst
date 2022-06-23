@@ -137,7 +137,7 @@ Complete documentation in `kcli installation <https://kcli.readthedocs.io/en/lat
 but we suggest to use the container image approach.
 
 So things to do:
-  - 1. Review `requeriments <https://kcli.readthedocs.io/en/latest/#libvirt-hypervisor-requisites>`_
+  - 1. Review `requirements <https://kcli.readthedocs.io/en/latest/#libvirt-hypervisor-requisites>`_
     and install/configure whatever is needed to meet them.
   - 2. get the kcli image and create one alias for executing the kcli command
     ::
