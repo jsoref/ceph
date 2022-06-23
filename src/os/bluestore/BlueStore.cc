@@ -18853,7 +18853,7 @@ int BlueStore::read_allocation_from_onodes(SimpleBitmap *sbmap, read_alloc_stats
       }
 
       // fill collection_ref if doesn't exist yet
-      // We process all the obejcts in a given collection and then move to the next collection
+      // We process all the objects in a given collection and then move to the next collection
       // This means we only search once for every given collection
       if (!collection_ref                                     ||
 	  oid.shard_id                != pgid.shard           ||
