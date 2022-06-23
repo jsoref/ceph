@@ -290,7 +290,7 @@ public:
     return super.free_block_count;
   }
   /*
-   * We will have mulitple partitions (circularjournals and randbomblockmanagers)
+   * We will have multiple partitions (circularjournals and randbomblockmanagers)
    * on a device, so start and end location of the device are needed to
    * support such case.
    */
