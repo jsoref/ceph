@@ -331,7 +331,7 @@ int RGWSelectObj_ObjStore_S3::run_s3select(const char* query, const char* input,
   uint32_t length_before_processing, length_post_processing;
   csv_object::csv_definitions csv;
   const char* s3select_syntax_error = "s3select-Syntax-Error";
-  const char* s3select_resource_id = "resourcse-id";
+  const char* s3select_resource_id = "resource-id";
   const char* s3select_processTime_error = "s3select-ProcessingTime-Error";
 
   s3select_syntax.parse_query(query);
