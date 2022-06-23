@@ -11069,7 +11069,7 @@ bool OSDMonitor::prepare_command_impl(MonOpRequestRef op,
 
     if (osdmap.crush->rule_exists(name)) {
       // The name is uniquely associated to a ruleid and the rule it contains
-      // From the user point of view, the rule is more meaningfull.
+      // From the user point of view, the rule is more meaningful.
       ss << "rule " << name << " already exists";
       err = 0;
       goto reply;
@@ -11079,7 +11079,7 @@ bool OSDMonitor::prepare_command_impl(MonOpRequestRef op,
 
     if (newcrush.rule_exists(name)) {
       // The name is uniquely associated to a ruleid and the rule it contains
-      // From the user point of view, the rule is more meaningfull.
+      // From the user point of view, the rule is more meaningful.
       ss << "rule " << name << " already exists";
       err = 0;
     } else {
@@ -11107,7 +11107,7 @@ bool OSDMonitor::prepare_command_impl(MonOpRequestRef op,
 
     if (osdmap.crush->rule_exists(name)) {
       // The name is uniquely associated to a ruleid and the rule it contains
-      // From the user point of view, the rule is more meaningfull.
+      // From the user point of view, the rule is more meaningful.
       ss << "rule " << name << " already exists";
       err = 0;
       goto reply;
@@ -11117,7 +11117,7 @@ bool OSDMonitor::prepare_command_impl(MonOpRequestRef op,
 
     if (newcrush.rule_exists(name)) {
       // The name is uniquely associated to a ruleid and the rule it contains
-      // From the user point of view, the rule is more meaningfull.
+      // From the user point of view, the rule is more meaningful.
       ss << "rule " << name << " already exists";
       err = 0;
     } else {
