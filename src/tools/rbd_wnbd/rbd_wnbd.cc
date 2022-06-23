@@ -405,7 +405,7 @@ int map_device_using_suprocess(std::string arguments, int timeout_ms)
     case WAIT_OBJECT_0:
       if (!GetOverlappedResult(pipe_handle, &connect_o, &bytes_read, TRUE)) {
         err = GetLastError();
-        derr << "Couln't establish a connection with the child process. "
+        derr << "Couldn't establish a connection with the child process. "
              << "Error: " << win32_strerror(err) << dendl;
         exit_code = -ECHILD;
         goto clean_process;
