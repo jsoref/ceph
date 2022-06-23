@@ -145,7 +145,7 @@ void RemotePoolPoller<I>::handle_mirror_peer_ping(int r) {
     notify_listener();
     return;
   } else if (r < 0) {
-    // we can still see if we can perform a peer list and find outselves
+    // we can still see if we can perform a peer list and find ourselves
     derr << "failed to ping remote mirror peer: " << cpp_strerror(r) << dendl;
   }
 
