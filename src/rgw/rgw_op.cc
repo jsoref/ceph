@@ -4091,7 +4091,7 @@ void RGWPutObj::execute(optional_yield y)
       hash.Update((const unsigned char *)data.c_str(), data.length());
     }
 
-    /* update torrrent */
+    /* update torrent */
     torrent.update(data);
 
     op_ret = filter->process(std::move(data), ofs);
