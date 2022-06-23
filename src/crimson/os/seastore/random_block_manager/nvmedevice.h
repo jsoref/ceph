@@ -343,7 +343,7 @@ public:
     uint16_t stream = 0) = 0;
 
   /*
-   * For passsing through nvme IO or Admin command to SSD
+   * For passing through nvme IO or Admin command to SSD
    * Caller can construct and execute its own nvme command
    */
   virtual nvme_command_ertr::future<int> pass_through_io(
