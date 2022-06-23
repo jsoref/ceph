@@ -197,7 +197,7 @@ public:
 };
 
 // fetching events from a subscription
-// dpending on whether the subscription was created via s3 compliant API or not
+// depending on whether the subscription was created via s3 compliant API or not
 // the matching events will be returned
 class RGWPSPullSubEventsOp : public RGWOp {
 protected:
