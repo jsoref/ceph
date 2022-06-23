@@ -518,7 +518,7 @@ int rgw_bucket_list(cls_method_context_t hctx, bufferlist *in, bufferlist *out)
   std::string start_after_omap_key;
   encode_list_index_key(hctx, op.start_obj, &start_after_omap_key);
 
-  // this is set whenenver start_after_omap_key is set to keep them in
+  // this is set whenever start_after_omap_key is set to keep them in
   // sync since this will be the returned marker when a marker is
   // returned
   cls_rgw_obj_key start_after_entry_key;
