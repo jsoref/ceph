@@ -155,7 +155,7 @@ struct DBOpParams {
  * Difference with above structure is that all 
  * the fields are strings here to accommodate any
  * style identifiers used by backend db. By default
- * initialized with sqlitedb style, can be overriden
+ * initialized with sqlitedb style, can be overridden
  * using InitPrepareParams()
  *
  * These identifiers are used in prepare and bind statements
