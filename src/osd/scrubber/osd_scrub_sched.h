@@ -333,7 +333,7 @@ class ScrubQueue {
   void register_with_osd(ScrubJobRef sjob, const sched_params_t& suggested);
 
   /**
-   * modify a scrub-job's schduled time and deadline
+   * modify a scrub-job's scheduled time and deadline
    *
    * There are 3 argument combinations to consider:
    * - 'must' is asserted, and the suggested time is 'scrub_must_stamp':
