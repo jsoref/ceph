@@ -843,7 +843,7 @@ private:
   /**
    * write_superblock()
    *
-   * Write superblock to persisent storage
+   * Write superblock to persistent storage
    *
    * return value: 0 on success, otherwise negative errno
    */
