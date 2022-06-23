@@ -828,7 +828,7 @@ void ProtocolV2::execute_connecting()
             abort_protocol();
           }
           if (socket) {
-            gate.dispatch_in_background("close_sockect_connecting", *this,
+            gate.dispatch_in_background("close_socket_connecting", *this,
                            [sock = std::move(socket)] () mutable {
               return sock->close().then([sock = std::move(sock)] {});
             });
