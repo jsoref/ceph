@@ -7846,7 +7846,7 @@ void BlueStore::_fsck_check_pool_statfs(
       uint64_t pool_id;
       if (get_key_pool_stat(key, &pool_id) < 0) {
 	derr << "fsck error: bad key " << key
-	     << "in statfs namespece" << dendl;
+	     << "in statfs namespace" << dendl;
 	if (repairer) {
 	  repairer->remove_key(db, PREFIX_STAT, key);
 	}
