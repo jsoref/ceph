@@ -287,7 +287,7 @@ namespace immutable_obj_cache {
     auto process_reply = new LambdaContext([current_request, reply]
       (bool dedicated) {
        if (dedicated) {
-         // dedicated thrad to execute this context.
+         // dedicated thread to execute this context.
        }
        current_request->process_msg.release()->complete(reply);
        delete current_request;
@@ -311,7 +311,7 @@ namespace immutable_obj_cache {
     if (err_type == ASIO_ERROR_CONNECT) {
        ceph_assert(!m_session_work.load());
        if (ec == boost::asio::error::connection_refused) {
-         ldout(m_cct, 20) << "Connecting RO daenmon fails : "<< ec.message()
+         ldout(m_cct, 20) << "Connecting RO daemon fails : "<< ec.message()
                         << ". Immutable-object-cache daemon is down ? "
                         << "Data will be read from ceph cluster " << dendl;
        } else {
@@ -337,8 +337,8 @@ namespace immutable_obj_cache {
     }
 
     /* when current session don't work, ASIO will don't receive any new request from hook.
-     * On the other hand, for pending request of ASIO, cancle these request,
-     * then call their callback. these request which are cancled by this method,
+     * On the other hand, for pending request of ASIO, cancel these request,
+     * then call their callback. these request which are canceled by this method,
      * will be re-dispatched to RADOS layer.
      * make sure just have one thread to modify execute below code. */
     m_session_work.store(false);

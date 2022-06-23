@@ -288,7 +288,7 @@ private:
   std::string devname;
 
   /*
-   * full states cycle at the beginnging of each commit epoch, when commit_start()
+   * full states cycle at the beginning of each commit epoch, when commit_start()
    * is called.
    *   FULL - we just filled up during this epoch.
    *   WAIT - we filled up last epoch; now we have to wait until everything during

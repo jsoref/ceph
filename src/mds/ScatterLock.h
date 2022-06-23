@@ -152,7 +152,7 @@ public:
 	s = LOCK_MIX_LOCK;
     }
 
-    // If there is a recovering mds who replcated an object when it failed
+    // If there is a recovering mds who replicated an object when it failed
     // and scatterlock in the object was in MIX state, It's possible that
     // the recovering mds needs to take wrlock on the scatterlock when it
     // replays unsafe requests. So this mds should delay taking rdlock on
@@ -161,7 +161,7 @@ public:
     //
     // For example:
     // The recovering mds is auth mds of a dirfrag, this mds is auth mds
-    // of corresponding inode. when 'rm -rf' the direcotry, this mds should
+    // of corresponding inode. when 'rm -rf' the directory, this mds should
     // delay the rmdir request until the recovering mds has replayed unlink
     // requests.
     if (s == LOCK_MIX || s == LOCK_MIX_LOCK || s == LOCK_MIX_SYNC)

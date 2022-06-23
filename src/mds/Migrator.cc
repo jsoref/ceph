@@ -441,7 +441,7 @@ void Migrator::handle_mds_failure_or_stop(mds_rank_t who)
     // abort exports:
     //  - that are going to the failed node
     //  - that aren't frozen yet (to avoid auth_pin deadlock)
-    //  - they havne't prepped yet (they may need to discover bounds to do that)
+    //  - they haven't prepped yet (they may need to discover bounds to do that)
     if ((p->second.peer == who &&
 	 p->second.state != EXPORT_CANCELLING) ||
 	p->second.state == EXPORT_LOCKING ||
@@ -3398,7 +3398,7 @@ void Migrator::decode_import_dir(bufferlist::const_iterator& blp,
 
   // take all waiters on this dir
   // NOTE: a pass of imported data is guaranteed to get all of my waiters because
-  // a replica's presense in my cache implies/forces it's presense in authority's.
+  // a replica's presence in my cache implies/forces it's presence in authority's.
   MDSContext::vec waiters;
   dir->take_waiting(CDir::WAIT_ANY_MASK, waiters);
   for (auto c : waiters)

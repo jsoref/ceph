@@ -809,7 +809,7 @@ cdef class LibCephFS(object):
 
     def lazyio_propagate(self, fd, offset, count):
         """
-        Flushes the write buffer for the file thereby propogating the buffered write to the file.
+        Flushes the write buffer for the file thereby propagating the buffered write to the file.
 
         :param fd: the file descriptor of the file to sync.
         :param offset: the byte range starting.
@@ -1094,7 +1094,7 @@ cdef class LibCephFS(object):
 
     def snap_info(self, path) -> Dict[str, Any]:
         """
-        Fetch sapshot info
+        Fetch snapshot info
 
         :param path: snapshot path
 
@@ -1904,7 +1904,7 @@ cdef class LibCephFS(object):
     def lstat(self, path):
         """
         Get a file's extended statistics and attributes. When file's a
-        symbolic link, return the informaion of the link itself rather
+        symbolic link, return the information of the link itself rather
         than that of the file it points too.
 
         :param path: the file or directory to get the statistics of.

@@ -6,7 +6,7 @@
 # provided seed.
 #
 # We also perform three additional tests, focused on assessing if 
-# replaying a larger chunck of the journal affects the expected store
+# replaying a larger chunk of the journal affects the expected store
 # behavior. These tests will be performed by increasing the store's
 # journal sync interval to a very large value, allowing the store to
 # finish execution before the first sync (unless the store runs for
@@ -14,11 +14,11 @@
 # to an appropriate value). Unless the '--no-journal-test' option is
 # specified, we will run the 3 following scenarios:
 #  
-#  1) journal sync'ing for both stores is good as disabled
+#  1) journal syncing for both stores is good as disabled
 #     (we call it '00', for store naming purposes)
-#  2) journal sync'ing for store A is as good as disabled
+#  2) journal syncing for store A is as good as disabled
 #     (we call it '01', for store naming purposes)
-#  3) journal sync'ing for store B is as good as disabled
+#  3) journal syncing for store B is as good as disabled
 #     (we call it '10', for store naming purposes)
 #
 # All log files are also appropriately named accordingly (i.e., a.00.fail,
@@ -178,7 +178,7 @@ to=1000000000
 #  1) if we are running the tests on a btrfs volume, then we need to use
 #     a seq number for each run. Being on btrfs means we will fail when
 #     removing the store's directories and it's far more simple to just
-#     specify differente store names such as 'a.$seq' or 'b.$seq'.
+#     specify different store names such as 'a.$seq' or 'b.$seq'.
 #  
 #  2) unless the '--no-journal-test' option is specified, we will run
 #     three additional tests for each store, and we will reuse the same
@@ -216,11 +216,11 @@ do
   #
   # We have already tested whether there are diffs when both journals
   # are properly working. Now let's try on three other scenarios:
-  #  1) journal sync'ing for both stores is good as disabled
+  #  1) journal syncing for both stores is good as disabled
   #     (we call it '00')
-  #  2) journal sync'ing for store A is as good as disabled
+  #  2) journal syncing for store A is as good as disabled
   #     (we call it '01')
-  #  3) journal sync'ing for store B is as good as disabled
+  #  3) journal syncing for store B is as good as disabled
   #     (we call it '10')
   #
   if [[ $num_runs -gt 0 && $journal_test -eq 1 ]]; then

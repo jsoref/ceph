@@ -363,7 +363,7 @@ OMapInnerNode::merge_entry(
                                                 l=l, r=r, oc, this] (auto tuple) {
 	logger().debug("OMapInnerNode::merge_entry to update parent: {}", *this);
         auto [replacement_l, replacement_r, replacement_pivot] = tuple;
-        //update operation will not cuase node overflow, so we can do it first
+        //update operation will not cause node overflow, so we can do it first
         journal_inner_update(liter, replacement_l->get_laddr(), maybe_get_delta_buffer());
         bool overflow = extent_will_overflow(replacement_pivot.size(), std::nullopt);
         if (!overflow) {

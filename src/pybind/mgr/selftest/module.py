@@ -24,7 +24,7 @@ class Module(MgrModule):
     This module is for testing the ceph-mgr python interface from within
     a running ceph-mgr daemon.
 
-    It implements a sychronous self-test command for calling the functions
+    It implements a synchronous self-test command for calling the functions
     in the MgrModule interface one by one, and a background "workload"
     command for causing the module to perform some thrashing-type
     activities in its serve() thread.
@@ -365,7 +365,7 @@ class Module(MgrModule):
         self.get_perf_schema("osd", "0")
         self.get_counter("osd", "0", "osd.op")
         # get_counter
-        # get_all_perf_coutners
+        # get_all_perf_counters
 
     def _self_test_misc(self) -> None:
         self.set_uri("http://this.is.a.test.com")

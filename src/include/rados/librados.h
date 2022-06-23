@@ -165,7 +165,7 @@ typedef enum {
 } rados_checksum_type_t;
 
 /*
- * snap id contants
+ * snap id constants
  */
 #define LIBRADOS_SNAP_HEAD  UINT64_C(-2)
 #define LIBRADOS_SNAP_DIR   UINT64_C(-1)
@@ -267,7 +267,7 @@ typedef uint64_t rados_snap_t;
 
 /**
  * @typedef rados_xattrs_iter_t
- * An iterator for listing extended attrbutes on an object.
+ * An iterator for listing extended attributes on an object.
  * Used with rados_getxattrs(), rados_getxattrs_next(), and
  * rados_getxattrs_end().
  */
@@ -746,7 +746,7 @@ CEPH_RADOS_API uint64_t rados_get_instance_id(rados_t cluster);
  * @param cluster cluster handle
  * @param require_osd_release [out] minimum compatible OSD version
  *  based upon the current features
- * @returns 0 on sucess, negative error code on failure
+ * @returns 0 on success, negative error code on failure
  */
 CEPH_RADOS_API int rados_get_min_compatible_osd(rados_t cluster,
                                                 int8_t* require_osd_release);
@@ -1360,7 +1360,7 @@ CEPH_RADOS_API void rados_ioctx_snap_set_read(rados_ioctx_t io,
 /**
  * Allocate an ID for a self-managed snapshot
  *
- * Get a unique ID to put in the snaphot context to create a
+ * Get a unique ID to put in the snapshot context to create a
  * snapshot. A clone of an object is not created until a write with
  * the new snapshot context is completed.
  *
@@ -1864,7 +1864,7 @@ CEPH_RADOS_API int rados_exec(rados_ioctx_t io, const char *oid,
 
 /**
  * @typedef rados_callback_t
- * Callbacks for asynchrous operations take two parameters:
+ * Callbacks for asynchronous operations take two parameters:
  * - cb the completion that has finished
  * - arg application defined data made available to the callback function
  */
@@ -2003,7 +2003,7 @@ CEPH_RADOS_API int rados_aio_is_complete_and_cb(rados_completion_t c);
 CEPH_RADOS_API int rados_aio_is_safe_and_cb(rados_completion_t c);
 
 /**
- * Get the return value of an asychronous operation
+ * Get the return value of an asynchronous operation
  *
  * The return value is set when the operation is complete or safe,
  * whichever comes first.
@@ -2019,7 +2019,7 @@ CEPH_RADOS_API int rados_aio_is_safe_and_cb(rados_completion_t c);
 CEPH_RADOS_API int rados_aio_get_return_value(rados_completion_t c);
 
 /**
- * Get the internal object version of the target of an asychronous operation
+ * Get the internal object version of the target of an asynchronous operation
  *
  * The return value is set when the operation is complete or safe,
  * whichever comes first.
@@ -2030,7 +2030,7 @@ CEPH_RADOS_API int rados_aio_get_return_value(rados_completion_t c);
  * message is received before the complete message
  *
  * @param c async operation to inspect
- * @returns version number of the asychronous operation's target
+ * @returns version number of the asynchronous operation's target
  */
 CEPH_RADOS_API uint64_t rados_aio_get_version(rados_completion_t c);
 
@@ -2341,7 +2341,7 @@ CEPH_RADOS_API int rados_aio_getxattrs(rados_ioctx_t io, const char *oid,
  * @name Watch/Notify
  *
  * Watch/notify is a protocol to help communicate among clients. It
- * can be used to sychronize client state. All that's needed is a
+ * can be used to synchronize client state. All that's needed is a
  * well-known object name (for example, rbd uses the header object of
  * an image).
  *
@@ -2596,7 +2596,7 @@ CEPH_RADOS_API int rados_aio_unwatch(rados_ioctx_t io, uint64_t cookie,
                                      rados_completion_t completion);
 
 /**
- * Sychronously notify watchers of an object
+ * Synchronously notify watchers of an object
  *
  * This blocks until all watchers of the object have received and
  * reacted to the notify, or a timeout is reached.
@@ -2616,7 +2616,7 @@ CEPH_RADOS_API int rados_notify(rados_ioctx_t io, const char *o, uint64_t ver,
   __attribute__((deprecated));
 
 /**
- * Sychronously notify watchers of an object
+ * Synchronously notify watchers of an object
  *
  * This blocks until all watchers of the object have received and
  * reacted to the notify, or a timeout is reached.
@@ -2702,7 +2702,7 @@ CEPH_RADOS_API void rados_free_notify_response(struct notify_ack_t *acks, size_t
                                                struct notify_timeout_t *timeouts);
 
 /**
- * Acknolwedge receipt of a notify
+ * Acknowledge receipt of a notify
  *
  * @param io the pool the object is in
  * @param o the name of the object
@@ -2834,7 +2834,7 @@ CEPH_RADOS_API int rados_set_alloc_hint2(rados_ioctx_t io, const char *o,
  * to be performed atomically. You must call rados_release_write_op when you are
  * finished with it.
  *
- * @note the ownership of a write operartion is passed to the function
+ * @note the ownership of a write operation is passed to the function
  *       performing the operation, so the same instance of @c rados_write_op_t
  *       cannot be used again after being performed.
  *
@@ -3226,7 +3226,7 @@ CEPH_RADOS_API int rados_aio_write_op_operate(rados_write_op_t write_op,
  * rados_release_read_op when you are finished with it (after it
  * completes, or you decide not to send it in the first place).
  *
- * @note the ownership of a read operartion is passed to the function
+ * @note the ownership of a read operation is passed to the function
  *       performing the operation, so the same instance of @c rados_read_op_t
  *       cannot be used again after being performed.
  *
@@ -4067,7 +4067,7 @@ CEPH_RADOS_API int rados_monitor_log2(rados_t cluster, const char *level,
  *
  * Register us as a daemon providing a particular service.  We identify
  * the service (e.g., 'rgw') and our instance name (e.g., 'rgw.$hostname').
- * The metadata is a map of keys and values with arbitrary static metdata
+ * The metadata is a map of keys and values with arbitrary static metadata
  * for this instance.  The encoding is a series of NULL-terminated strings,
  * alternating key names and values, terminating with an empty key name.
  * For example,  "foo\0bar\0this\0that\0\0" is the dict {foo=bar,this=that}.

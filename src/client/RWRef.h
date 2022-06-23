@@ -13,7 +13,7 @@
  * ============
  *
  * This is a common read/write reference framework, which will work
- * simliarly to a RW lock, the difference here is that for the "readers"
+ * similarly to a RW lock, the difference here is that for the "readers"
  * they won't hold any lock but will increase a reference instead when
  * the "require" state is matched, or set a flag to tell the callers
  * that the "require" state is not matched and also there is no any
@@ -24,10 +24,10 @@
  *
  * The Readers:
  *
- *   For the ll_read()/ll_write(), etc fucntions, they will work as
+ *   For the ll_read()/ll_write(), etc functions, they will work as
  *   "readers", in the beginning they just need to define a RWRef
  *   object and in RWRef constructor it will check if the state is
- *   MOUNTED or MOUTING, if not it will fail and return directly with
+ *   MOUNTED or MOUNTING, if not it will fail and return directly with
  *   doing nothing, or it will increase the reference and continue.
  *   And when destructing the RWRef object, in the RWRef destructor
  *   it will decrease the reference and notify the "writers" who maybe
@@ -38,7 +38,7 @@
  *   And for the _unmount() function , as a "writer", in the beginning
  *   it will also just need to define a RWRef object and in RWRef
  *   constructor it will update the state to next stage first, which then
- *   will fail all the new comming "readers", and then wait for all the
+ *   will fail all the new coming "readers", and then wait for all the
  *   "readers" to finish.
  *
  * With this we can get rid of the locks for all the "readers" and they
@@ -104,7 +104,7 @@ struct RWRefState {
      * client state is in mounting or mounted states, then it
      * will set the "require = mounting" in class RWRef's constructor.
      * Then the check_reader_state() should return truth if the
-     * state is already in mouting or mounted state.
+     * state is already in mounting or mounted state.
      */
     virtual int check_reader_state(T require) const = 0;
 

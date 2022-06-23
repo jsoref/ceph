@@ -24,7 +24,7 @@ when any of these hits the soft limit and will block in throttle()
 while any has exceeded the hard limit.
 
 Tighter soft limits will cause writeback to happen more quickly,
-but may cause the OSD to miss oportunities for write coalescing.
+but may cause the OSD to miss opportunities for write coalescing.
 Tighter hard limits may cause a reduction in latency variance by
 reducing time spent flushing the journal, but may reduce writeback
 parallelism.
@@ -42,13 +42,13 @@ wbthrottle to open up (thus, the wbthrottle can push back indirectly
 on the queue_transactions caller), and time spent actually applying
 the op to the file system.  A BackoffThrottle is used to gradually
 delay the queueing thread after each throttle becomes more than
-filestore_queue_low_threshhold full (a ratio of
+filestore_queue_low_threshold full (a ratio of
 filestore_queue_max_(bytes|ops)).  The throttles will block once the
 max value is reached (filestore_queue_max_(bytes|ops)).
 
 The significant config options are:
-filestore_queue_low_threshhold
-filestore_queue_high_threshhold
+filestore_queue_low_threshold
+filestore_queue_high_threshold
 filestore_expected_throughput_ops
 filestore_expected_throughput_bytes
 filestore_queue_high_delay_multiple
@@ -68,7 +68,7 @@ changed.
 Setting these properly should help to smooth out op latencies by
 mostly avoiding the hard limit.
 
-See FileStore::throttle_ops and FileSTore::thottle_bytes.
+See FileStore::throttle_ops and FileSTore::throttle_bytes.
 
 journal usage throttle
 ----------------------
@@ -83,8 +83,8 @@ journal is flushed.  The configs work very similarly to the
 op_queue_throttle.
 
 The significant config options are:
-journal_throttle_low_threshhold
-journal_throttle_high_threshhold
+journal_throttle_low_threshold
+journal_throttle_high_threshold
 filestore_expected_throughput_ops
 filestore_expected_throughput_bytes
 journal_throttle_high_multiple

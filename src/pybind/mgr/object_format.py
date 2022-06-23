@@ -257,8 +257,8 @@ class CommonFormatter(Protocol):
 # runtime_checkable is not available and isinstance can not be used with a
 # protocol type.  These could be replaced by isinstance in a later version of
 # python.  Note that these functions *can not* be methods of the protocol types
-# for neatness - including methods on the protocl types makes mypy consider
-# those methods as part of the protcol & a required method. Using decorators
+# for neatness - including methods on the protocol types makes mypy consider
+# those methods as part of the protocol & a required method. Using decorators
 # did not change that - I checked.
 
 
@@ -283,7 +283,7 @@ def _is_return_value_provider(obj: ReturnValueProvider) -> bool:
 
 
 class ObjectFormatAdapter:
-    """A format adapater for a single object.
+    """A format adapter for a single object.
     Given an input object, this type will adapt the object, or a simplified
     representation of the object, to either JSON or YAML when the format_json or
     format_yaml methods are used.

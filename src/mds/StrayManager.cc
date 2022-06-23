@@ -301,7 +301,7 @@ void StrayManager::enqueue(CDentry *dn, bool trunc)
   ceph_assert(in);
 
   /* We consider a stray to be purging as soon as it is enqueued, to avoid
-   * enqueing it twice */
+   * enqueuing it twice */
   dn->state_set(CDentry::STATE_PURGING);
   in->state_set(CInode::STATE_PURGING);
 
@@ -443,7 +443,7 @@ bool StrayManager::_eval_stray(CDentry *dn)
   ceph_assert(in);
   ceph_assert(!in->state_test(CInode::STATE_REJOINUNDEF));
 
-  // The only dentries elegible for purging are those
+  // The only dentries eligible for purging are those
   // in the stray directories
   ceph_assert(dn->get_dir()->get_inode()->is_stray());
 

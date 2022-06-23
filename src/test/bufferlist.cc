@@ -1771,12 +1771,12 @@ TEST(BufferList, page_aligned_appender) {
       }
 
       // moreover, the next C string-taking `append()` had to
-      // create anoter `ptr_node` instance but...
+      // create another `ptr_node` instance but...
       a.append("xyz", 3);
       ASSERT_EQ(4u, bl.get_num_buffers());
 
       // ... it should point to the same `buffer::raw` instance
-      // (to the same same block of memory).
+      // (to the same block of memory).
       ASSERT_EQ(bl.back().raw_c_str(), initial_back.raw_c_str());
     }
 

@@ -392,7 +392,7 @@ Notable Changes since v0.80.x Firefly
 * librados: fix watch/notify test (#7934 David Zafman)
 * librados: fix watch reregistration on acting set change (#9220 Samuel Just)
 * librados: give Objecter fine-grained locks (Yehuda Sadeh, Sage Weil, John Spray)
-* librados: lttng tracepoitns (Adam Crume)
+* librados: lttng tracepoints (Adam Crume)
 * librados, osd: return ETIMEDOUT on failed notify (Sage Weil)
 * librados: pybind: fix reads when \0 is present (#9547 Mohammad Salehe)
 * librados_striper: striping library for librados (Sebastien Ponce)
@@ -507,7 +507,7 @@ Notable Changes since v0.80.x Firefly
 * msgr: avoid big lock when sending (most) messages (Greg Farnum)
 * msgr: fix logged address (Yongyue Sun)
 * msgr: misc locking fixes for fast dispatch (#8891, Sage Weil)
-* msgr: refactor to cleanly separate SimpleMessenger implemenetation, move toward Connection-based calls (Matt Benjamin, Sage Wei)
+* msgr: refactor to cleanly separate SimpleMessenger implementation, move toward Connection-based calls (Matt Benjamin, Sage Wei)
 * objecter: flag operations that are redirected by caching (Sage Weil)
 * objectstore: clean up KeyValueDB interface for key/value backends (Sage Weil)
 * osd: account for hit_set_archive bytes (Sage Weil)
@@ -534,7 +534,7 @@ Notable Changes since v0.80.x Firefly
 * osd: do not evict blocked objects (#9285 Zhiqiang Wang)
 * osd: do not skip promote for write-ordered reads (#9064, Samuel Just)
 * osd: fix agent early finish looping (David Zafman)
-* osd: fix ambigous encoding order for blacklisted clients (#9211, Sage Weil)
+* osd: fix ambiguous encoding order for blacklisted clients (#9211, Sage Weil)
 * osd: fix bogus assert during OSD shutdown (Sage Weil)
 * osd: fix bug with long object names and rename (#8701, Sage Weil)
 * osd: fix cache flush corner case for snapshotted objects (#9054, Samuel Just)
@@ -638,7 +638,7 @@ Notable Changes since v0.80.x Firefly
 * rbd: use write-back (not write-through) when caching is enabled (Jason Dillaman)
 * removed mkcephfs (deprecated since dumpling)
 * rest-api: fix help (Ailing Zhang)
-* rgw: add civetweb as default frontent on port 7490 (#9013 Yehuda Sadeh)
+* rgw: add civetweb as default frontend on port 7490 (#9013 Yehuda Sadeh)
 * rgw: add --min-rewrite-stripe-size for object restriper (Yehuda Sadeh)
 * rgw: add powerdns hook for dynamic DNS for global clusters (Wido den Hollander)
 * rgw: add S3 bucket get location operation (Abhishek Lekshmanan)
@@ -755,7 +755,7 @@ Notable Changes
 * librados: fix watch reregistration on acting set change (#9220 Samuel Just)
 * librados: fix watch/notify test (#7934 David Zafman)
 * librados: give Objecter fine-grained locks (Yehuda Sadeh, Sage Weil, John Spray)
-* librados: lttng tracepoitns (Adam Crume)
+* librados: lttng tracepoints (Adam Crume)
 * librados: pybind: fix reads when \0 is present (#9547 Mohammad Salehe)
 * librbd: enforce cache size on read requests (Jason Dillaman)
 * librbd: handle blacklisting during shutdown (#9105 John Spray)
@@ -832,7 +832,7 @@ Notable Changes
 * rbd: rbd-replay utility to replay captured rbd workload traces (Adam Crume)
 * rbd: use write-back (not write-through) when caching is enabled (Jason Dillaman)
 * rgw: add S3 bucket get location operation (Abhishek Lekshmanan)
-* rgw: add civetweb as default frontent on port 7490 (#9013 Yehuda Sadeh)
+* rgw: add civetweb as default frontend on port 7490 (#9013 Yehuda Sadeh)
 * rgw: allow : in S3 access key (Roman Haritonov)
 * rgw: fix admin create user op (#8583 Ray Lv)
 * rgw: fix log filename suffix (#9353 Alexandre Marangone)
@@ -848,7 +848,7 @@ v0.85
 
 This is the second-to-last development release before Giant that
 contains new functionality.  The big items to land during this cycle
-are the messenger refactoring from Matt Benjmain that lays some
+are the messenger refactoring from Matt Benjamin that lays some
 groundwork for RDMA support, a performance improvement series from
 SanDisk that improves performance on SSDs, lots of improvements to our
 new standalone civetweb-based RGW frontend, and a new 'osd blocked-by'
@@ -925,13 +925,13 @@ Notable Changes
 * mon: make usage dumps in terms of bytes, not kB (Sage Weil)
 * mon: prevent implicit destruction of OSDs with 'osd setmaxosd ...' (#8865, Anand Bhat)
 * mon: verify all quorum members are contiguous at end of Paxos round (#9053, Sage Weil)
-* msgr: refactor to cleanly separate SimpleMessenger implemenetation, move toward Connection-based calls (Matt Benjamin, Sage Wei)
+* msgr: refactor to cleanly separate SimpleMessenger implementation, move toward Connection-based calls (Matt Benjamin, Sage Wei)
 * objectstore: clean up KeyValueDB interface for key/value backends (Sage Weil)
 * osd: add local_mtime for use by cache agent (Zhiqiang Wang)
 * osd: add superblock for KeyValueStore backend (Haomai Wang)
 * osd: add support for Intel ISA-L erasure code library (Andreas-Joachim Peters)
 * osd: do not skip promote for write-ordered reads (#9064, Samuel Just)
-* osd: fix ambigous encoding order for blacklisted clients (#9211, Sage Weil)
+* osd: fix ambiguous encoding order for blacklisted clients (#9211, Sage Weil)
 * osd: fix cache flush corner case for snapshotted objects (#9054, Samuel Just)
 * osd: fix discard of old/obsolete subop replies (#9259, Samuel Just)
 * osd: fix discard of peer messages from previous intervals (Greg Farnum)

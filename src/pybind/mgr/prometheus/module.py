@@ -1263,12 +1263,12 @@ class Module(MgrModule):
         #   - rbd_data.{pool_id}.{image_id}. (data stored in a dedicated data pool)
         #   - journal_data.{pool_id}.{image_id}. (journal if journaling is enabled)
         # The pool_id in the object name is the id of the pool with the image
-        # metdata, and should be used in the image spec. If there is no pool_id
+        # metadata, and should be used in the image spec. If there is no pool_id
         # in the object name, the image pool is the pool where the object is
         # located.
 
         # Parse rbd_stats_pools option, which is a comma or space separated
-        # list of pool[/namespace] entries. If no namespace is specifed the
+        # list of pool[/namespace] entries. If no namespace is specified the
         # stats are collected for every namespace in the pool. The wildcard
         # '*' can be used to indicate all pools or namespaces
         pools_string = cast(str, self.get_localized_module_option('rbd_stats_pools'))

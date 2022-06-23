@@ -2544,7 +2544,7 @@ void BlueFS::_rewrite_log_and_layout_sync_LNF_LD(bool allocate_with_fallback,
  * in-memory fnodes and names.  This will become the new beginning of the
  * log.  The last event will jump to the log continuation extent from #1.
  *
- * 3. Queue a write to a new extent for the new beginnging of the log.
+ * 3. Queue a write to a new extent for the new beginning of the log.
  *
  * 4. Drop lock and wait
  *
@@ -4095,7 +4095,7 @@ bool BlueFS::db_is_rotational()
 /*
   Algorithm.
   do_replay_recovery_read is used when bluefs log abruptly ends, but it seems that more data should be there.
-  Idea is to search disk for definiton of extents that will be accompanied with bluefs log in future,
+  Idea is to search disk for definition of extents that will be accompanied with bluefs log in future,
   and try if using it will produce healthy bluefs transaction.
   We encode already known bluefs log extents and search disk for these bytes.
   When we find it, we decode following bytes as extent.

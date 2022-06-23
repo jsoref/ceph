@@ -149,7 +149,7 @@ bool LogMonitor::log_channel_info::do_log_to_syslog(const string &channel) {
   // we are here using a modified version of how
   // md_config_t::set_val_raw() handles booleans. We will
   // accept both 'true' and 'false', but will also check for
-  // '1' and '0'. The main distiction between this and the
+  // '1' and '0'. The main distinction between this and the
   // original code is that we will assume everything not '1',
   // '0', 'true' or 'false' to be 'false'.
   bool ret = false;
@@ -913,7 +913,7 @@ bool LogMonitor::preprocess_command(MonOpRequestRef op)
 	  } else {
 	    start = from;
 	  }
-	  dout(10) << __func__ << " channnel " << p.first
+	  dout(10) << __func__ << " channel " << p.first
 		   << " from " << from << " to " << to << dendl;
 	  for (version_t v = start; v < to; ++v) {
 	    bufferlist ebl;

@@ -327,7 +327,7 @@ std::string to_string(amqp_status_enum s) {
   }
 }
 
-// TODO: add status_to_string on the connection object to prinf full status
+// TODO: add status_to_string on the connection object to printf full status
 
 // convert int status to string - including RGW specific values
 std::string status_to_string(int s) {
@@ -728,7 +728,7 @@ private:
               // TODO: add exponential backoff for retries
               conn->next_reconnect = now + reconnect_time;
             } else {
-              ldout(conn->cct, 10) << "AMQP run: connection (" << to_string(conn_key) << ") retry successfull" << dendl;
+              ldout(conn->cct, 10) << "AMQP run: connection (" << to_string(conn_key) << ") retry successful" << dendl;
             }
           }
           INCREMENT_AND_CONTINUE(conn_it);

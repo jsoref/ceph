@@ -119,7 +119,7 @@ def merge_hosts_by_hostname(ceph_hosts, orch_hosts):
 
     :param ceph_hosts: hosts returned from mgr
     :type ceph_hosts: list of dict
-    :param orch_hosts: hosts returned from ochestrator
+    :param orch_hosts: hosts returned from orchestrator
     :type orch_hosts: list of HostSpec
     :return list of dict
     """
@@ -239,7 +239,7 @@ def get_inventories(hosts: Optional[List[str]] = None,
     :param hosts: Hostnames to query.
     :param refresh: Ask the Orchestrator to refresh the inventories. Note the this is an
                     asynchronous operation, the updated version of inventories need to
-                    be re-qeuried later.
+                    be re-queried later.
     :return: Returns list of inventory.
     :rtype: list
     """

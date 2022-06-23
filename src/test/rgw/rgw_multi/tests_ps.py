@@ -257,7 +257,7 @@ def stop_amqp_receiver(receiver, task):
         receiver.channel.stop_consuming()
         log.info('stopping AMQP receiver')
     except Exception as error:
-        log.info('failed to gracefuly stop AMQP receiver: %s', str(error))
+        log.info('failed to gracefully stop AMQP receiver: %s', str(error))
     task.join(5)
 
 def check_ps_configured():
@@ -482,7 +482,7 @@ def stop_kafka_receiver(receiver, task):
     try:
         receiver.consumer.close()
     except Exception as error:
-        log.info('failed to gracefuly stop Kafka receiver: %s', str(error))
+        log.info('failed to gracefully stop Kafka receiver: %s', str(error))
 
 
 # follow the instruction here to create and sign a broker certificate:
@@ -1142,7 +1142,7 @@ def test_ps_topic():
     # delete topic
     _, status = topic_conf.del_config()
     assert_equal(status/100, 2)
-    # verift topic is deleted
+    # verify topic is deleted
     result, status = topic_conf.get_config()
     assert_equal(status, 404)
     parsed_result = json.loads(result)
@@ -1884,7 +1884,7 @@ def test_ps_versioned_deletion():
         assert_equal(str(event['event']), event_type2)
 
     # cleanup
-    # follwing is needed for the cleanup in the case of 3-zones
+    # following is needed for the cleanup in the case of 3-zones
     # see: http://tracker.ceph.com/issues/39142
     realm = get_realm()
     zonegroup = realm.master_zonegroup()

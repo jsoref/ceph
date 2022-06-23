@@ -78,7 +78,7 @@ class TestNFS(MgrTestCase):
 
     def _check_nfs_cluster_event(self, expected_event):
         '''
-        Check whether an event occured during the lifetime of the NFS service
+        Check whether an event occurred during the lifetime of the NFS service
         :param expected_event: event that was expected to occur
         '''
         event_occurred = False
@@ -171,7 +171,7 @@ class TestNFS(MgrTestCase):
         '''
         Test creation of a single export.
         :param export_id: Denotes export number
-        :param create_fs: If false filesytem exists. Otherwise create it.
+        :param create_fs: If false filesystem exists. Otherwise create it.
         :param extra_cmd: List of extra arguments for creating export.
         '''
         if create_fs:
@@ -300,7 +300,7 @@ class TestNFS(MgrTestCase):
                     tries -= 1
                     time.sleep(2)
                     continue
-                # Check if mount failed only when non existing pseudo path is passed
+                # Check if mount failed only when nonexistent pseudo path is passed
                 if not check and e.exitstatus == 32:
                     return
                 raise

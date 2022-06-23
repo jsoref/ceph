@@ -215,7 +215,7 @@ class TestMkdir(TestCephFSShell):
 
     def test_mkdir_with_bad_non_octal_mode(self):
         """
-        Test that mkdir failes with bad non-octal mode
+        Test that mkdir fails with bad non-octal mode
         """
         self.negtest_cephfs_shell_cmd(cmd="mkdir -m ugx=0755 d5")
         try:
@@ -269,7 +269,7 @@ class TestRmdir(TestCephFSShell):
 
     def test_rmdir_non_existing_dir(self):
         """
-        Test that rmdir does not delete a non existing directory
+        Test that rmdir does not delete a nonexistent directory
         """
         self.negtest_cephfs_shell_cmd(cmd="rmdir test_dir")
         self.dir_does_not_exists()
@@ -675,7 +675,7 @@ class TestDU(TestCephFSShell):
                 f, follow_symlinks=False)['st_size'])
             append_expected_output_pattern(f)
 
-        # get size for directories containig regfiles within
+        # get size for directories containing regfiles within
         for f in [dir2_abspath, dir21_abspath]:
             size = humansize(self.mount_a.stat(regfile121_abspath,
                                                follow_symlinks=False)[
@@ -810,7 +810,7 @@ class TestQuota(TestCephFSShell):
             self.assertTupleEqual(self.set_and_get_quota_vals(
                 set_values, False), set_values)
             raise Exception(
-                "Something went wrong!! Values set for non existing directory")
+                "Something went wrong!! Values set for nonexistent directory")
         except IndexError:
             # Test should pass as values cannot be set for non
             # existing directory

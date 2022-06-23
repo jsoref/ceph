@@ -645,7 +645,7 @@ class MDCache {
   void shutdown_start();
   void shutdown_check();
   bool shutdown_pass();
-  bool shutdown();                    // clear cache (ie at shutodwn)
+  bool shutdown();                    // clear cache (ie at shutdown)
   bool shutdown_export_strays();
   void shutdown_export_stray_finish(inodeno_t ino) {
     if (shutdown_exporting_strays.erase(ino))
@@ -798,7 +798,7 @@ class MDCache {
    * MDS_TRAVERSE_DISCOVER: Instead of forwarding request, path_traverse()
    * attempts to look up the path from a different MDS (and bring them into
    * its cache as replicas).
-   * MDS_TRAVERSE_PATH_LOCKED: path_traverse() will procceed when xlocked
+   * MDS_TRAVERSE_PATH_LOCKED: path_traverse() will proceed when xlocked
    * dentry is encountered.
    * MDS_TRAVERSE_WANT_DENTRY: Caller wants tail dentry. Add a null dentry if
    * tail dentry does not exist. return 0 even tail dentry is null.
@@ -1134,7 +1134,7 @@ class MDCache {
    * Resolve path to a dentry and pass it onto the ScrubStack.
    *
    * TODO: return enough information to the original mdr formatter
-   * and completion that they can subsequeuntly check the progress of
+   * and completion that they can subsequently check the progress of
    * this scrub (we won't block them on a whole scrub as it can take a very
    * long time)
    */

@@ -169,7 +169,7 @@ class TestMirroring(CephFSTestCase):
                                          'fs', 'mirror', 'peer', 'status',
                                          f'{fs_name}@{fs_id}', peer_uuid)
         self.assertTrue('syncing' == res[dir_name]['state'])
-        self.assertTrue(res[dir_name]['current_sycning_snap']['name'] == snap_name)
+        self.assertTrue(res[dir_name]['current_syncing_snap']['name'] == snap_name)
 
     def verify_snapshot(self, dir_name, snap_name):
         snap_list = self.mount_b.ls(path=f'{dir_name}/.snap')
@@ -692,12 +692,12 @@ class TestMirroring(CephFSTestCase):
         """Test mirror daemon init failure"""
 
         # disable mgr mirroring plugin as it would try to load dir map on
-        # on mirroring enabled for a filesystem (an throw up erorrs in
+        # on mirroring enabled for a filesystem (an throw up errors in
         # the logs)
         self.disable_mirroring_module()
 
         # enable mirroring through mon interface -- this should result in the mirror daemon
-        # failing to enable mirroring due to absence of `cephfs_mirorr` index object.
+        # failing to enable mirroring due to absence of `cephfs_mirror` index object.
         self.mgr_cluster.mon_manager.raw_cluster_cmd("fs", "mirror", "enable", self.primary_fs_name)
 
         with safe_while(sleep=5, tries=10, action='wait for failed state') as proceed:
@@ -728,7 +728,7 @@ class TestMirroring(CephFSTestCase):
         """Test if the mirror daemon can recover from a init failure"""
 
         # disable mgr mirroring plugin as it would try to load dir map on
-        # on mirroring enabled for a filesystem (an throw up erorrs in
+        # on mirroring enabled for a filesystem (an throw up errors in
         # the logs)
         self.disable_mirroring_module()
 
@@ -1083,7 +1083,7 @@ class TestMirroring(CephFSTestCase):
         """Test snapshot synchronization in midst of snapshot deletes.
 
         Deleted the previous snapshot when the mirror daemon is figuring out
-        incremental differences between current and previous snaphot. The
+        incremental differences between current and previous snapshot. The
         mirror daemon should identify the purge and switch to using remote
         comparison to sync the snapshot (in the next iteration of course).
         """

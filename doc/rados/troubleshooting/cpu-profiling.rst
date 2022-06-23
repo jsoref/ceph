@@ -61,7 +61,7 @@ To reset ``oprofile``, execute the following command::
 	sudo opcontrol --reset   
    
 .. important:: You should reset ``oprofile`` after analyzing data so that 
-   you do not commingle results from different tests.
+   you do not comingle results from different tests.
 
 .. _oprofile: http://oprofile.sourceforge.net/about/
 .. _Installing Oprofile: ../../../dev/cpu-profiler

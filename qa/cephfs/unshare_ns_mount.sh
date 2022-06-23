@@ -39,7 +39,7 @@ usage() {
     echo ""
     echo "This will help to isolate the network namespace from OS for the mount client!"
     echo ""
-    echo "usage: unshare_ns_mount.sh [OPTIONS [paramters]] [--brxip <ip_address/mask>]"
+    echo "usage: unshare_ns_mount.sh [OPTIONS [parameters]] [--brxip <ip_address/mask>]"
     echo "OPTIONS:" 
     echo -e "  --fuse    <ceph-fuse options>"
     echo -e "\tThe ceph-fuse command options"
@@ -96,7 +96,7 @@ function get_mountpoint() {
                 continue
 	        fi
             if [ "0$mountpoint" != "0" ]; then
-                echo "Oops: too many mountpiont options!"
+                echo "Oops: too many mountpoint options!"
                 exit 1
             fi
             mountpoint=$param
@@ -459,7 +459,7 @@ function setup_bridge_and_nat() {
         return
     fi
 
-    # if it is the first time to run the the script or there
+    # if it is the first time to run the script or there
     # is no any network namespace exists, we need to setup
     # the $CEPH_BRX, if no --brxip is specified will use the
     # default $CEPH_BRX_IP/$NET_MASK

@@ -79,7 +79,7 @@ def create_histogram(sockets, counter, last, seconds, batch):
 
     current = []
 
-    # initalize with zeros
+    # initialize with zeros
     for i in range(len(current_datasets[socket])):
        current.append([])
        for j in range(len(current_datasets[socket][i])):
@@ -121,7 +121,7 @@ def loop_print(sockets, counter, loop_seconds, batch):
            print(content)
            time.sleep(loop_seconds)
     except KeyboardInterrupt:
-       print("...interupted")
+       print("...interrupted")
        sys.exit(0)
 
 

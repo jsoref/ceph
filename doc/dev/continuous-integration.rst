@@ -211,7 +211,7 @@ Uploading Dependencies
 
 To ensure that prebuilt packages are available by the jenkins agents, we need to
 upload them to either ``apt-mirror.front.sepia.ceph.com`` or `chacra`_. To upload
-packages to the former would require the help our our lab administrator, so if we
+packages to the former would require the help our lab administrator, so if we
 want to maintain the package repositories on regular basis, a better choice would be
 to manage them using `chacractl`_. `chacra`_ represents packages repositories using
 a resource hierarchy, like::
@@ -232,7 +232,7 @@ ref
     the set packages under the ``<project>/<branch>``. It is a good practice to
     version the packaging recipes, like the ``debian`` directory for building deb
     packages and the ``spec`` for building rpm packages, and use the sha1 of the
-    packaging receipe for the ``ref``. But you could also use a random string for
+    packaging recipe for the ``ref``. But you could also use a random string for
     ``ref``, like the tag name of the built source tree.
 
 distro

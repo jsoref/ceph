@@ -162,7 +162,7 @@ public:
 
   void decode_json(JSONObj *obj);
   static void xattrs_cb(InodeStoreBase::mempool_xattr_map& c, JSONObj *obj);
-  static void old_indoes_cb(InodeStoreBase::mempool_old_inode_map& c, JSONObj *obj);
+  static void old_inodes_cb(InodeStoreBase::mempool_old_inode_map& c, JSONObj *obj);
   
   /* For use by offline tools */
   __u32 hash_dentry_name(std::string_view dn);
@@ -718,7 +718,7 @@ class CInode : public MDSCacheObject, public InodeStoreBase, public Counter<CIno
   void make_path(filepath& s, bool projected=false) const;
   void name_stray_dentry(std::string& dname);
   
-  // -- dirtyness --
+  // -- dirtiness --
   version_t get_version() const { return get_inode()->version; }
 
   version_t pre_dirty();
@@ -1042,7 +1042,7 @@ class CInode : public MDSCacheObject, public InodeStoreBase, public Counter<CIno
    *
    * @param results A freshly-created validated_data struct, with values set
    * as described in the struct documentation.
-   * @param mdr The request to be responeded upon the completion of the
+   * @param mdr The request to be responded upon the completion of the
    * validation (or NULL)
    * @param fin Context to call back on completion (or NULL)
    */

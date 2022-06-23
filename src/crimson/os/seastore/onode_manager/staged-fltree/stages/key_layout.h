@@ -281,7 +281,7 @@ struct string_key_view_t {
  *
  * A common class to hide the underlying string implementation regardless of a
  * string_key_view_t (maybe compressed), a string/string_view, or a compressed
- * string. And leverage this consistant class to do compare, print, convert and
+ * string. And leverage this consistent class to do compare, print, convert and
  * append operations.
  */
 class string_view_masked_t {
@@ -484,7 +484,7 @@ inline const ghobject_t _MIN_OID() {
 }
 
 /*
- * Unfortunally the ghobject_t representitive as tree key doesn't have max
+ * Unfortunately the ghobject_t representative as tree key doesn't have max
  * field, so we define our own _MAX_OID and translate it from/to
  * ghobject_t::get_max() if necessary.
  */

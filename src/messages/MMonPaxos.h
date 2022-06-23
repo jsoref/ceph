@@ -30,7 +30,7 @@ private:
   static constexpr int OP_COLLECT =   1; // proposer: propose round
   static constexpr int OP_LAST =      2; // voter:    accept proposed round
   static constexpr int OP_BEGIN =     3; // proposer: value proposed for this round
-  static constexpr int OP_ACCEPT =    4; // voter:    accept propsed value
+  static constexpr int OP_ACCEPT =    4; // voter:    accept proposed value
   static constexpr int OP_COMMIT =    5; // proposer: notify learners of agreed value
   static constexpr int OP_LEASE =     6; // leader: extend peon lease
   static constexpr int OP_LEASE_ACK = 7; // peon: lease ack
@@ -53,7 +53,7 @@ private:
   version_t first_committed = 0;  // i've committed to
   version_t last_committed = 0;  // i've committed to
   version_t pn_from = 0;         // i promise to accept after
-  version_t pn = 0;              // with with proposal
+  version_t pn = 0;              // with proposal
   version_t uncommitted_pn = 0;     // previous pn, if we are a LAST with an uncommitted value
   utime_t lease_timestamp;
   utime_t sent_timestamp;

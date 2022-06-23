@@ -742,7 +742,7 @@ class Bucket {
     virtual ACLOwner get_acl_owner(void) { return ACLOwner(info.owner); };
     /** Check in the backing store if this bucket is empty */
     virtual int check_empty(const DoutPrefixProvider* dpp, optional_yield y) = 0;
-    /** Chec k if the given size fits within the quota */
+    /** Check if the given size fits within the quota */
     virtual int check_quota(const DoutPrefixProvider *dpp, RGWQuota& quota, uint64_t obj_size, optional_yield y, bool check_size_only = false) = 0;
     /** Set the attributes in attrs, leaving any other existing attrs set, and
      * write them to the backing store; a merge operation */
@@ -1532,7 +1532,7 @@ class Zone {
     virtual bool has_zonegroup_api(const std::string& api) const = 0;
     /** Get the current period ID for this zone */
     virtual const std::string& get_current_period_id() = 0;
-    /** Get thes system access key for this zone */
+    /** Get the system access key for this zone */
     virtual const RGWAccessKey& get_system_key() = 0;
     /** Get the name of the realm containing this zone */
     virtual const std::string& get_realm_name() = 0;

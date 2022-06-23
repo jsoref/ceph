@@ -497,7 +497,7 @@ void SegmentCleaner::register_metrics()
     sm::make_counter("io_blocked_count_trim", stats.io_blocked_count_trim,
 		    sm::description("IOs that are blocked by trimming")),
     sm::make_counter("io_blocked_count_reclaim", stats.io_blocked_count_reclaim,
-		    sm::description("IOs that are blocked by reclaimming")),
+		    sm::description("IOs that are blocked by reclaiming")),
     sm::make_counter("io_blocked_sum", stats.io_blocked_sum,
 		     sm::description("the sum of blocking IOs")),
 
@@ -1116,7 +1116,7 @@ SegmentCleaner::scan_extents_ret SegmentCleaner::scan_nonfull_segment(
 	) mutable -> SegmentManagerGroup::scan_valid_records_ertr::future<> {
 	LOG_PREFIX(SegmentCleaner::scan_nonfull_segment);
 	if (segment_header.get_type() == segment_type_t::OOL) {
-	  DEBUG("out-of-line segment {}, decodeing {} records",
+	  DEBUG("out-of-line segment {}, decoding {} records",
 	    segment_id,
 	    header.records);
 	  auto maybe_headers = try_decode_record_headers(header, mdbuf);
@@ -1145,7 +1145,7 @@ SegmentCleaner::scan_extents_ret SegmentCleaner::scan_nonfull_segment(
 	    }
 	  }
 	} else {
-	  DEBUG("inline segment {}, decodeing {} records",
+	  DEBUG("inline segment {}, decoding {} records",
 	    segment_id,
 	    header.records);
 	  auto maybe_record_deltas_list = try_decode_deltas(

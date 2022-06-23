@@ -220,7 +220,7 @@ class DeltaRecorderT final: public DeltaRecorder {
  private:
   ValueDeltaRecorder* get_value_replayer(value_magic_t magic) {
     // Replay procedure is independent of Btree and happens at lower level in
-    // seastore. There is no ValueBuilder so the recoder needs to build the
+    // seastore. There is no ValueBuilder so the recorder needs to build the
     // ValueDeltaRecorder by itself.
     if (value_replayer) {
       if (value_replayer->get_header_magic() != magic) {
@@ -350,7 +350,7 @@ class NodeExtentAccessorT {
     }
   }
 
-  // must be called before any mutate attempes.
+  // must be called before any mutate attempts.
   // for the safety of mixed read and mutate, call before read.
   void prepare_mutate(context_t c) {
     assert(!is_retired());
@@ -556,7 +556,7 @@ class NodeExtentAccessorT {
             [FNAME, c, l_to_discard = to_discard->get_laddr(),
              l_fresh = fresh_extent->get_laddr()] {
           SUBERRORT(seastore_onode,
-              "EIO during retire -- to_disgard={:x}, fresh={:x}",
+              "EIO during retire -- to_discard={:x}, fresh={:x}",
               c.t, l_to_discard, l_fresh);
           ceph_abort("fatal error");
         }),
@@ -564,7 +564,7 @@ class NodeExtentAccessorT {
             [FNAME, c, l_to_discard = to_discard->get_laddr(),
              l_fresh = fresh_extent->get_laddr()] {
           SUBERRORT(seastore_onode,
-              "ENOENT during retire -- to_disgard={:x}, fresh={:x}",
+              "ENOENT during retire -- to_discard={:x}, fresh={:x}",
               c.t, l_to_discard, l_fresh);
           ceph_abort("fatal error");
         })

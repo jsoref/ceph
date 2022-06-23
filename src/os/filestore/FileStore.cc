@@ -6093,8 +6093,8 @@ const char** FileStore::get_tracked_conf_keys() const
     "filestore_queue_max_bytes",
     "filestore_expected_throughput_bytes",
     "filestore_expected_throughput_ops",
-    "filestore_queue_low_threshhold",
-    "filestore_queue_high_threshhold",
+    "filestore_queue_low_threshold",
+    "filestore_queue_high_threshold",
     "filestore_queue_high_delay_multiple",
     "filestore_queue_max_delay_multiple",
     "filestore_commit_timeout",
@@ -6137,8 +6137,8 @@ void FileStore::handle_conf_change(const ConfigProxy& conf,
       changed.count("filestore_queue_max_ops") ||
       changed.count("filestore_expected_throughput_bytes") ||
       changed.count("filestore_expected_throughput_ops") ||
-      changed.count("filestore_queue_low_threshhold") ||
-      changed.count("filestore_queue_high_threshhold") ||
+      changed.count("filestore_queue_low_threshold") ||
+      changed.count("filestore_queue_high_threshold") ||
       changed.count("filestore_queue_high_delay_multiple") ||
       changed.count("filestore_queue_max_delay_multiple")) {
     std::lock_guard l(lock);
@@ -6187,8 +6187,8 @@ int FileStore::set_throttle_params()
 {
   stringstream ss;
   bool valid = throttle_bytes.set_params(
-    cct->_conf->filestore_queue_low_threshhold,
-    cct->_conf->filestore_queue_high_threshhold,
+    cct->_conf->filestore_queue_low_threshold,
+    cct->_conf->filestore_queue_high_threshold,
     cct->_conf->filestore_expected_throughput_bytes,
     cct->_conf->filestore_queue_high_delay_multiple?
     cct->_conf->filestore_queue_high_delay_multiple:
@@ -6200,8 +6200,8 @@ int FileStore::set_throttle_params()
     &ss);
 
   valid &= throttle_ops.set_params(
-    cct->_conf->filestore_queue_low_threshhold,
-    cct->_conf->filestore_queue_high_threshhold,
+    cct->_conf->filestore_queue_low_threshold,
+    cct->_conf->filestore_queue_high_threshold,
     cct->_conf->filestore_expected_throughput_ops,
     cct->_conf->filestore_queue_high_delay_multiple?
     cct->_conf->filestore_queue_high_delay_multiple:

@@ -3126,7 +3126,7 @@ static int filter_out_quota_info(std::map<std::string, bufferlist>& add_attrs,
     }
   }
 
-  /* Swift requries checking on raw usage instead of the 4 KiB rounded one. */
+  /* Swift requires checking on raw usage instead of the 4 KiB rounded one. */
   quota.check_on_raw = true;
   quota.enabled = quota.max_size > 0 || quota.max_objects > 0;
 
@@ -4091,7 +4091,7 @@ void RGWPutObj::execute(optional_yield y)
       hash.Update((const unsigned char *)data.c_str(), data.length());
     }
 
-    /* update torrrent */
+    /* update torrent */
     torrent.update(data);
 
     op_ret = filter->process(std::move(data), ofs);
@@ -7183,7 +7183,7 @@ RGWBulkUploadOp::parse_path(const std::string_view& path)
   const size_t start_pos = path.find_first_not_of('/');
 
   if (std::string_view::npos != start_pos) {
-    /* Seperator is the first slash after the leading ones. */
+    /* Separator is the first slash after the leading ones. */
     const size_t sep_pos = path.substr(start_pos).find('/');
 
     if (std::string_view::npos != sep_pos) {
@@ -7644,10 +7644,10 @@ void RGWBulkUploadOp::execute(optional_yield y)
 
 RGWBulkUploadOp::AlignedStreamGetter::~AlignedStreamGetter()
 {
-  const size_t aligned_legnth = length + (-length % alignment);
+  const size_t aligned_length = length + (-length % alignment);
   ceph::bufferlist junk;
 
-  DecoratedStreamGetter::get_exactly(aligned_legnth - position, junk);
+  DecoratedStreamGetter::get_exactly(aligned_length - position, junk);
 }
 
 ssize_t RGWBulkUploadOp::AlignedStreamGetter::get_at_most(const size_t want,

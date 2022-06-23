@@ -5,8 +5,8 @@
 #include "include/ceph_assert.h"
 
 bool JournalThrottle::set_params(
-  double _low_threshhold,
-  double _high_threshhold,
+  double _low_threshold,
+  double _high_threshold,
   double _expected_throughput,
   double _high_multiple,
   double _max_multiple,
@@ -14,8 +14,8 @@ bool JournalThrottle::set_params(
   std::ostream *errstream)
 {
   return throttle.set_params(
-    _low_threshhold,
-    _high_threshhold,
+    _low_threshold,
+    _high_threshold,
     _expected_throughput,
     _high_multiple,
     _max_multiple,

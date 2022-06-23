@@ -20,7 +20,7 @@
   
      --decompile|-d map    decompile a crush map to source
      [--outfn|-o outfile]
-                           specify output for for (de)compilation
+                           specify output for (de)compilation
      --compile|-c map.txt  compile a map from source
      --enable-unsafe-tunables
                            compile with unsafe tunables
@@ -85,7 +85,7 @@
      --dump                dump the crush map
      --tree                print map summary as a tree
      --bucket-tree         print bucket map summary as a tree
-     --bucket-name         specify bucket bucket name for bucket-tree
+     --bucket-name         specify bucket name for bucket-tree
      --check [max_id]      check if any item is referencing an unknown name/type
      -i mapfn --show-location id
                            show location for given device id

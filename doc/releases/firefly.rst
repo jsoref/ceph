@@ -51,7 +51,7 @@ Notable Changes
 * mon: MonitorDBStore: get_next_key() only if prefix matches (`issue#11786 <http://tracker.ceph.com/issues/11786>`_, `pr#5360 <http://github.com/ceph/ceph/pull/5360>`_, Joao Eduardo Luis)
 * mon: PaxosService: call post_refresh() instead of post_paxos_update() (`issue#11470 <http://tracker.ceph.com/issues/11470>`_, `pr#5358 <http://github.com/ceph/ceph/pull/5358>`_, Joao Eduardo Luis)
 * mon: add a cache layer over MonitorDBStore (`issue#12638 <http://tracker.ceph.com/issues/12638>`_, `pr#5698 <http://github.com/ceph/ceph/pull/5698>`_, Kefu Chai)
-* mon: adding exsting pool as tier with --force-nonempty clobbers removed_snaps (`issue#11493 <http://tracker.ceph.com/issues/11493>`_, `pr#5236 <http://github.com/ceph/ceph/pull/5236>`_, Sage Weil, Samuel Just)
+* mon: adding existing pool as tier with --force-nonempty clobbers removed_snaps (`issue#11493 <http://tracker.ceph.com/issues/11493>`_, `pr#5236 <http://github.com/ceph/ceph/pull/5236>`_, Sage Weil, Samuel Just)
 * mon: ceph fails to compile with boost 1.58 (`issue#11576 <http://tracker.ceph.com/issues/11576>`_, `pr#5129 <http://github.com/ceph/ceph/pull/5129>`_, Kefu Chai)
 * mon: does not check for IO errors on every transaction (`issue#13089 <http://tracker.ceph.com/issues/13089>`_, `pr#6091 <http://github.com/ceph/ceph/pull/6091>`_, Sage Weil)
 * mon: get pools health'info have error (`issue#12402 <http://tracker.ceph.com/issues/12402>`_, `pr#5410 <http://github.com/ceph/ceph/pull/5410>`_, renhwztetecs)
@@ -59,7 +59,7 @@ Notable Changes
 * mon: pgmonitor: wrong at/near target max“ reporting (`issue#12401 <http://tracker.ceph.com/issues/12401>`_, `pr#5409 <http://github.com/ceph/ceph/pull/5409>`_, huangjun)
 * mon: register_new_pgs() should check ruleno instead of its index (`issue#12210 <http://tracker.ceph.com/issues/12210>`_, `pr#5404 <http://github.com/ceph/ceph/pull/5404>`_, Xinze Chi)
 * mon: scrub error (osdmap encoding mismatch?) upgrading from 0.80 to ~0.80.2 (`issue#8815 <http://tracker.ceph.com/issues/8815>`_, `issue#8674 <http://tracker.ceph.com/issues/8674>`_, `issue#9064 <http://tracker.ceph.com/issues/9064>`_, `pr#5200 <http://github.com/ceph/ceph/pull/5200>`_, Sage Weil, Zhiqiang Wang, Samuel Just)
-* mon: the output is wrong when runing ceph osd reweight (`issue#12251 <http://tracker.ceph.com/issues/12251>`_, `pr#5408 <http://github.com/ceph/ceph/pull/5408>`_, Joao Eduardo Luis)
+* mon: the output is wrong when running ceph osd reweight (`issue#12251 <http://tracker.ceph.com/issues/12251>`_, `pr#5408 <http://github.com/ceph/ceph/pull/5408>`_, Joao Eduardo Luis)
 * objecter: can get stuck in redirect loop if osdmap epoch == last_force_op_resend (`issue#11026 <http://tracker.ceph.com/issues/11026>`_, `pr#4597 <http://github.com/ceph/ceph/pull/4597>`_, Jianpeng Ma, Sage Weil)
 * objecter: pg listing can deadlock when throttling is in use (`issue#9008 <http://tracker.ceph.com/issues/9008>`_, `pr#5043 <http://github.com/ceph/ceph/pull/5043>`_, Guang Yang)
 * objecter: resend linger ops on split (`issue#9806 <http://tracker.ceph.com/issues/9806>`_, `pr#5062 <http://github.com/ceph/ceph/pull/5062>`_, Josh Durgin, Samuel Just)
@@ -182,7 +182,7 @@ Notable Changes
 * rgw: use correct objv_tracker for bucket instance (`issue#11416 <http://tracker.ceph.com/issues/11416>`_, `pr#4379 <http://github.com/ceph/ceph/pull/4379>`_, Yehuda Sadeh)
 * tests: force checkout of submodules (`issue#11157 <http://tracker.ceph.com/issues/11157>`_, `pr#4079 <http://github.com/ceph/ceph/pull/4079>`_, Loic Dachary)
 * tools: Backport ceph-objectstore-tool changes to firefly (`issue#12327 <http://tracker.ceph.com/issues/12327>`_, `pr#3866 <http://github.com/ceph/ceph/pull/3866>`_, David Zafman)
-* tools: ceph-objectstore-tool: Output only unsupported features when incomatible (`issue#11176 <http://tracker.ceph.com/issues/11176>`_, `pr#4126 <http://github.com/ceph/ceph/pull/4126>`_, David Zafman)
+* tools: ceph-objectstore-tool: Output only unsupported features when incompatible (`issue#11176 <http://tracker.ceph.com/issues/11176>`_, `pr#4126 <http://github.com/ceph/ceph/pull/4126>`_, David Zafman)
 * tools: ceph-objectstore-tool: Use exit status 11 for incompatible import attemp... (`issue#11139 <http://tracker.ceph.com/issues/11139>`_, `pr#4129 <http://github.com/ceph/ceph/pull/4129>`_, David Zafman)
 * tools: Fix do_autogen.sh so that -L is allowed (`issue#11303 <http://tracker.ceph.com/issues/11303>`_, `pr#4247 <http://github.com/ceph/ceph/pull/4247>`_, Alfredo Deza)
 
@@ -257,7 +257,7 @@ Notable Changes
 * osd: fix PG ref leak in snaptrimmer on peering (#10421 Kefu Chai)
 * osd: handle no-op write with snapshot (#10262 Sage Weil)
 * radosgw-admin: create subuser when creating user (#10103 Yehuda Sadeh)
-* rgw: change multipart uplaod id magic (#10271 Georgio Dimitrakakis, Yehuda Sadeh)
+* rgw: change multipart upload id magic (#10271 Georgio Dimitrakakis, Yehuda Sadeh)
 * rgw: don't overwrite bucket/object owner when setting ACLs (#10978 Yehuda Sadeh)
 * rgw: enable IPv6 for embedded civetweb (#10965 Yehuda Sadeh)
 * rgw: fix partial swift GET (#10553 Yehuda Sadeh)
@@ -304,14 +304,14 @@ Notable Changes
 * crush: fix potential buffer overflow in erasure rules (#9492 Johnu George)
 * debian: fix python-ceph -> ceph file movement (Sage Weil)
 * libcephfs,ceph-fuse: fix flush tid wraparound bug (#9869 Greg Farnum, Yan, Zheng)
-* libcephfs: close fd befure umount (#10415 Yan, Zheng)
+* libcephfs: close fd before umount (#10415 Yan, Zheng)
 * librados: fix crash from C API when read timeout is enabled (#9582 Sage Weil)
 * librados: handle reply race with pool deletion (#10372 Sage Weil)
 * librbd: cap memory utilization for read requests (Jason Dillaman)
 * librbd: do not close a closed parent image on failure (#10030 Jason Dillaman)
 * librbd: fix diff tests (#10002 Josh Durgin)
 * librbd: protect list_children from invalid pools (#10123 Jason Dillaman)
-* make check improvemens (Loic Dachary)
+* make check improvements (Loic Dachary)
 * mds: fix ctime updates (#9514 Greg Farnum)
 * mds: fix journal import tool (#10025 John Spray)
 * mds: fix rare NULL deref in cap flush handler (Greg Farnum)
@@ -334,7 +334,7 @@ Notable Changes
 * osd: fix journal dump (Ma Jianpeng)
 * osd: fix occasional stall during peering or activation (Sage Weil)
 * osd: fix past_interval display bug (#9752 Loic Dachary)
-* osd: fix rare crash triggered by admin socket dump_ops_in_filght (#9916 Dong Lei)
+* osd: fix rare crash triggered by admin socket dump_ops_in_flight (#9916 Dong Lei)
 * osd: fix snap trimming performance issues (#9487 #9113 Samuel Just, Sage Weil, Dan van der Ster, Florian Haas)
 * osd: fix snapdir handling on cache eviction (#8629 Sage Weil)
 * osd: handle map gaps in map advance code (Sage Weil)
@@ -346,7 +346,7 @@ Notable Changes
 * osd: other misc bugs (#9821 #9875 Samuel Just)
 * rgw: add .log to default log path (#9353 Alexandre Marangone)
 * rgw: clean up fcgi request context (#10194 Yehuda Sadeh)
-* rgw: convet header underscores to dashes (#9206 Yehuda Sadeh)
+* rgw: convert header underscores to dashes (#9206 Yehuda Sadeh)
 * rgw: copy object data if copy target is in different pool (#9039 Yehuda Sadeh)
 * rgw: don't try to authenticate CORS peflight request (#8718 Robert Hubbard, Yehuda Sadeh)
 * rgw: fix civetweb URL decoding (#8621 Yehuda Sadeh)
@@ -357,7 +357,7 @@ Notable Changes
 * rgw: separate civetweb log from rgw log (Yehuda Sadeh)
 * rgw: set length for keystone token validations (#7796 Mark Kirkwood, Yehuda Sadeh)
 * rgw: subuser creation fixes (#8587 Yehuda Sadeh)
-* rpm: misc packaging improvements (Sandon Van Ness, Dan Mick, Erik Logthenberg, Boris Ranto)
+* rpm: misc packaging improvements (Sandon Van Ness, Dan Mick, Erik Logtenberg, Boris Ranto)
 * rpm: use standard udev rules for CentOS7/RHEL7 (#9747 Loic Dachary)
 
 
@@ -766,7 +766,7 @@ Upgrading from v0.72 Emperor
 * The 'osd pool create ...' syntax has changed for erasure pools.
 
 * The default CRUSH rules and layouts are now using the 'bobtail'
-  tunables and defaults.  Upgaded clusters using the old values will
+  tunables and defaults.  Upgraded clusters using the old values will
   now present with a health WARN state.  This can be disabled by
   adding 'mon warn on legacy crush tunables = false' to ceph.conf and
   restarting the monitors.  Alternatively, you can switch to the new
@@ -1198,7 +1198,7 @@ Notable changes since v0.67 Dumpling
 * osd: cls_hello OSD class example
 * osd: erasure coding doc updates (Loic Dachary)
 * osd: erasure coding plugin infrastructure, tests (Loic Dachary)
-* osd: experiemental support for ZFS (zfsonlinux.org) (Yan, Zheng)
+* osd: experimental support for ZFS (zfsonlinux.org) (Yan, Zheng)
 * osd: fix RWORDER flags
 * osd: fix exponential backoff of slow request warnings (Loic Dachary)
 * osd: fix handling of racing read vs write (Samuel Just)
@@ -1227,7 +1227,7 @@ Notable changes since v0.67 Dumpling
 * rgw: fix inefficient use of std::list::size() (Yehuda Sadeh)
 * rgw: fix major CPU utilization bug with internal caching (Yehuda Sadeh, Mark Nelson)
 * rgw: fix ordering of write operations (preventing data loss on crash) (Yehuda Sadeh)
-* rgw: fix ordering of writes for mulitpart upload (Yehuda Sadeh)
+* rgw: fix ordering of writes for multipart upload (Yehuda Sadeh)
 * rgw: fix various CORS bugs (Yehuda Sadeh)
 * rgw: fix/improve swift COPY support (Yehuda Sadeh)
 * rgw: improve help output (Christophe Courtaut)
@@ -1374,7 +1374,7 @@ Upgrading
   increased from 4 MB to 128 MB.  This will increase the memory
   footprint of that process but tends to increase performance of omap
   (key/value) objects (used for CephFS and the radosgw).  If memory in your
-  deployment is tight, you can preserve the old behavio by adding::
+  deployment is tight, you can preserve the old behavior by adding::
 
     leveldb write buffer size = 0
     leveldb cache size = 0
@@ -1391,7 +1391,7 @@ Notable Changes
 * common: fall back to json-pretty for admin socket (Loic Dachary)
 * common: fix 'config dump' debug prefix (Danny Al-Gaaf)
 * common: misc coverity fixes (Danny Al-Gaaf)
-* common: throtller, shared_cache performance improvements, TrackedOp (Greg Farnum, Samuel Just)
+* common: throttler, shared_cache performance improvements, TrackedOp (Greg Farnum, Samuel Just)
 * crush: fix JSON schema for dump (John Spray)
 * crush: misc cleanups, tests (Loic Dachary)
 * crush: new vary_r tunable (Sage Weil)

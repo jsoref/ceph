@@ -1593,7 +1593,7 @@ TEST_P(StoreTestSpecificAUSize, BluestoreStatFSTest) {
   StartDeferred(65536);
   SetVal(g_conf(), "bluestore_compression_mode", "force");
   SetVal(g_conf(), "bluestore_max_blob_size", "524288");
-  // just a big number to disble gc
+  // just a big number to disable gc
   SetVal(g_conf(), "bluestore_gc_enable_total_threshold", "100000");
   SetVal(g_conf(), "bluestore_fsck_on_umount", "true");
   g_conf().apply_changes(nullptr);
@@ -8579,7 +8579,7 @@ TEST_P(StoreTestSpecificAUSize, BlobReuseOnSmallOverwrite) {
 // with unloaded shard map.
 // Second extent might be filled with zeros this way due to wrong result
 // returned by has_any_extents() call in do_write_small. The latter is caused
-// by incompletly loaded extent map.
+// by incompletely loaded extent map.
 TEST_P(StoreTestSpecificAUSize, SmallWriteOnShardedExtents) {
   if (string(GetParam()) != "bluestore")
     return;
@@ -9272,7 +9272,7 @@ TEST_P(StoreTestSpecificAUSize, BluestoreRepairSharedBlobTest) {
   }
 
   // check the scenario when shared blob contains
-  // references to extents from two objects which don't overlapp
+  // references to extents from two objects which don't overlap
   // o1 -> 0x2000~1K
   // o2 -> 0x4000~1k
   cerr << "introduce 2 non-overlapped extents in a shared blob"
@@ -9670,7 +9670,7 @@ TEST_P(StoreTest, BluestorePerPoolOmapFixOnMount)
   ch = store->open_collection(cid);
 
   {
-    // write to onode which will partiall revert per-pool
+    // write to onode which will partially revert per-pool
     // omap repair done on mount due to #43824.
     // And object removal will leave stray per-pool omap recs
     //
@@ -9699,7 +9699,7 @@ static bool is_hugepaged(const bufferptr& bp)
   return ibp.is_raw_marked<BlockDevice::hugepaged_raw_marker_t>();
 }
 
-// disabled by default b/c of the dependency on huge page ssome test
+// disabled by default b/c of the dependency on huge page some test
 // environments might not offer without extra configuration.
 TEST_P(StoreTestDeferredSetup, DISABLED_BluestoreHugeReads)
 {
@@ -10264,7 +10264,7 @@ TEST_P(StoreTestSpecificAUSize, SpilloverFixed3Test) {
       ceph_assert(bstore);
       bstore->compact();
       const PerfCounters* logger = bstore->get_bluefs_perf_counters();
-      ASSERT_EQ(logger->get(l_bluefs_slow_used_bytes), 0); // reffering to SpilloverFixedTest
+      ASSERT_EQ(logger->get(l_bluefs_slow_used_bytes), 0); // referring to SpilloverFixedTest
     }
   );
 }

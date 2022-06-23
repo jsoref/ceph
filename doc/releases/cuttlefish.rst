@@ -145,7 +145,7 @@ Notable Changes
 * libcephfs, ceph-fuse: fix old bug with O_LAZY vs O_NOATIME confusion
 * ceph-disk: more robust journal device detection on RHEL/CentOS
 * ceph-disk: better, simpler locking
-* ceph-disk: do not inadvertantely mount over existing osd mounts
+* ceph-disk: do not inadvertently mount over existing osd mounts
 * ceph-disk: better handling for unusual device names
 * sysvinit, upstart: handle symlinks in /var/lib/ceph/*
 
@@ -221,7 +221,7 @@ Notable Changes
 * mon: fix bug incorrectly marking osds down with insufficient failure reports
 * osd: fixed small bug in pg request map
 * osd: avoid rewriting pg info on every osdmap
-* osd: avoid internal heartbeta timeouts when scrubbing very large objects
+* osd: avoid internal heartbeat timeouts when scrubbing very large objects
 * osd: fix narrow race with journal replay
 * mon: fixed narrow pg split race
 * rgw: fix leaked space when copying object
@@ -233,7 +233,7 @@ Notable Changes
 * debian: fix prerm/postinst hooks to start/stop daemons appropriately
 * upstart: allow uppercase daemons names (and thus hostnames)
 * sysvinit: fix enumeration of local daemons by type
-* sysvinit: fix osd weight calcuation when using -a
+* sysvinit: fix osd weight calculation when using -a
 * fix build on unsigned char platforms (e.g., arm)
 
 For more detailed information, see :download:`the complete changelog <../changelog/v0.61.3.txt>`.
@@ -381,7 +381,7 @@ Please see `Upgrading from Bobtail to Cuttlefish`_ for details.
   reflect just that.
 
 * The monitor now enforces that MDS names be unique.  If you have
-  multiple daemons start with with the same id (e.g., ``mds.a``) the
+  multiple daemons start with the same id (e.g., ``mds.a``) the
   second one will implicitly mark the first as failed.  This makes
   things less confusing and makes a daemon restart faster (we no
   longer wait for the stopped daemon to time out) but existing
@@ -650,7 +650,7 @@ Upgrading
 ---------
 
 * The monitor now enforces that MDS names be unique.  If you have
-  multiple daemons start with with the same id (e.g., ``mds.a``) the
+  multiple daemons start with the same id (e.g., ``mds.a``) the
   second one will implicitly mark the first as failed.  This makes
   things less confusing and makes a daemon restart faster (we no
   longer wait for the stopped daemon to time out) but existing

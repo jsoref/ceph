@@ -115,7 +115,7 @@ struct property {
   static constexpr auto const is_strong_exception_guaranteed = Throws;
 };
 
-/// Provides utilities for invocing callable objects
+/// Provides utilities for invoicing callable objects
 namespace invocation {
 /// Invokes the given callable object with the given arguments
 template <typename Callable, typename... Args>
@@ -454,7 +454,7 @@ template <bool IsNoexcept>
 throw_or_abort(std::false_type /*is_throwing*/) noexcept {
   std::abort();
 }
-/// Throws bad_function_call on empty funciton calls
+/// Throws bad_function_call on empty function calls
 [[noreturn]] inline void throw_or_abort(std::true_type /*is_throwing*/) {
 #ifdef FU2_HAS_DISABLED_EXCEPTIONS
   throw_or_abort(std::false_type{});
@@ -1145,21 +1145,21 @@ class erasure<false, Config,
   data_accessor view_;
 
 public:
-  // NOLINTNEXTLINE(cppcoreguidlines-pro-type-member-init)
+  // NOLINTNEXTLINE(cppcoreguidelines-pro-type-member-init)
   constexpr erasure() noexcept
       : invoke_table_(
             invoke_table_t::template get_empty_invocation_table<IsThrowing>()),
         view_(nullptr) {
   }
 
-  // NOLINTNEXTLINE(cppcoreguidlines-pro-type-member-init)
+  // NOLINTNEXTLINE(cppcoreguidelines-pro-type-member-init)
   constexpr erasure(std::nullptr_t) noexcept
       : invoke_table_(
             invoke_table_t::template get_empty_invocation_table<IsThrowing>()),
         view_(nullptr) {
   }
 
-  // NOLINTNEXTLINE(cppcoreguidlines-pro-type-member-init)
+  // NOLINTNEXTLINE(cppcoreguidelines-pro-type-member-init)
   constexpr erasure(erasure&& right) noexcept
       : invoke_table_(right.invoke_table_), view_(right.view_) {
   }
@@ -1167,13 +1167,13 @@ public:
   constexpr erasure(erasure const& /*right*/) = default;
 
   template <typename OtherConfig>
-  // NOLINTNEXTLINE(cppcoreguidlines-pro-type-member-init)
+  // NOLINTNEXTLINE(cppcoreguidelines-pro-type-member-init)
   constexpr erasure(erasure<false, OtherConfig, property_t> right) noexcept
       : invoke_table_(right.invoke_table_), view_(right.view_) {
   }
 
   template <typename T>
-  // NOLINTNEXTLINE(cppcoreguidlines-pro-type-member-init)
+  // NOLINTNEXTLINE(cppcoreguidelines-pro-type-member-init)
   constexpr erasure(T&& object)
       : invoke_table_(invoke_table_t::template get_invocation_view_table_of<
                       std::decay_t<T>>()),
@@ -1551,7 +1551,7 @@ using function_view =
 /// This type will default to std::bad_function_call if the
 /// functional header is used, otherwise the library provides its own type.
 ///
-/// You may disable the inclusion of the functionl header
+/// You may disable the inclusion of the functional header
 /// through defining `FU2_WITH_NO_FUNCTIONAL_HEADER`.
 ///
 using detail::type_erasure::invocation_table::bad_function_call;

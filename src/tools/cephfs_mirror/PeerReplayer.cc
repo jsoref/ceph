@@ -1146,7 +1146,7 @@ int PeerReplayer::do_synchronize(const std::string &dir_root, const Snapshot &cu
   FHandles fh;
   int r = pre_sync_check_and_open_handles(dir_root, current, prev, &fh);
   if (r < 0) {
-    dout(5) << ": cannot proceeed with sync: " << cpp_strerror(r) << dendl;
+    dout(5) << ": cannot proceed with sync: " << cpp_strerror(r) << dendl;
     return r;
   }
 
@@ -1390,13 +1390,13 @@ int PeerReplayer::do_sync_snaps(const std::string &dir_root) {
 
   r = propagate_snap_deletes(dir_root, snaps_deleted);
   if (r < 0) {
-    derr << ": failed to propgate deleted snapshots" << dendl;
+    derr << ": failed to propagate deleted snapshots" << dendl;
     return r;
   }
 
   r = propagate_snap_renames(dir_root, snaps_renamed);
   if (r < 0) {
-    derr << ": failed to propgate renamed snapshots" << dendl;
+    derr << ": failed to propagate renamed snapshots" << dendl;
     return r;
   }
 
@@ -1519,7 +1519,7 @@ void PeerReplayer::peer_status(Formatter *f) {
       f->dump_string("state", "idle");
     } else {
       f->dump_string("state", "syncing");
-      f->open_object_section("current_sycning_snap");
+      f->open_object_section("current_syncing_snap");
       f->dump_unsigned("id", (*sync_stat.current_syncing_snap).first);
       f->dump_string("name", (*sync_stat.current_syncing_snap).second);
       f->close_section();

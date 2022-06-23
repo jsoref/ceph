@@ -924,7 +924,7 @@ void Server::_session_logged(Session *session, uint64_t state_seq, bool open, ve
       // do this *before* sending the message to avoid a possible
       // race.
       if (session->get_connection()) {
-        // Conditional because terminate_sessions will indiscrimately
+        // Conditional because terminate_sessions will indiscriminately
         // put sessions in CLOSING whether they ever had a conn or not.
         session->get_connection()->mark_disposable();
       }
@@ -3490,7 +3490,7 @@ public:
        * all active peers.
        *
        * As a workaround users can run `ls -R ${mountpoint}`
-       * to list all the sub-files or sub-direcotries from the
+       * to list all the sub-files or sub-directories from the
        * mountpoint.
        *
        * We need try to open the ino and try it again.
@@ -4636,7 +4636,7 @@ void Server::handle_client_readdir(MDRequestRef& mdr)
 
   if (num_caps > static_cast<uint64_t>(max_caps_per_client * max_caps_throttle_ratio) && session_cap_acquisition >= cap_acquisition_throttle) {
       dout(20) << "readdir throttled. max_caps_per_client: " << max_caps_per_client << " num_caps: " << num_caps
-	       << " session_cap_acquistion: " << session_cap_acquisition << " cap_acquisition_throttle: " << cap_acquisition_throttle << dendl;
+	       << " session_cap_acquisition: " << session_cap_acquisition << " cap_acquisition_throttle: " << cap_acquisition_throttle << dendl;
       if (logger)
           logger->inc(l_mdss_cap_acquisition_throttle);
 
@@ -5805,7 +5805,7 @@ int Server::check_layout_vxattr(MDRequestRef& mdr,
       // well, our map is older. consult mds.
       auto fin = new C_IO_Wrapper(mds, new C_MDS_RetryRequest(mdcache, mdr));
 
-      mds->objecter->wait_for_map(req_epoch, lambdafy(fin));
+      mds->objecter->wait_for_map(req_epoch, lambdify(fin));
       return r;
     } else if (req_epoch == 0 && !mdr->waited_for_osdmap) {
 
@@ -7449,7 +7449,7 @@ void Server::handle_peer_link_prep(MDRequestRef& mdr)
   link_rollback rollback;
   rollback.reqid = mdr->reqid;
   rollback.ino = targeti->ino();
-  rollback.old_ctime = targeti->get_inode()->ctime;   // we hold versionlock xlock; no concorrent projections
+  rollback.old_ctime = targeti->get_inode()->ctime;   // we hold versionlock xlock; no concurrent projections
   const auto& pf = targeti->get_parent_dn()->get_dir()->get_projected_fnode();
   rollback.old_dir_mtime = pf->fragstat.mtime;
   rollback.old_dir_rctime = pf->rstat.rctime;
@@ -8018,7 +8018,7 @@ void Server::_unlink_local_finish(MDRequestRef& mdr,
   // respond_to_request() drops locks. So stray reintegration can race with us.
   if (straydn && !straydn->get_projected_linkage()->is_null()) {
     // Tip off the MDCache that this dentry is a stray that
-    // might be elegible for purge.
+    // might be eligible for purge.
     mdcache->notify_stray(straydn);
   }
 }
@@ -8358,7 +8358,7 @@ void Server::_rmdir_rollback_finish(MDRequestRef& mdr, metareqid_t reqid, CDentr
  *
  * check if a directory is non-empty (i.e. we can rmdir it).
  *
- * the unlocked varient this is a fastpath check.  we can't really be
+ * the unlocked variant this is a fastpath check.  we can't really be
  * sure until we rdlock the filelock.
  */
 bool Server::_dir_is_nonempty_unlocked(MDRequestRef& mdr, CInode *in)
@@ -8441,7 +8441,7 @@ public:
  * destdn->inode) remain connected during the rename.
  *
  * to do this, we freeze srci, then leader (destdn auth) verifies that
- * all other nodes have also replciated destdn and straydn.  note that
+ * all other nodes have also replicated destdn and straydn.  note that
  * destdn replicas need not also replicate srci.  this only works when 
  * destdn is leader.
  *
@@ -8873,7 +8873,7 @@ void Server::handle_client_rename(MDRequestRef& mdr)
     le->had_peers = true;
     
     mdcache->add_uncommitted_leader(mdr->reqid, mdr->ls, mdr->more()->witnessed);
-    // no need to send frozen auth pin to recovring auth MDS of srci
+    // no need to send frozen auth pin to recovering auth MDS of srci
     mdr->more()->is_remote_frozen_authpin = false;
   }
   
@@ -8937,7 +8937,7 @@ void Server::_rename_finish(MDRequestRef& mdr, CDentry *srcdn, CDentry *destdn, 
 
 // helpers
 
-bool Server::_rename_prepare_witness(MDRequestRef& mdr, mds_rank_t who, set<mds_rank_t> &witnesse,
+bool Server::_rename_prepare_witness(MDRequestRef& mdr, mds_rank_t who, set<mds_rank_t> &witness,
 				     vector<CDentry*>& srctrace, vector<CDentry*>& dsttrace, CDentry *straydn)
 {
   const auto& client_req = mdr->client_request;
@@ -8972,7 +8972,7 @@ bool Server::_rename_prepare_witness(MDRequestRef& mdr, mds_rank_t who, set<mds_
   req->srcdn_auth = mdr->more()->srcdn_auth_mds;
   
   // srcdn auth will verify our current witness list is sufficient
-  req->witnesses = witnesse;
+  req->witnesses = witness;
 
   req->op_stamp = mdr->get_op_stamp();
   mds->send_message_mds(req, who);

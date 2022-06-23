@@ -589,7 +589,7 @@ double perf_cycles_to_seconds()
   return Cycles::to_seconds(stop - start)/count;
 }
 
-// Measure the cost of the Cylcles::toNanoseconds method.
+// Measure the cost of the Cycles::toNanoseconds method.
 double perf_cycles_to_nanoseconds()
 {
   int count = 1000000;
@@ -671,7 +671,7 @@ double perf_prefetch()
 
 #if defined(__x86_64__)
 /**
- * This function is used to seralize machine instructions so that no
+ * This function is used to serialize machine instructions so that no
  * instructions that appear after it in the current thread can run before any
  * instructions that appear before it. 
  *

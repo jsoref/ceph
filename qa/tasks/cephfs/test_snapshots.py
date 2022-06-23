@@ -52,7 +52,7 @@ class TestSnapshots(CephFSTestCase):
         except CommandFailedError as ce:
             self.assertEqual(ce.exitstatus, errno.EPERM, "expected EPERM")
         else:
-            self.fail("expected snap creatiion to fail")
+            self.fail("expected snap creation to fail")
 
         self.fs.set_allow_new_snaps(True);
         self.mount_a.run_shell(["mkdir", "test-allow-snaps/.snap/snap00"])
@@ -61,7 +61,7 @@ class TestSnapshots(CephFSTestCase):
 
     def test_kill_mdstable(self):
         """
-        check snaptable transcation
+        check snaptable transaction
         """
         if not isinstance(self.mount_a, FuseMount):
             self.skipTest("Require FUSE client to forcibly kill mount")
@@ -485,7 +485,7 @@ class TestSnapshots(CephFSTestCase):
 
     def test_mds_max_snaps_per_dir_default_limit(self):
         """
-        Test the newly introudced option named mds_max_snaps_per_dir
+        Test the newly introduced option named mds_max_snaps_per_dir
         Default snaps limit is 100
         Test if the default number of snapshot directories can be created
         """
@@ -494,7 +494,7 @@ class TestSnapshots(CephFSTestCase):
 
     def test_mds_max_snaps_per_dir_with_increased_limit(self):
         """
-        Test the newly introudced option named mds_max_snaps_per_dir
+        Test the newly introduced option named mds_max_snaps_per_dir
         First create 101 directories and ensure that the 101st directory
         creation fails. Then increase the default by one and see if the
         additional directory creation succeeds
@@ -516,7 +516,7 @@ class TestSnapshots(CephFSTestCase):
 
     def test_mds_max_snaps_per_dir_with_reduced_limit(self):
         """
-        Test the newly introudced option named mds_max_snaps_per_dir
+        Test the newly introduced option named mds_max_snaps_per_dir
         First create 99 directories. Then reduce the limit to 98. Then try
         creating another directory and ensure that additional directory
         creation fails.

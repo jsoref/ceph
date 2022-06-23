@@ -3732,13 +3732,13 @@ int CInode::encode_inodestat(bufferlist& bl, Session *session,
 	  pi = oi = &it->second.inode;
 	  pxattrs = &it->second.xattrs;
 	} else {
-	  // snapshoted remote dentry can result this
+	  // snapshotted remote dentry can result this
 	  dout(0) << __func__ << " old_inode for snapid " << snapid
 		  << " not found" << dendl;
 	}
       }
     } else if (snapid < first || snapid > last) {
-      // snapshoted remote dentry can result this
+      // snapshotted remote dentry can result this
       dout(0) << __func__ << " [" << first << "," << last << "]"
 	      << " not match snapid " << snapid << dendl;
     }
@@ -4538,7 +4538,7 @@ void InodeStoreBase::decode_json(JSONObj *obj)
   }
 
   JSONDecoder::decode_json("symlink", symlink, obj, true);
-  // JSONDecoder::decode_json("dirfragtree", dirfragtree, obj, true); // cann't decode it now
+  // JSONDecoder::decode_json("dirfragtree", dirfragtree, obj, true); // can't decode it now
   //
   //
   {
@@ -4549,11 +4549,11 @@ void InodeStoreBase::decode_json(JSONObj *obj)
     else
       reset_xattrs(allocate_xattr_map(std::move(tmp)));
   }
-  // JSONDecoder::decode_json("old_inodes", old_inodes, InodeStoreBase::old_indoes_cb, obj, true); // cann't decode old_inodes now
+  // JSONDecoder::decode_json("old_inodes", old_inodes, InodeStoreBase::old_inodes_cb, obj, true); // can't decode old_inodes now
   JSONDecoder::decode_json("oldest_snap", oldest_snap.val, obj, true);
   JSONDecoder::decode_json("damage_flags", damage_flags, obj, true);
   //sr_t srnode;
-  //JSONDecoder::decode_json("snap_blob", srnode, obj, true);   // cann't decode it now
+  //JSONDecoder::decode_json("snap_blob", srnode, obj, true);   // can't decode it now
   //snap_blob = srnode;
 }
 
@@ -4566,12 +4566,12 @@ void InodeStoreBase::xattrs_cb(InodeStoreBase::mempool_xattr_map& c, JSONObj *ob
   c[k.c_str()] = buffer::copy(v.c_str(), v.size());
 }
 
-void InodeStoreBase::old_indoes_cb(InodeStoreBase::mempool_old_inode_map& c, JSONObj *obj){
+void InodeStoreBase::old_inodes_cb(InodeStoreBase::mempool_old_inode_map& c, JSONObj *obj){
 
   snapid_t s;
   JSONDecoder::decode_json("last", s.val, obj, true);
   InodeStoreBase::mempool_old_inode i;
-  // i.decode_json(obj); // cann't decode now, simon
+  // i.decode_json(obj); // can't decode now, simon
   c[s] = i;
 }
 

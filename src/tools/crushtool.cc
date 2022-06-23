@@ -140,7 +140,7 @@ void usage()
   cout << "\n";
   cout << "   --decompile|-d map    decompile a crush map to source\n";
   cout << "   [--outfn|-o outfile]\n";
-  cout << "                         specify output for for (de)compilation\n";
+  cout << "                         specify output for (de)compilation\n";
   cout << "   --compile|-c map.txt  compile a map from source\n";
   cout << "   --enable-unsafe-tunables\n";
   cout << "                         compile with unsafe tunables\n";
@@ -205,7 +205,7 @@ void usage()
   cout << "   --dump                dump the crush map\n";
   cout << "   --tree                print map summary as a tree\n";
   cout << "   --bucket-tree         print bucket map summary as a tree\n";
-  cout << "   --bucket-name         specify bucket bucket name for bucket-tree\n";
+  cout << "   --bucket-name         specify bucket name for bucket-tree\n";
   cout << "   --check [max_id]      check if any item is referencing an unknown name/type\n";
   cout << "   -i mapfn --show-location id\n";
   cout << "                         show location for given device id\n";
@@ -1201,7 +1201,7 @@ int main(int argc, const char **argv)
   if (rebuild_class_roots) {
     int r = crush.rebuild_roots_with_classes(g_ceph_context);
     if (r < 0) {
-      cerr << "failed to rebuidl roots with classes" << std::endl;
+      cerr << "failed to rebuild roots with classes" << std::endl;
       return EXIT_FAILURE;
     }
     modified = true;

@@ -90,7 +90,7 @@ We recommend that all Dumpling users upgrade at their convenience.
 Notable Changes
 ---------------
 
-* ceph-disk: partprobe befoere settle, fixing dm-crypt (#6966, Eric Eastman)
+* ceph-disk: partprobe before settle, fixing dm-crypt (#6966, Eric Eastman)
 * librbd: add invalidate cache interface (Josh Durgin)
 * librbd: close image if remove_child fails (Ilya Dryomov)
 * librbd: fix potential null pointer dereference (Danny Al-Gaaf)
@@ -553,7 +553,7 @@ Upgrading from v0.66
   in order to accommodate the new write back throttle system.  On
   Ubuntu, upstart now sets the fd limit to 32k.  On other platforms,
   the sysvinit script will set it to 32k by default (still
-  overrideable via max_open_files).  If this field has been customized
+  overridable via max_open_files).  If this field has been customized
   in ceph.conf it should likely be adjusted upwards.
 
 Upgrading from v0.61 "Cuttlefish"
@@ -654,7 +654,7 @@ Notable changes since v0.61 "Cuttlefish"
 * ceph-fuse, libcephfs: fix a few caps revocation bugs
 * ceph-fuse, libcephfs: fix read zeroing at EOF
 * ceph-fuse, libcephfs: fix request refcounting bug (hang on shutdown)
-* ceph-fuse, libcephfs: fix truncatation bug on >4MB files (Yan, Zheng)
+* ceph-fuse, libcephfs: fix truncation bug on >4MB files (Yan, Zheng)
 * ceph-fuse, libcephfs: fix for cap release/hang
 * ceph-fuse: add ioctl support
 * ceph-fuse: fixed long-standing O_NOATIME vs O_LAZY bug
@@ -721,7 +721,7 @@ Notable changes since v0.61 "Cuttlefish"
 * osd: fix for an op ordering bug
 * osd: fix handling for split after upgrade from bobtail
 * osd: fix incorrect mark-down of osds
-* osd: fix internal heartbeart timeouts when scrubbing very large objects
+* osd: fix internal heartbeat timeouts when scrubbing very large objects
 * osd: fix memory/network inefficiency during deep scrub
 * osd: fixed problem with front-side heartbeats and mixed clusters (David Zafman)
 * osd: limit number of incremental osdmaps sent to peers (could cause osds to be wrongly marked down)
@@ -774,7 +774,7 @@ Notable changes
 * rgw: fix radosgw-admin buckets list (Yehuda Sadeh)
 * mds: support robust lookup by ino number (good for NFS) (Yan, Zheng)
 * mds: fix several bugs (Yan, Zheng)
-* ceph-fuse, libcephfs: fix truncatation bug on >4MB files (Yan, Zheng)
+* ceph-fuse, libcephfs: fix truncation bug on >4MB files (Yan, Zheng)
 * ceph/librados: fix resending of commands on mon reconnect
 * librados python: fix xattrs > 4KB (Josh Durgin)
 * librados: configurable max object size (default 100 GB)
@@ -915,7 +915,7 @@ Notable Changes
 * librbd: ability to read from local replicas
 * osd: resurrect partially deleted PGs
 * osd: prioritize recovery for degraded PGs
-* osd: fix internal heartbeart timeouts when scrubbing very large objects
+* osd: fix internal heartbeat timeouts when scrubbing very large objects
 * osd: close narrow journal race
 * rgw: fix usage log scanning for large, untrimmed logs
 * rgw: fix locking issue, user operation mask,

@@ -90,7 +90,7 @@ void CacheServer::handle_accept(CacheSessionPtr new_session,
                                 const boost::system::error_code& error) {
   ldout(cct, 20) << dendl;
   if (error) {
-    // operation_absort
+    // operation_abort
     lderr(cct) << "async accept fails : " << error.message() << dendl;
     return;
   }
@@ -98,7 +98,7 @@ void CacheServer::handle_accept(CacheSessionPtr new_session,
   // TODO(dehao) : session setting
   new_session->start();
 
-  // lanuch next accept
+  // launch next accept
   accept();
 }
 

@@ -2697,7 +2697,7 @@ void CDir::_commit(version_t want, int op_prio)
     return;
   }
 
-  // alrady committed an older version?
+  // already committed an older version?
   if (committing_version > committed_version) {
     dout(10) << "already committing older " << committing_version << ", waiting for that to finish" << dendl;
     return;
@@ -3273,7 +3273,7 @@ bool CDir::freeze_tree()
 
   auth_pin(this);
 
-  // Travese the subtree to mark dirfrags as 'freezing' (set freeze_tree_state)
+  // Traverse the subtree to mark dirfrags as 'freezing' (set freeze_tree_state)
   // and to accumulate auth pins and record total count in freeze_tree_state.
   // when auth unpin an 'freezing' object, the counter in freeze_tree_state also
   // gets decreased. Subtree become 'frozen' when the counter reaches zero.
@@ -3293,7 +3293,7 @@ bool CDir::freeze_tree()
     }
   );
 
-  if (is_freezeable(true)) {
+  if (is_freezable(true)) {
     _freeze_tree();
     auth_unpin(this);
     return true;
@@ -3308,7 +3308,7 @@ bool CDir::freeze_tree()
 void CDir::_freeze_tree()
 {
   dout(10) << __func__ << " " << *this << dendl;
-  ceph_assert(is_freezeable(true));
+  ceph_assert(is_freezable(true));
 
   if (freeze_tree_state) {
     ceph_assert(is_auth());
@@ -3527,7 +3527,7 @@ bool CDir::freeze_dir()
   ceph_assert(!is_freezing());
   
   auth_pin(this);
-  if (is_freezeable_dir(true)) {
+  if (is_freezable_dir(true)) {
     _freeze_dir();
     auth_unpin(this);
     return true;
@@ -3543,7 +3543,7 @@ bool CDir::freeze_dir()
 void CDir::_freeze_dir()
 {
   dout(10) << __func__ << " " << *this << dendl;
-  //assert(is_freezeable_dir(true));
+  //assert(is_freezable_dir(true));
   // not always true during split because the original fragment may have frozen a while
   // ago and we're just now getting around to breaking it up.
 
@@ -3564,7 +3564,7 @@ void CDir::unfreeze_dir()
     state_clear(STATE_FROZENDIR);
     put(PIN_FROZEN);
 
-    // unpin  (may => FREEZEABLE)   FIXME: is this order good?
+    // unpin  (may => FREEZABLE)   FIXME: is this order good?
     if (is_auth() && !is_subtree_root())
       inode->auth_unpin(this);
 

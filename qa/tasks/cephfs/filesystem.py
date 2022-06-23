@@ -389,7 +389,7 @@ class MDSCluster(CephCluster):
         """
         Block (using iptables) client communications to this MDS.  Be careful: if
         other services are running on this MDS, or other MDSs try to talk to this
-        MDS, their communications may also be blocked as collatoral damage.
+        MDS, their communications may also be blocked as collateral damage.
 
         :param mds_id: Optional ID of MDS to block, default to all
         :return:
@@ -1229,7 +1229,7 @@ class Filesystem(MDSCluster):
         Block until the MDS reaches a particular state, or a failure condition
         is met.
 
-        When there are multiple MDSs, succeed when exaclty one MDS is in the
+        When there are multiple MDSs, succeed when exactly one MDS is in the
         goal state, or fail when any MDS is in the reject state.
 
         :param goal_state: Return once the MDS is in this state

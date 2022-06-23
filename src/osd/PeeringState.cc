@@ -2563,7 +2563,7 @@ bool PeeringState::discover_all_missing(
 
     // If we've requested any of this stuff, the pg_missing_t information
     // should be on its way.
-    // TODO: coalsce requested_* into a single data structure
+    // TODO: coalesce requested_* into a single data structure
     if (peer_missing.find(peer) != peer_missing.end()) {
       psdout(20) << __func__ << ": osd." << peer
 		 << ": we already have pg_missing_t" << dendl;
@@ -2786,7 +2786,7 @@ void PeeringState::activate(
 	/* ^ This last case covers a situation where a replica is not contiguous
 	 * with the auth_log, but is contiguous with this replica.  Reshuffling
 	 * the active set to handle this would be tricky, so instead we just go
-	 * ahead and backfill it anyway.  This is probably preferrable in any
+	 * ahead and backfill it anyway.  This is probably preferable in any
 	 * case since the replica in question would have to be significantly
 	 * behind.
 	 */
@@ -6613,7 +6613,7 @@ void PeeringState::ToDelete::exit()
 PeeringState::WaitDeleteReserved::WaitDeleteReserved(my_context ctx)
   : my_base(ctx),
     NamedState(context< PeeringMachine >().state_history,
-	       "Started/ToDelete/WaitDeleteReseved")
+	       "Started/ToDelete/WaitDeleteReserved")
 {
   context< PeeringMachine >().log_enter(state_name);
   DECLARE_LOCALS;

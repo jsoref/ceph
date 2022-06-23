@@ -1768,7 +1768,7 @@ void MDCache::project_rstat_inode_to_frag(const MutationRef& mut,
     bool update = true;
     if (cur->state_test(CInode::STATE_AMBIGUOUSAUTH) && cur->is_auth()) {
       // rename src inode is not projected in the peer rename prep case. so we should
-      // avoid updateing the inode.
+      // avoid updating the inode.
       ceph_assert(linkunlink < 0);
       ceph_assert(cur->is_frozen_inode());
       update = false;
@@ -2010,7 +2010,7 @@ void MDCache::broadcast_quota_to_client(CInode *in, client_t exclude_ct, bool qu
   if (!pi->quota.is_enable() && !quota_change)
     return;
 
-  // creaete snaprealm for quota inode (quota was set before mimic)
+  // create snaprealm for quota inode (quota was set before mimic)
   if (!in->get_projected_srnode())
     mds->server->create_quota_realm(in);
 
@@ -2088,7 +2088,7 @@ update:
  * the rstat (nestlock) _may_ get updated without a wrlock when nested
  * data is pushed up the tree.  this could be changed with some
  * restructuring here, but in its current form we ensure that the
- * fragstat+rstat _always_ reflect an accurrate summation over the dir
+ * fragstat+rstat _always_ reflect an accurate summation over the dir
  * frag, which is nice.  and, we only need to track frags that need to
  * be nudged (and not inodes with pending rstat changes that need to
  * be pushed into the frag).  a consequence of this is that the
@@ -3278,7 +3278,7 @@ void MDCache::handle_resolve(const cref_t<MMDSResolve> &m)
   }    
 
   // update my dir_auth values
-  //   need to do this on recoverying nodes _and_ bystanders (to resolve ambiguous
+  //   need to do this on recovering nodes _and_ bystanders (to resolve ambiguous
   //   migrations between other nodes)
   for (const auto& p : m->subtrees) {
     dout(10) << "peer claims " << p.first << " bounds " << p.second << dendl;
@@ -4370,7 +4370,7 @@ void MDCache::handle_cache_rejoin_weak(const cref_t<MMDSCacheRejoin> &weak)
 
   if (mds->is_clientreplay() || mds->is_active() || mds->is_stopping()) {
     survivor = true;
-    dout(10) << "i am a surivivor, and will ack immediately" << dendl;
+    dout(10) << "i am a survivor, and will ack immediately" << dendl;
     ack = make_message<MMDSCacheRejoin>(MMDSCacheRejoin::OP_ACK);
 
     map<inodeno_t,map<client_t,Capability::Import> > imported_caps;
@@ -4823,7 +4823,7 @@ void MDCache::handle_cache_rejoin_strong(const cref_t<MMDSCacheRejoin> &strong)
 	  } else {
 	    // the survivor missed MDentryLink message ?
 	    ceph_assert(strong->strong_inodes.count(dnl->get_inode()->vino()) == 0);
-	    dout(7) << " sender doesn't have primay dentry" << dendl;
+	    dout(7) << " sender doesn't have primary dentry" << dendl;
 	  }
         } else {
 	  if (d.is_primary()) {
@@ -5898,7 +5898,7 @@ void MDCache::open_snaprealms()
 	  if (r->second.snap_follows < child->first - 1) {
 	    rebuild_need_snapflush(child, realm, r->first, r->second.snap_follows);
 	  } else if (r->second.snapflush) {
-	    // When processing a cap flush message that is re-sent, it's possble
+	    // When processing a cap flush message that is re-sent, it's possible
 	    // that the sender has already released all WR caps. So we should
 	    // force MDCache::cow_inode() to setup CInode::client_need_snapflush.
 	    cap->mark_needsnapflush();
@@ -7327,7 +7327,7 @@ void MDCache::trim_non_auth()
 
 /**
  * Recursively trim the subtree rooted at directory to remove all
- * CInodes/CDentrys/CDirs that aren't links to remote MDSes, or ancestors
+ * CInodes/CDentries/CDirs that aren't links to remote MDSes, or ancestors
  * of those links. This is used to clear invalid data out of the cache.
  * Note that it doesn't clear the passed-in directory, since that's not
  * always safe.
@@ -7770,7 +7770,7 @@ void MDCache::dentry_remove_replica(CDentry *dn, mds_rank_t from, set<SimpleLock
   if (dn->lock.remove_replica(from))
     gather_locks.insert(&dn->lock);
 
-  // Replicated strays might now be elegible for purge
+  // Replicated strays might now be eligible for purge
   CDentry::linkage_t *dnl = dn->get_projected_linkage();
   if (dnl->is_primary()) {
     maybe_eval_stray(dnl->get_inode());
@@ -9492,7 +9492,7 @@ void MDCache::handle_find_ino(const cref_t<MMDSFindIno> &m)
     dout(10) << " have " << r->path << " " << *in << dendl;
 
     /*
-     * If the the CInode was just created by using openc in current
+     * If the CInode was just created by using openc in current
      * auth MDS, but the client just sends a getattr request to another
      * replica MDS. Then here it will make a path of '#INODE-NUMBER'
      * only because the CInode hasn't been linked yet, and the replica
@@ -9902,7 +9902,7 @@ void MDCache::request_kill(MDRequestRef& mdr)
   mdr->mark_event("killing request");
 
   if (mdr->committing) {
-    dout(10) << "request_kill " << *mdr << " -- already committing, remove it from sesssion requests" << dendl;
+    dout(10) << "request_kill " << *mdr << " -- already committing, remove it from session requests" << dendl;
     mdr->item_session_request.remove_myself();
   } else {
     dout(10) << "request_kill " << *mdr << dendl;
@@ -10400,7 +10400,7 @@ void MDCache::handle_discover(const cref_t<MDiscover> &dis)
       // dentry specifies
       fg = cur->pick_dirfrag(dis->get_dentry(i));
     } else {
-      // requester explicity specified the frag
+      // requester explicitly specified the frag
       ceph_assert(dis->wants_base_dir() || MDS_INO_IS_BASE(dis->get_base_ino()));
       fg = dis->get_base_dir_frag();
       if (!cur->dirfragtree.is_leaf(fg))
@@ -10547,7 +10547,7 @@ void MDCache::handle_discover(const cref_t<MDiscover> &dis)
 
     // xlocked dentry?
     //  ...always block on non-tail items (they are unrelated)
-    //  ...allow xlocked tail disocvery _only_ if explicitly requested
+    //  ...allow xlocked tail discovery _only_ if explicitly requested
     if (dn->lock.is_xlocked()) {
       // is this the last (tail) item in the discover traversal?
       if (dis->is_path_locked()) {
@@ -10791,7 +10791,7 @@ void MDCache::encode_replica_inode(CInode *in, mds_rank_t to, bufferlist& bl,
   ceph_assert(in->is_auth());
 
   ENCODE_START(2, 1, bl);
-  encode(in->ino(), bl);  // bleh, minor assymetry here
+  encode(in->ino(), bl);  // bleh, minor asymmetry here
   encode(in->last, bl);
 
   __u32 nonce = in->add_replica(to);
@@ -11080,7 +11080,7 @@ void MDCache::handle_dir_update(const cref_t<MDirUpdate> &m)
   }
 
   if (!m->has_tried_discover()) {
-    // Update if it already exists. Othwerwise it got updated by discover reply.
+    // Update if it already exists. Otherwise it got updated by discover reply.
     dout(5) << "dir_update on " << *dir << dendl;
     dir->dir_rep = m->get_dir_rep();
     dir->dir_rep_by.clear();
@@ -13141,7 +13141,7 @@ void MDCache::repair_inode_stats_work(MDRequestRef& mdr)
   if (!mds->locker->acquire_locks(mdr, lov))
     return;
 
-  // Fetch all dirfrags and mark filelock/nestlock dirty. This will tirgger
+  // Fetch all dirfrags and mark filelock/nestlock dirty. This will trigger
   // the scatter-gather process, which will fix any fragstat/rstat errors.
   {
     frag_vec_t leaves;

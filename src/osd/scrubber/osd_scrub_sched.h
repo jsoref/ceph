@@ -77,7 +77,7 @@
 └─────────────────────────────────┘
 
 
-SqrubQueue interfaces (main functions):
+ScrubQueue interfaces (main functions):
 
 <1> - OSD/PG resources management:
 
@@ -333,7 +333,7 @@ class ScrubQueue {
   void register_with_osd(ScrubJobRef sjob, const sched_params_t& suggested);
 
   /**
-   * modify a scrub-job's schduled time and deadline
+   * modify a scrub-job's scheduled time and deadline
    *
    * There are 3 argument combinations to consider:
    * - 'must' is asserted, and the suggested time is 'scrub_must_stamp':
@@ -409,7 +409,7 @@ class ScrubQueue {
    *  variables. Specifically, the following are guaranteed:
    *  - 'in_queues' is asserted only if the job is in one of the queues;
    *  - a job will only be in state 'registered' if in one of the queues;
-   *  - no job will be in the two queues simulatenously
+   *  - no job will be in the two queues simultaneously
    *
    *  Note that PG locks should not be acquired while holding jobs_lock.
    */

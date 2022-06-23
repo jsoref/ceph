@@ -208,7 +208,7 @@ NVMeManager::find_block_ret NVMeManager::find_free_block(Transaction &t, size_t 
 			       convert_bitmap_block_no_to_block_id(i, addr), i);
 		if (allocated != 0 && alloc_extent.range_end() != block_id) {
 		  /*
-		   * if not continous block, just restart to find continuous blocks
+		   * if not continuous block, just restart to find continuous blocks
 		   * at the next block.
 		   * in-memory allocator can handle this efficiently.
 		   */
@@ -462,7 +462,7 @@ NVMeManager::write_ertr::future<> NVMeManager::sync_allocation(
 	  }
 	}
       }
-      logger().debug("complete_alloction: complete to allocate {} blocks",
+      logger().debug("complete_allocation: complete to allocate {} blocks",
 		     alloc_block_count);
       super.free_block_count -= alloc_block_count;
       return write_ertr::now();

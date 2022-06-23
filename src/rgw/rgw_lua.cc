@@ -148,7 +148,7 @@ int remove_package(const DoutPrefixProvider *dpp, rgw::sal::RadosStore* store, o
   librados::ObjectWriteOperation op;
   size_t pos = package_name.find(" ");
   if (pos != package_name.npos) {
-    // remove specfic version of the the package
+    // remove specific version of the package
     op.omap_rm_keys(std::set<std::string>({package_name}));
     auto ret = rgw_rados_operate(dpp, *(store->getRados()->get_lc_pool_ctx()),
         PACKAGE_LIST_OBJECT_NAME, &op, y);

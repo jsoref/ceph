@@ -23,7 +23,7 @@ namespace ceph {
 // on the shared mutex, and whether it's shared or exclusive doesn't
 // matter. In some circumstances they may drop the shared lock and
 // reacquire an exclusive one. This could be handled by passing both a
-// shared and unique lock down the call stack. This is vexacious and
+// shared and unique lock down the call stack. This is vexatious and
 // shameful.
 
 // Wanting to avoid heaping shame and vexation upon myself, I threw
@@ -263,7 +263,7 @@ public:
   }
 
   // Only have a single unlock method. Otherwise we'd be building an
-  // Acme lock class suitable only for ravenous coyotes desparate to
+  // Acme lock class suitable only for ravenous coyotes desperate to
   // devour a road runner. It would be bad. It would be disgusting. It
   // would be infelicitous as heck. It would leave our developers in a
   // state of seeming safety unaware of the yawning chasm of failure

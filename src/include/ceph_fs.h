@@ -283,9 +283,9 @@ struct ceph_mon_subscribe_ack {
 #define CEPH_MDSMAP_ALLOW_SNAPS                  (1<<1)  /* cluster allowed to create snapshots */
 /* deprecated #define CEPH_MDSMAP_ALLOW_MULTIMDS (1<<2) cluster allowed to have >1 active MDS */
 /* deprecated #define CEPH_MDSMAP_ALLOW_DIRFRAGS (1<<3) cluster allowed to fragment directories */
-#define CEPH_MDSMAP_ALLOW_MULTIMDS_SNAPS	     (1<<4)  /* cluster alllowed to enable MULTIMDS
+#define CEPH_MDSMAP_ALLOW_MULTIMDS_SNAPS	     (1<<4)  /* cluster allowed to enable MULTIMDS
                                                             and SNAPS at the same time */
-#define CEPH_MDSMAP_ALLOW_STANDBY_REPLAY         (1<<5)  /* cluster alllowed to enable MULTIMDS */
+#define CEPH_MDSMAP_ALLOW_STANDBY_REPLAY         (1<<5)  /* cluster allowed to enable MULTIMDS */
 
 #define CEPH_MDSMAP_DEFAULTS (CEPH_MDSMAP_ALLOW_SNAPS | \
 			      CEPH_MDSMAP_ALLOW_MULTIMDS_SNAPS)
@@ -479,7 +479,7 @@ int ceph_flags_sys2wire(int flags);
 #define CEPH_READDIR_HASH_ORDER		(1<<9)
 #define CEPH_READDIR_OFFSET_HASH       (1<<10)
 
-/* Note that this is embedded wthin ceph_mds_request_head_legacy. */
+/* Note that this is embedded within ceph_mds_request_head_legacy. */
 union ceph_mds_request_args_legacy {
 	struct {
 		__le32 mask;                 /* CEPH_CAP_* */
@@ -553,7 +553,7 @@ struct ceph_mds_request_head_legacy {
 } __attribute__ ((packed));
 
 /*
- * Note that this is embedded wthin ceph_mds_request_head. Also, compatibility
+ * Note that this is embedded within ceph_mds_request_head. Also, compatibility
  * with the ceph_mds_request_args_legacy must be maintained!
  */
 union ceph_mds_request_args {
@@ -981,7 +981,7 @@ struct ceph_mds_snap_head {
 	__le32 op;                /* CEPH_SNAP_OP_* */
 	__le64 split;             /* ino to split off, if any */
 	__le32 num_split_inos;    /* # inos belonging to new child realm */
-	__le32 num_split_realms;  /* # child realms udner new child realm */
+	__le32 num_split_realms;  /* # child realms under new child realm */
 	__le32 trace_len;         /* size of snap trace blob */
 } __attribute__ ((packed));
 /* followed by split ino list, then split realms, then the trace blob */

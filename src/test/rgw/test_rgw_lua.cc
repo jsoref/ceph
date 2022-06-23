@@ -523,7 +523,7 @@ TEST(TestRGWLua, UseFunction)
 {
 	const std::string script = R"(
 		function print_owner(owner)
-  		print("Owner Dispaly Name: " .. owner.DisplayName)
+  		print("Owner Display Name: " .. owner.DisplayName)
   		print("Owner Id: " .. owner.User.Id)
   		print("Owner Tenanet: " .. owner.User.Tenant)
 		end
@@ -732,7 +732,7 @@ TEST(TestRGWLuaBackground, RequestScript)
 
   DEFINE_REQ_STATE;
 
-  // to make sure test is consistent we have to puase the background
+  // to make sure test is consistent we have to pause the background
   lua_background.pause();
   const auto rc = lua::request::execute(nullptr, nullptr, nullptr, &s, "", request_script, &lua_background);
   ASSERT_EQ(rc, 0);

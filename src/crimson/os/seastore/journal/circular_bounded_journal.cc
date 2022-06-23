@@ -15,7 +15,7 @@ namespace crimson::os::seastore::journal {
 std::ostream &operator<<(std::ostream &out,
     const CircularBoundedJournal::cbj_header_t &header)
 {
-  return out << "cbj_header_t(magin=" << header.magic
+  return out << "cbj_header_t(magic=" << header.magic
 	     << ", uuid=" << header.uuid
 	     << ", block_size=" << header.block_size
 	     << ", size=" << header.size
@@ -173,7 +173,7 @@ CircularBoundedJournal::write_ertr::future<> CircularBoundedJournal::append_reco
     writes.push_back(std::make_pair(addr, bl));
   } else {
     // write remaining data---in this case,
-    // data is splited into two parts before due to the end of CircularBoundedJournal.
+    // data is split into two parts before due to the end of CircularBoundedJournal.
     // the following code is to write the second part
     bufferlist first_write, next_write;
     first_write.substr_of(bl, 0, get_journal_end() - addr);
@@ -381,7 +381,7 @@ Journal::replay_ret CircularBoundedJournal::replay(
 	  }
 	  auto [r_header, bl] = *ret;
 	  if (last_seq > r_header.committed_to.segment_seq) {
-	    DEBUG("found invalide record. stop replaying");
+	    DEBUG("found invalid record. stop replaying");
 	    return replay_ertr::make_ready_future<
 	      seastar::stop_iteration>(seastar::stop_iteration::yes);
 	  }
@@ -469,7 +469,7 @@ CircularBoundedJournal::return_record(record_group_header_t& header, bufferlist 
       read_record_ertr::ready_future_marker{},
       std::make_pair(header, std::move(bl)));
   } else {
-    DEBUG("invalid matadata");
+    DEBUG("invalid metadata");
     return read_record_ret(
       read_record_ertr::ready_future_marker{},
       std::nullopt);
@@ -513,10 +513,10 @@ CircularBoundedJournal::read_record_ret CircularBoundedJournal::read_record(padd
      *        <---- 1 block ----><--
      * -- 2 block --->
      *
-     *  If record has logner than read_length and its data is located across
-     *  the end of journal and the begining of journal, we need three reads
+     *  If record has longer than read_length and its data is located across
+     *  the end of journal and the beginning of journal, we need three reads
      *  ---reads of header, other remaining data before the end, and
-     *  the other remaining data from the begining.
+     *  the other remaining data from the beginning.
      *
      */
     if (h.mdlength + h.dlength > read_length) {
@@ -527,7 +527,7 @@ CircularBoundedJournal::read_record_ret CircularBoundedJournal::read_record(padd
       if (get_journal_end() < next_read_addr + next_read) {
 	// In this case, need two more reads.
 	// The first is to read remain bytes to the end of cbjournal
-	// The second is to read the data at the begining of cbjournal
+	// The second is to read the data at the beginning of cbjournal
 	next_read = get_journal_end() - (addr + read_length);
       }
       DEBUG("read_entry: additional reading addr {} length {}",
@@ -558,12 +558,12 @@ CircularBoundedJournal::read_record_ret CircularBoundedJournal::read_record(padd
 	).safe_then([this, h=h, last_bptr=std::move(last_bptr),
 	  bl=std::move(bl), FNAME]() mutable {
 	  bl.append(last_bptr);
-	  DEBUG("read_record: complte size {}", bl.length());
+	  DEBUG("read_record: complete size {}", bl.length());
 	  return return_record(h, bl);
 	});
       });
     } else {
-      DEBUG("read_record: complte size {}", bl.length());
+      DEBUG("read_record: complete size {}", bl.length());
       return return_record(h, bl);
     }
   });
@@ -577,7 +577,7 @@ CircularBoundedJournal::write_header()
   try {
     bl = encode_header();
   } catch (ceph::buffer::error &e) {
-    DEBUG("unable to encode header block from underlying deivce");
+    DEBUG("unable to encode header block from underlying device");
     return crimson::ct_error::input_output_error::make();
   }
   ceph_assert(bl.length() + sizeof(checksum_t) < get_block_size());

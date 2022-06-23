@@ -309,7 +309,7 @@ def dmsetup_splitname(dev):
     Run ``dmsetup splitname`` and parse the results.
 
     .. warning:: This call does not ensure that the device is correct or that
-    it exists. ``dmsetup`` will happily take a non existing path and still
+    it exists. ``dmsetup`` will happily take a nonexistent path and still
     return a 0 exit status.
     """
     command = [
@@ -465,7 +465,7 @@ def get_pvs(fields=PV_FIELDS, filters='', tags=None):
                    pvs command
     :param sep: string containing separator to be used between two fields
     :param filters: dictionary containing LVM filters
-    :param tags: dictionary containng LVM tags
+    :param tags: dictionary containing LVM tags
     :returns: list of class PVolume object representing pvs on the system
     """
     filters = make_filters_lvmcmd_ready(filters, tags)
@@ -604,7 +604,7 @@ class VolumeGroup(object):
         some uncertainty involved. If size/extent_size is within 1% of the
         actual free extents we will return the extent count, otherwise we'll
         throw an error.
-        This accomodates for the size calculation in batch. We need to report
+        This accommodates for the size calculation in batch. We need to report
         the OSD layout but have not yet created any LVM structures. We use the
         disk size in batch if no VG is present and that will overshoot the
         actual free_extent count due to LVM overhead.
@@ -747,7 +747,7 @@ def get_vgs(fields=VG_FIELDS, filters='', tags=None):
                    vgs command
     :param sep: string containing separator to be used between two fields
     :param filters: dictionary containing LVM filters
-    :param tags: dictionary containng LVM tags
+    :param tags: dictionary containing LVM tags
     :returns: list of class VolumeGroup object representing vgs on the system
     """
     filters = make_filters_lvmcmd_ready(filters, tags)
@@ -941,7 +941,7 @@ def create_lv(name_prefix,
 
         {"ceph.block_device": "/dev/ceph/osd-1"}
 
-    :param name_prefix: name prefix for the LV, typically somehting like ceph-osd-block
+    :param name_prefix: name prefix for the LV, typically something like ceph-osd-block
     :param uuid: UUID to ensure uniqueness; is combined with name_prefix to
                  form the LV name
     :param vg: optional, pass an existing VG to create LV
@@ -1109,7 +1109,7 @@ def get_lvs(fields=LV_FIELDS, filters='', tags=None):
                    lvs command
     :param sep: string containing separator to be used between two fields
     :param filters: dictionary containing LVM filters
-    :param tags: dictionary containng LVM tags
+    :param tags: dictionary containing LVM tags
     :returns: list of class Volume object representing LVs on the system
     """
     filters = make_filters_lvmcmd_ready(filters, tags)

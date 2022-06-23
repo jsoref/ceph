@@ -52,7 +52,7 @@
  *    because 13.2.z (mimic) did not care if its peers advertised this
  *    feature bit.
  *
- *  - In the second phase we stop advertising the the bit and call it
+ *  - In the second phase we stop advertising the bit and call it
  *    RETIRED.  This can normally be done 2 major releases
  *    following the one in which we marked the feature DEPRECATED.  In
  *    the above example, for 15.0.z (octopus) we can say:
@@ -60,7 +60,7 @@
  *      DEFINE_CEPH_FEATURE_RETIRED( 2, 1, MON_METADATA, MIMIC, OCTOPUS)
  *
  *  - The bit can be reused in the next release that will never talk to
- *    a pre-octopus daemon (13 mimic or 14 nautlius) that advertises the
+ *    a pre-octopus daemon (13 mimic or 14 nautilus) that advertises the
  *    bit: in this case, the 16.y.z (P-release).
  *
  * This ensures that no two versions who have different meanings for

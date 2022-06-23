@@ -160,7 +160,7 @@ class Manager : public DoutPrefixProvider {
   };
 
   // processing of a specific entry
-  // return whether processing was successfull (true) or not (false)
+  // return whether processing was successful (true) or not (false)
   bool process_entry(const cls_queue_entry& entry, yield_context yield) {
     event_entry_t event_entry;
     auto iter = entry.data.cbegin();
@@ -319,7 +319,7 @@ class Manager : public DoutPrefixProvider {
               remove_entries = true;
             }  else {
               if (set_min_marker(end_marker, entry.marker) < 0) {
-                ldpp_dout(this, 1) << "ERROR: cannot determin minimum between malformed markers: " << end_marker << ", " << entry.marker << dendl;
+                ldpp_dout(this, 1) << "ERROR: cannot determine minimum between malformed markers: " << end_marker << ", " << entry.marker << dendl;
               } else {
                 ldpp_dout(this, 20) << "INFO: new end marker for removal: " << end_marker << " from: " << queue_name << dendl;
               }
@@ -405,7 +405,7 @@ class Manager : public DoutPrefixProvider {
 
       for (const auto& queue_name : queues) {
         // try to lock the queue to check if it is owned by this rgw
-        // or if ownershif needs to be taken
+        // or if ownership needs to be taken
         librados::ObjectWriteOperation op;
         op.assert_exists();
         rados::cls::lock::lock(&op, queue_name+"_lock", 
@@ -440,7 +440,7 @@ class Manager : public DoutPrefixProvider {
           // start processing this queue
           spawn::spawn(io_context, [this, &queue_gc, &queue_gc_lock, queue_name](yield_context yield) {
             process_queue(queue_name, yield);
-            // if queue processing ended, it measn that the queue was removed or not owned anymore
+            // if queue processing ended, it means that the queue was removed or not owned anymore
             // mark it for deletion
             std::lock_guard lock_guard(queue_gc_lock);
             queue_gc.push_back(queue_name);
@@ -616,7 +616,7 @@ int remove_persistent_topic(const std::string& topic_name, optional_yield y) {
   return s_manager->remove_persistent_topic(topic_name, y);
 }
 
-rgw::sal::Object* get_object_with_atttributes(
+rgw::sal::Object* get_object_with_attributes(
   const reservation_t& res, rgw::sal::Object* obj) {
   // in case of copy obj, the tags and metadata are taken from source
   const auto src_obj = res.src_object ? res.src_object : obj;
@@ -634,7 +634,7 @@ rgw::sal::Object* get_object_with_atttributes(
 static inline void metadata_from_attributes(
   reservation_t& res, rgw::sal::Object* obj) {
   auto& metadata = res.x_meta_map;
-  const auto src_obj = get_object_with_atttributes(res, obj);
+  const auto src_obj = get_object_with_attributes(res, obj);
   if (!src_obj) {
     return;
   }
@@ -651,7 +651,7 @@ static inline void metadata_from_attributes(
 
 static inline void tags_from_attributes(
   const reservation_t& res, rgw::sal::Object* obj, KeyMultiValueMap& tags) {
-  const auto src_obj = get_object_with_atttributes(res, obj);
+  const auto src_obj = get_object_with_attributes(res, obj);
   if (!src_obj) {
     return;
   }

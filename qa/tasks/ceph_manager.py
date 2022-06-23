@@ -1530,7 +1530,7 @@ class CephManager:
         if self.config is None:
             self.config = dict()
 
-        # NOTE: These variables are meant to be overriden by vstart_runner.py.
+        # NOTE: These variables are meant to be overridden by vstart_runner.py.
         self.rook = rook
         self.cephadm = cephadm
         self.testdir = teuthology.get_testdir(self.ctx)
@@ -3119,7 +3119,7 @@ class CephManager:
                     if len(self.get_mon_quorum()) == size:
                         break
                 except CommandFailedError as e:
-                    # could fail instea4d of blocked if the rotating key of the
+                    # could fail instead of blocked if the rotating key of the
                     # connected monitor is not updated yet after they form the
                     # quorum
                     if e.exitstatus == errno.EACCES:

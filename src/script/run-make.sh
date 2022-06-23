@@ -71,7 +71,7 @@ function do_install() {
     if test $ret -eq 0 ; then
         return
     fi
-    # try harder if apt-get, and it was interrutped
+    # try harder if apt-get, and it was interrupted
     if [[ $install_cmd == *"apt-get"* ]]; then
         if test $ret -eq 100 ; then
             # dpkg was interrupted

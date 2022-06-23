@@ -108,7 +108,7 @@ unlock_mtab (void) {
  * maximal number of attempts has been 5.
  *
  * There was very small number of attempts and extremely long waiting (1s)
- * that is useless on machines with large number of concurret mount processes.
+ * that is useless on machines with large number of concurrent mount processes.
  *
  * Now we wait few thousand microseconds between attempts and we have global
  * time limit (30s) rather than limit for number of attempts. The advantage
@@ -226,7 +226,7 @@ lock_mtab (void) {
 				if (fcntl (lockfile_fd, F_SETLKW, &flock) == -1) {
 					int errsv = errno;
 					(void) unlink(linktargetfile);
-					die (EX_FILEIO, "can't lock lock file %s: %s",
+					die (EX_FILEIO, "can't lock file %s: %s",
 					     _PATH_MOUNTED_LOCK, (errno == EINTR) ?
 					     "timed out" : strerror (errsv));
 				}

@@ -241,7 +241,7 @@ int Dumper::undump(const char *dump_file, bool force)
   sscanf(strstr(buf, "format"), "format %llu", &format);
 
   if (!force) {
-    // need to check if fsid match onlien cluster fsid
+    // need to check if fsid match online cluster fsid
     if (strstr(buf, "fsid")) {
       uuid_d fsid;
       char fsid_str[40];
@@ -260,7 +260,7 @@ int Dumper::undump(const char *dump_file, bool force)
 	return -EINVAL;
       }
     } else {
-      derr  << "Invalid header, no fsid embeded" << dendl;
+      derr  << "Invalid header, no fsid embedded" << dendl;
       ::close(fd);
       return -EINVAL;
     }

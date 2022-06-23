@@ -1016,7 +1016,7 @@ class Module(MgrModule):
         },
         {
             "cmd": "k8sevents ls",
-            "desc": "List all current Kuberenetes events from the Ceph namespace",
+            "desc": "List all current Kubernetes events from the Ceph namespace",
             "perm": "r"
         },
         {
@@ -1031,7 +1031,7 @@ class Module(MgrModule):
         },
         {
             "cmd": "k8sevents set-config name=key,type=CephString name=value,type=CephString",
-            "desc": "Set kubernetes config paramters. <key> must be server or namespace (e.g., ceph k8sevents set-config server https://localhost:30433).",
+            "desc": "Set kubernetes config parameters. <key> must be server or namespace (e.g., ceph k8sevents set-config server https://localhost:30433).",
             "perm": "rw"
         },
         {

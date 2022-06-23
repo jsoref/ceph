@@ -130,7 +130,7 @@ TEST_F(PrioritizedQueueTest, lowest_among_eligible_otherwise_highest) {
 }
 
 static const unsigned num_classes = 4;
-// just a determinitic number
+// just a deterministic number
 #define ITEM_TO_CLASS(item_) Klass((item_ + 43) % num_classes)
 
 TEST_F(PrioritizedQueueTest, fairness_by_class) {
@@ -147,7 +147,7 @@ TEST_F(PrioritizedQueueTest, fairness_by_class) {
     pq.enqueue(k, priority, cost, Item(item));
   }
   // just sample first 1/2 of the items
-  // if i pick too small a dataset, the result won't be statisitcally
+  // if i pick too small a dataset, the result won't be statistically
   // significant. if the sample dataset is too large, it will converge to the
   // distribution of the full set.
   vector<unsigned> num_picked_in_class(num_classes, 0u);
@@ -195,7 +195,7 @@ TEST_F(PrioritizedQueueTest, remove_by_class) {
   EXPECT_EQ(num_to_remove, removed.size());
   EXPECT_EQ(item_size - num_to_remove, pq.length());
   EXPECT_EQ(item_size - num_to_remove, items.size());
-  // see if the remainder are expeceted also.
+  // see if the remainder are expected also.
   while (!pq.empty()) {
     const Item item = pq.dequeue();
     Klass k = ITEM_TO_CLASS(item);

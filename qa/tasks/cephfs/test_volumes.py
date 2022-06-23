@@ -514,7 +514,7 @@ class TestVolumes(TestVolumesHelper):
 
     def test_volume_rm_when_mon_delete_pool_false(self):
         """
-        That the volume can only be removed when mon_allowd_pool_delete is set
+        That the volume can only be removed when mon_allowed_pool_delete is set
         to true and verify that the pools are removed after volume deletion.
         """
         for m in self.mounts:
@@ -2168,7 +2168,7 @@ class TestSubvolumes(TestVolumesHelper):
         # verify trash dir is clean
         self._wait_for_trash_empty()
 
-    def test_subvolume_ls_for_notexistent_default_group(self):
+    def test_subvolume_ls_for_nonexistent_default_group(self):
         # tests the 'fs subvolume ls' command when the default group '_nogroup' doesn't exist
         # prerequisite: we expect that the volume is created and the default group _nogroup is
         # NOT created (i.e. a subvolume without group is not created)
@@ -4267,7 +4267,7 @@ class TestSubvolumeSnapshots(TestVolumesHelper):
         except CommandFailedError as ce:
             self.assertEqual(ce.exitstatus, errno.EINVAL, msg="invalid error code when removing inherited snapshot")
         else:
-            self.fail("expected removing inheirted snapshot to fail")
+            self.fail("expected removing inherited snapshot to fail")
 
         # remove ancestral snapshots
         self.mount_a.run_shell(['rmdir', ancestral_snappath1], sudo=True)
@@ -4661,7 +4661,7 @@ class TestSubvolumeSnapshots(TestVolumesHelper):
         self._wait_for_trash_empty()
 
     def test_subvolume_snapshot_rm_force(self):
-        # test removing non existing subvolume snapshot with --force
+        # test removing nonexistent subvolume snapshot with --force
         subvolume = self._generate_random_subvolume_name()
         snapshot = self._generate_random_snapshot_name()
 
@@ -6044,7 +6044,7 @@ class TestSubvolumeSnapshotClones(TestVolumesHelper):
         # wait for clone1 to be in-progress
         self._wait_for_clone_to_be_in_progress(clone1)
 
-        # cancel in-progess clone1
+        # cancel in-progress clone1
         self._fs_cmd("clone", "cancel", self.volname, clone1)
 
         # check clone1 status
@@ -6135,7 +6135,7 @@ class TestSubvolumeSnapshotClones(TestVolumesHelper):
     def test_subvolume_snapshot_in_complete_clone_rm(self):
         """
         Validates the removal of clone when it is not in 'complete|cancelled|failed' state.
-        The forceful removl of subvolume clone succeeds only if it's in any of the
+        The forceful removal of subvolume clone succeeds only if it's in any of the
         'complete|cancelled|failed' states. It fails with EAGAIN in any other states.
         """
 
@@ -6863,7 +6863,7 @@ class TestMisc(TestVolumesHelper):
         self._fs_cmd('volume', 'rm', volname, '--yes-i-really-mean-it')
 
     def test_subvolume_ops_on_nonexistent_vol(self):
-        # tests the fs subvolume operations on non existing volume
+        # tests the fs subvolume operations on nonexistent volume
 
         volname = "non_existent_subvolume"
 

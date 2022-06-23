@@ -1029,7 +1029,7 @@ int ceph_fchown(struct ceph_mount_info *cmount, int fd, int uid, int gid);
 int ceph_lchown(struct ceph_mount_info *cmount, const char *path, int uid, int gid);
 
 /**
- * Change the ownership of a file/directory releative to a file descriptor.
+ * Change the ownership of a file/directory relative to a file descriptor.
  *
  * @param cmount the ceph mount handle to use for performing the chown.
  * @param dirfd open file descriptor (or CEPHFS_AT_FDCWD)
@@ -1330,7 +1330,7 @@ int ceph_lazyio(struct ceph_mount_info *cmount, int fd, int enable);
 
 
 /**
- * Flushes the write buffer for the file thereby propogating the buffered write to the file.
+ * Flushes the write buffer for the file thereby propagating the buffered write to the file.
  *
  * @param cmount the ceph mount handle to use for performing the fsync.
  * @param fd the file descriptor of the file to sync.
@@ -2100,7 +2100,7 @@ void ceph_finish_reclaim(struct ceph_mount_info *cmount);
  *
  * This is deprecated, use ceph_ll_register_callbacks2() instead.
  *
- * @param cmount the ceph mount handle on which the cb's should be registerd
+ * @param cmount the ceph mount handle on which the cb's should be registered
  * @param args   callback arguments to register with the cmount
  *
  * Any fields set to NULL will be ignored. There currently is no way to
@@ -2111,7 +2111,7 @@ void ceph_ll_register_callbacks(struct ceph_mount_info *cmount,
 
 /**
  * Register a set of callbacks to be used with this cmount
- * @param cmount the ceph mount handle on which the cb's should be registerd
+ * @param cmount the ceph mount handle on which the cb's should be registered
  * @param args   callback arguments to register with the cmount
  *
  * Any fields set to NULL will be ignored. There currently is no way to

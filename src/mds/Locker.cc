@@ -3096,7 +3096,7 @@ bool Locker::should_defer_client_cap_frozen(CInode *in)
    * because when the caps can't get revoked.
    *
    * No auth_pin implies that there is no unstable lock and @in is not auth
-   * pinnned by client request. If parent dirfrag is auth pinned by a lock
+   * pinned by client request. If parent dirfrag is auth pinned by a lock
    * cache, later request from lock cache owner may forcibly auth pin the @in.
    */
   if (in->is_freezing() && in->get_num_auth_pins() == 0) {
@@ -3377,7 +3377,7 @@ void Locker::handle_client_caps(const cref_t<MClientCaps> &m)
     int new_wanted = m->get_wanted();
     if (new_wanted != cap->wanted()) {
       if (!need_flush && in->is_auth() && (new_wanted & ~cap->pending())) {
-	// exapnding caps.  make sure we aren't waiting for a log flush
+	// expanding caps.  make sure we aren't waiting for a log flush
 	need_flush = _need_flush_mdlog(head_in, new_wanted & ~cap->pending());
       }
 

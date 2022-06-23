@@ -104,7 +104,7 @@ Notable changes
 * rgw: fix multipat upload listing
 * rgw: don't copy object when copied onto self
 * osd: fix caps parsing for pools with - or _
-* osd: allow pg log trimming when degraded, scrubbing, recoverying (reducing memory consumption)
+* osd: allow pg log trimming when degraded, scrubbing, recovering (reducing memory consumption)
 * osd: fix potential deadlock when 'journal aio = true'
 * osd: various fixes for collection creation/removal, rename, temp collections
 * osd: various fixes for PG split
@@ -200,7 +200,7 @@ Notable changes
 * osd: scrub snapshot metadata
 * osd: fix osdmap trimming
 * osd: misc peering fixes
-* osd: stop heartbeating with peers if internal threads are stuck/hung
+* osd: stop heart beating with peers if internal threads are stuck/hung
 * osd: PG removal is friendlier to other workloads
 * osd: fix recovery start delay (was causing very slow recovery)
 * osd: fix scheduling of explicitly requested scrubs
@@ -331,7 +331,7 @@ Compatibility changes
 ---------------------
 
 * The 'ceph osd create [<uuid>]' command now rejects an argument that
-  is not a UUID.  (Previously it would take take an optional integer
+  is not a UUID.  (Previously it would take an optional integer
   OSD id.)  This correct syntax has been 'ceph osd create [<uuid>]'
   since v0.47, but the older calling convention was being silently
   ignored.
@@ -422,7 +422,7 @@ Notable changes
 * ceph.spec: misc packaging fixes
 * common: thread pool sizes can now be adjusted at runtime
 * config: $pid is now available as a metavariable
-* crush: default root of tree type is now 'root' instead of 'pool' (to avoid confusiong wrt rados pools)
+* crush: default root of tree type is now 'root' instead of 'pool' (to avoid confusion wrt rados pools)
 * crush: fixed retry behavior with chooseleaf via tunable
 * crush: tunables documented; feature bit now present and enforced
 * libcephfs: java wrapper

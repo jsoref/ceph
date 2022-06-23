@@ -828,7 +828,7 @@ void ProtocolV2::execute_connecting()
             abort_protocol();
           }
           if (socket) {
-            gate.dispatch_in_background("close_sockect_connecting", *this,
+            gate.dispatch_in_background("close_socket_connecting", *this,
                            [sock = std::move(socket)] () mutable {
               return sock->close().then([sock = std::move(sock)] {});
             });
@@ -1079,7 +1079,7 @@ ProtocolV2::reuse_connection(
   }
 #endif
   // close this connection because all the necessary information is delivered
-  // to the exisiting connection, and jump to error handling code to abort the
+  // to the existing connection, and jump to error handling code to abort the
   // current state.
   abort_in_close(*this, false);
   return seastar::make_ready_future<next_step_t>(next_step_t::none);
@@ -1449,7 +1449,7 @@ ProtocolV2::server_reconnect()
         return send_wait();
       }
     } else { // existing_proto->connect_seq < reconnect.connect_seq()
-      logger().warn("{} server_reconnect: stale exsiting connect_seq exist_cs({}) < peer_cs({}),"
+      logger().warn("{} server_reconnect: stale existing connect_seq exist_cs({}) < peer_cs({}),"
                     " reusing existing {}",
                     conn, existing_proto->connect_seq,
                     reconnect.connect_seq(), *existing_conn);

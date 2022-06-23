@@ -108,8 +108,8 @@ struct RadosStriperImpl {
 
   // asynchronous remove. Note that the removal is not 100% parallelized :
   // the removal of the first rados object of the striped object will be
-  // done via a syncrhonous call after the completion of all other removals.
-  // These are done asynchrounously and in parallel
+  // done via a synchronous call after the completion of all other removals.
+  // These are done asynchronously and in parallel
   int aio_remove(const std::string& soid, librados::AioCompletionImpl *c, int flags=0);
 
   // reference counting
@@ -179,7 +179,7 @@ struct RadosStriperImpl {
   /**
    * opens an existing striped object and takes a shared lock on it
    * @return 0 if everything is ok and the lock was taken. -errcode otherwise
-   * In particulae, if the striped object does not exists, -ENOENT is returned
+   * In particular, if the striped object does not exists, -ENOENT is returned
    * In case the return code in not 0, no lock is taken
    */
   int openStripedObjectForRead(const std::string& soid,

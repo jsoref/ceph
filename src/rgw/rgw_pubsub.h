@@ -700,7 +700,7 @@ public:
     int get_conf(rgw_pubsub_sub_config* result);
     
     static const int DEFAULT_MAX_EVENTS = 100;
-    // followint virtual methods should only be called in derived
+    // following virtual methods should only be called in derived
     virtual int list_events(const DoutPrefixProvider *dpp, const std::string& marker, int max_events) {ceph_assert(false);}
     virtual int remove_event(const DoutPrefixProvider *dpp, const std::string& event_id) {ceph_assert(false);}
     virtual void dump(Formatter* f) const {ceph_assert(false);}
@@ -771,7 +771,7 @@ public:
   // return 0 on success, error code otherwise
   int create_topic(const DoutPrefixProvider *dpp, const std::string& name, optional_yield y);
   // create a topic with push destination information and ARN
-  // if the topic already exists the destination and ARN values may be updated (considered succsess)
+  // if the topic already exists the destination and ARN values may be updated (considered success)
   // return 0 on success, error code otherwise
   int create_topic(const DoutPrefixProvider *dpp, const std::string& name, const rgw_pubsub_sub_dest& dest, const std::string& arn, const std::string& opaque_data, optional_yield y);
   // remove a topic according to its name

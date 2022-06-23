@@ -1,4 +1,4 @@
-/* Javascript plotting library for jQuery, version 0.8.3.
+/* JavaScript plotting library for jQuery, version 0.8.3.
 
 Copyright (c) 2007-2014 IOLA and Ole Laursen.
 Licensed under the MIT license.
@@ -298,7 +298,7 @@ Licensed under the MIT license.
 	//
 	// Each position after the first receives a clone of the original element.
 	//
-	// The idea is that that the width, height, and general 'identity' of the
+	// The idea is that the width, height, and general 'identity' of the
 	// text is constant no matter where it is placed; the placements are a
 	// secondary property.
 	//
@@ -517,7 +517,7 @@ Licensed under the MIT license.
                 colors: ["#edc240", "#afd8f8", "#cb4b4b", "#4da74d", "#9440ed"],
                 legend: {
                     show: true,
-                    noColumns: 1, // number of colums in legend table
+                    noColumns: 1, // number of columns in legend table
                     labelFormatter: null, // fn: string -> string
                     labelBoxBorderColor: "#ccc", // border color for the little label boxes
                     container: null, // container (as jQuery object) to put legend in, null means default on top of graph

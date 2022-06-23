@@ -95,7 +95,7 @@ class TestAddDataPool(TestAdminCommands):
         self.mount_a.run_shell("mkdir subdir")
         self.fs.set_dir_layout(self.mount_a, "subdir", FileLayout(pool=p))
 
-    def test_add_data_pool_non_alphamueric_name_as_subdir(self):
+    def test_add_data_pool_non_alphanumeric_name_as_subdir(self):
         """
         That a new data pool with non-alphanumeric name can be added and used for a sub-directory.
         """
@@ -322,7 +322,7 @@ class TestFsNew(TestAdminCommands):
             self.run_cluster_cmd(f'fs new {fs_name} {pool_names[0]} {pool_names[1]} --fscid  {fscid}')
         except CommandFailedError as ce:
             self.assertEqual(ce.exitstatus, errno.EINVAL,
-                "invalid error code on creating a file system with specifc ID without --force flag")
+                "invalid error code on creating a file system with specific ID without --force flag")
         else:
             self.fail("expected creating file system with specific ID without '--force' flag to fail")
 
@@ -341,7 +341,7 @@ class TestFsNew(TestAdminCommands):
             self.run_cluster_cmd(f'fs new {fs_name} {pool_names[0]} {pool_names[1]} --fscid  {fscid} --force')
         except CommandFailedError as ce:
             self.assertEqual(ce.exitstatus, errno.EINVAL,
-                "invalid error code on creating a file system with specifc ID that is already in use")
+                "invalid error code on creating a file system with specific ID that is already in use")
         else:
             self.fail("expected creating file system with ID already in use to fail")
 
@@ -494,7 +494,7 @@ class TestFsNew(TestAdminCommands):
 
     def test_fs_new_interchange_already_in_use_metadata_and_data_pool_of_different_fs(self):
         """
-        That creating file system with interchanging metadata and data pool which is already in use by defferent fs.
+        That creating file system with interchanging metadata and data pool which is already in use by different fs.
         """
 
         # create first data pool, metadata pool and add with filesystem

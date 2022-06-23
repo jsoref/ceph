@@ -108,7 +108,7 @@ def test_repair_bad_omap(ctx, manager, pg, osd, objname):
     manager.osd_admin_socket(osd, ['setomapheader', 'rbd', objname, 'badhdr'])
 
     deep_scrub(manager, pg, 'rbd')
-    # please note, the repair here is errnomous, it rewrites the correct omap
+    # please note, the repair here is erroneous, it rewrites the correct omap
     # digest and data digest on the replicas with the corresponding digests
     # from the primary osd which is hosting the victim object, see
     # find_victim_object().
@@ -338,7 +338,7 @@ def task(ctx, config):
         - shard [0-9]+ .* : missing
         - deep-scrub 1 missing, 1 inconsistent objects
         - does not match object info size
-        - attr name mistmatch
+        - attr name mismatch
         - deep-scrub 1 missing, 0 inconsistent objects
         - failed to pick suitable auth object
         - candidate size [0-9]+ info size [0-9]+ mismatch

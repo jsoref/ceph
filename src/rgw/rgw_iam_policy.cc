@@ -499,7 +499,7 @@ bool ParseState::do_string(CephContext* cct, const char* s, size_t l) {
   auto k = pp->tokens.lookup(s, l);
   Policy& p = pp->policy;
   bool is_action = false;
-  bool is_validaction = false;
+  bool is_validation = false;
   Statement* t = p.statements.empty() ? nullptr : &(p.statements.back());
 
   // Top level!
@@ -524,13 +524,13 @@ bool ParseState::do_string(CephContext* cct, const char* s, size_t l) {
 	     (w->id == TokenID::NotAction)) {
     is_action = true;
     if (*s == '*') {
-      is_validaction = true;
+      is_validation = true;
       (w->id == TokenID::Action ?
         t->action = allValue : t->notaction = allValue);
     } else {
       for (auto& p : actpairs) {
         if (match_policy({s, l}, p.name, MATCH_POLICY_ACTION)) {
-          is_validaction = true;
+          is_validation = true;
           (w->id == TokenID::Action ? t->action[p.bit] = 1 : t->notaction[p.bit] = 1);
         }
         if ((t->action & s3AllValue) == s3AllValue) {
@@ -606,7 +606,7 @@ bool ParseState::do_string(CephContext* cct, const char* s, size_t l) {
     pp->s.pop_back();
   }
 
-  if (is_action && !is_validaction){
+  if (is_action && !is_validation){
     return false;
   }
 

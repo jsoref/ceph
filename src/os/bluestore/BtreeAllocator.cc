@@ -135,7 +135,7 @@ void BtreeAllocator::_process_range_removal(uint64_t start, uint64_t end,
     range_seg_t seg_after{end, seg_whole.end};
     range_tree.emplace_hint(rs, seg_after.start, seg_after.end);
     range_size_tree.emplace(seg_after);
-    // shink the left seg in offset tree
+    // shrink the left seg in offset tree
     rs->second = start;
     // insert the shrinked left seg back into size tree
     range_size_tree.emplace(seg_whole.start, start);

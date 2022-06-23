@@ -46,7 +46,7 @@ void DataScan::usage()
     << "  cephfs-data-scan pg_files <path> <pg id> [<pg id>...]\n"
     << "  cephfs-data-scan scan_links\n"
     << "\n"
-    << "    --force-corrupt: overrite apparently corrupt structures\n"
+    << "    --force-corrupt: overwrite apparently corrupt structures\n"
     << "    --force-init: write root inodes even if they exist\n"
     << "    --force-pool: use data pool even if it is not in FSMap\n"
     << "    --worker_m: Maximum number of workers\n"
@@ -820,7 +820,7 @@ int DataScan::scan_inodes()
       }
     }
 
-    // Santity checking backtrace ino against object name
+    // Sanity checking backtrace ino against object name
     if (have_backtrace && backtrace.ino != obj_name_ino) {
       dout(4) << "Backtrace ino 0x" << std::hex << backtrace.ino
         << " doesn't match object name ino 0x" << obj_name_ino
@@ -1359,7 +1359,7 @@ int DataScan::scan_frags()
 
     bool have_backtrace = !(backtrace.ancestors.empty());
 
-    // Santity checking backtrace ino against object name
+    // Sanity checking backtrace ino against object name
     if (have_backtrace && backtrace.ino != obj_name_ino) {
       dout(4) << "Backtrace ino 0x" << std::hex << backtrace.ino
         << " doesn't match object name ino 0x" << obj_name_ino

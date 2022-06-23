@@ -70,7 +70,7 @@
  * so that the head object is removed last, making the completion of the deletion atomic.
  *
  * Striped objects can be sparse, typically in case data was written at the end of the
- * striped object only. In such a case, some rados objects constituing the striped object
+ * striped object only. In such a case, some rados objects constituting the striped object
  * may be missing. Other can be partial (only the beginning will have data)
  * When dealing with such sparse striped files, missing objects are detected and
  * considered as full of 0s. They are however not created until real data is written
@@ -378,10 +378,10 @@ private:
  * versions (time_t or struct timespec)
  */
 struct BasicStatCompletionData : CompletionData {
-  // MultiAioCompletionImpl used to handle the double aysnc
+  // MultiAioCompletionImpl used to handle the double async
   // call in the back (stat + getxattr)
   libradosstriper::MultiAioCompletionImpl *m_multiCompletion;
-  // where to store the size of first objct
+  // where to store the size of first object
   // this will be ignored but we need a place to store it when
   // async stat is called
   uint64_t m_objectSize;
@@ -1491,7 +1491,7 @@ int libradosstriper::RadosStriperImpl::truncate(const std::string& soid,
   libradosstriper::MultiAioCompletionImplPtr multi_completion{
     new libradosstriper::MultiAioCompletionImpl, false};
   multi_completion->set_complete_callback(cdata->get() /* create ref! */, striper_truncate_aio_req_complete);
-  // call asynchrous version of truncate
+  // call asynchronous version of truncate
   int rc = aio_truncate(soid, multi_completion, original_size, size, layout);
   // wait for completion of the truncation
   multi_completion->finish_adding_requests();

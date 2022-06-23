@@ -1678,7 +1678,7 @@ cdef class Completion(object):
 
     def get_return_value(self) -> int:
         """
-        Get the return value of an asychronous operation
+        Get the return value of an asynchronous operation
 
         The return value is set when the operation is complete or safe,
         whichever comes first.
@@ -4010,7 +4010,7 @@ returned %d, but should return zero on success." % (self.name, ret))
         :param app_name: application name
         :type app_name: str
         :param force: False if only a single app should exist per pool
-        :type expire_seconds: boool
+        :type expire_seconds: bool
 
         :raises: :class:`Error`
         """

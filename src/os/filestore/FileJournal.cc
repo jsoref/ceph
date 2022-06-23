@@ -127,7 +127,7 @@ int FileJournal::_open(bool forwrite, bool create)
     ret = io_setup(128, &aio_ctx);
     if (ret < 0) {
       switch (ret) {
-	// Contrary to naive expectations -EAGIAN means ...
+	// Contrary to naive expectations -EAGAIN means ...
 	case -EAGAIN:
 	  derr << "FileJournal::_open: user's limit of aio events exceeded. "
 	       << "Try increasing /proc/sys/fs/aio-max-nr" << dendl;
@@ -658,7 +658,7 @@ void FileJournal::stop_writer()
   }
 
 #ifdef HAVE_LIBAIO
-  // stop aio completeion thread *after* writer thread has stopped
+  // stop aio completion thread *after* writer thread has stopped
   // and has submitted all of its io
   if (aio && !aio_stop) {
     aio_lock.lock();
@@ -1254,7 +1254,7 @@ void FileJournal::write_thread_entry()
 
     bufferlist bl;
     int r = prepare_multi_write(bl, orig_ops, orig_bytes);
-    // Don't care about journal full if stoppping, so drop queue and
+    // Don't care about journal full if stopping, so drop queue and
     // possibly let header get written and loop above to notice stop
     if (r == -ENOSPC) {
       if (write_stop) {
@@ -1416,7 +1416,7 @@ int FileJournal::write_aio_bl(off64_t& pos, bufferlist& bl, uint64_t seq)
     aio_bytes += aio.len;
 
     // need to save current aio len to update write_pos later because current
-    // aio could be ereased from aio_queue once it is done
+    // aio could be erased from aio_queue once it is done
     uint64_t cur_len = aio.len;
     // unlock aio_lock because following io_submit might take time to return
     aio_lock.unlock();
@@ -1744,7 +1744,7 @@ void FileJournal::commit_start(uint64_t seq)
 }
 
 /*
- *send discard command to joural block deivce
+ *send discard command to journal block device
  */
 void FileJournal::do_discard(int64_t offset, int64_t end)
 {
@@ -1872,8 +1872,8 @@ int FileJournal::set_throttle_params()
 {
   stringstream ss;
   bool valid = throttle.set_params(
-    cct->_conf->journal_throttle_low_threshhold,
-    cct->_conf->journal_throttle_high_threshhold,
+    cct->_conf->journal_throttle_low_threshold,
+    cct->_conf->journal_throttle_high_threshold,
     cct->_conf->filestore_expected_throughput_bytes,
     cct->_conf->journal_throttle_high_multiple,
     cct->_conf->journal_throttle_max_multiple,
@@ -1891,8 +1891,8 @@ int FileJournal::set_throttle_params()
 const char** FileJournal::get_tracked_conf_keys() const
 {
   static const char *KEYS[] = {
-    "journal_throttle_low_threshhold",
-    "journal_throttle_high_threshhold",
+    "journal_throttle_low_threshold",
+    "journal_throttle_high_threshold",
     "journal_throttle_high_multiple",
     "journal_throttle_max_multiple",
     "filestore_expected_throughput_bytes",

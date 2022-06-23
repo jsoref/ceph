@@ -2047,7 +2047,7 @@ TEST(LibCephFS, OperationsOnRoot)
 
   ASSERT_EQ(ceph_link(cmount, "/", "/"), -EEXIST);
   ASSERT_EQ(ceph_link(cmount, dirname, "/"), -EEXIST);
-  ASSERT_EQ(ceph_link(cmount, "nonExisitingDir", "/"), -ENOENT);
+  ASSERT_EQ(ceph_link(cmount, "nonExistingDir", "/"), -ENOENT);
 
   ASSERT_EQ(ceph_unlink(cmount, "/"), -EISDIR);
 

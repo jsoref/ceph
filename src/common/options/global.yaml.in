@@ -832,7 +832,7 @@ options:
     are client or daemon names (e.g., 'osd.0') and each section contains a 'key' property
     with CephX authentication key as the value.
   # please note, document are generated without accessing to the CMake
-  # variables, so please update the document manually with a representive
+  # variables, so please update the document manually with a representative
   # default value using the ":default:" option of ".. confval::" directive.
   default: @keyring_paths@
   see_also:
@@ -1005,7 +1005,7 @@ options:
 - name: ms_osd_compress_min_size
   type: uint
   level: advanced
-  desc: Minimal message size eligable for on-wire compression
+  desc: Minimal message size eligible for on-wire compression
   default: 1_K
   services:
   - osd
@@ -1941,7 +1941,7 @@ options:
 - name: mon_debug_dump_json
   type: bool
   level: dev
-  desc: dump paxos transasctions to log as json
+  desc: dump paxos transactions to log as json
   default: false
   services:
   - mon
@@ -3276,7 +3276,7 @@ options:
   desc: Fast, immediate shutdown
   long_desc: Setting this to false makes the OSD do a slower teardown of all state
     when it receives a SIGINT or SIGTERM or when shutting down for any other reason.  That
-    slow shutdown is primarilyy useful for doing memory leak checking with valgrind.
+    slow shutdown is primarily useful for doing memory leak checking with valgrind.
   default: true
   with_legacy: true
 - name: osd_fast_shutdown_timeout
@@ -3467,7 +3467,7 @@ options:
 - name: rocksdb_delete_range_threshold
   type: uint
   level: advanced
-  desc: The number of keys required to invoke DeleteRange when deleting muliple keys.
+  desc: The number of keys required to invoke DeleteRange when deleting multiple keys.
   default: 1_M
 - name: rocksdb_bloom_bits_per_key
   type: uint
@@ -3492,7 +3492,7 @@ options:
     memory when it is opened and remove them from memory when an SST file is closed.  Thus,
     memory consumption by indices and bloom filters is directly tied to the number
     of concurrent SST files allowed to be kept open.  This option instead stores cached
-    indicies and filters in the block cache where they directly compete with other
+    indices and filters in the block cache where they directly compete with other
     cached data.  By default we set this option to true to better account for and
     bound rocksdb memory usage and keep filters in memory even when an SST file is
     closed.
@@ -3955,7 +3955,7 @@ options:
     from a KernelDevice. Applied to minimize size of scatter-gather lists
     sent to NICs. Targets really  big buffers (>= 2 or 4 MBs).
     Keep in mind the system must be configured accordingly (see /proc/sys/vm/nr_hugepages).
-    Otherwise the OSD wil fail early.
+    Otherwise the OSD will fail early.
     Beware BlueStore, by default, stores large chunks across many smaller blobs.
     Increasing bluestore_max_blob_size changes that, and thus allows the data to
     be read back into small number of huge page-backed buffers.
@@ -4107,7 +4107,7 @@ options:
   type: bool
   level: dev
   desc: Attempt to read bluefs log so large that it became unreadable.
-  long_desc: If BlueFS log grows to extreme sizes (200GB+) it is likely that it becames
+  long_desc: If BlueFS log grows to extreme sizes (200GB+) it is likely that it becomes
     unreadable. This options enables heuristics that scans devices for missing data.
     DO NOT ENABLE BY DEFAULT
   default: false
@@ -4951,7 +4951,7 @@ options:
     ]. column_def := column_name [ ''('' shard_count [ '','' hash_begin ''-'' [ hash_end
     ] ] '')'' ]. Example: ''I=write_buffer_size=1048576 O(6) m(7,10-)''. Interval
     [hash_begin..hash_end) defines characters to use for hash calculation. Recommended
-    hash ranges: O(0-13) P(0-8) m(0-16). Sharding of S,T,C,M,B prefixes is inadvised'
+    hash ranges: O(0-13) P(0-8) m(0-16). Sharding of S,T,C,M,B prefixes is unadvised'
   fmt_desc: Definition of BlueStore's RocksDB sharding.
     The optimal value depends on multiple factors, and modification is invadvisable.
     This setting is used only when OSD is doing ``--mkfs``.
@@ -5237,7 +5237,7 @@ options:
   level: dev
   desc: Allows mkfs to create OSD in legacy OMAP naming mode (neither per-pool nor per-pg).
     This is intended primarily for developers' purposes. The resulting OSD might/would
-    be transformed to the currrently default 'per-pg' format when BlueStore's quick-fix or
+    be transformed to the currently default 'per-pg' format when BlueStore's quick-fix or
     repair are applied.
   default: false
   with_legacy: true
@@ -5550,7 +5550,7 @@ options:
 - name: filestore_wbthrottle_btrfs_ios_start_flusher
   type: uint
   level: advanced
-  desc: Start flushing (fsyncing) when this many IOs are written (brtrfs)
+  desc: Start flushing (fsyncing) when this many IOs are written (btrfs)
   default: 500
   with_legacy: true
 - name: filestore_wbthrottle_btrfs_ios_hard_limit
@@ -5706,7 +5706,7 @@ options:
   default: 64_K
   with_legacy: true
 # ext4 allows 4k xattrs total including some smallish extra fields and the
-# keys.  We're allowing 2 512 inline attrs in addition some some filestore
+# keys.  We're allowing 2 512 inline attrs in addition some filestore
 # replay attrs.  After accounting for those, we still need to fit up to
 # two attrs of this value.  That means we need this value to be around 1k
 # to be safe.  This is hacky, but it's not worth complicating the code
@@ -5903,12 +5903,12 @@ options:
   level: dev
   default: 0
   with_legacy: true
-- name: filestore_queue_low_threshhold
+- name: filestore_queue_low_threshold
   type: float
   level: dev
   default: 0.3
   with_legacy: true
-- name: filestore_queue_high_threshhold
+- name: filestore_queue_high_threshold
   type: float
   level: dev
   with_legacy: true
@@ -6068,17 +6068,17 @@ options:
   default: 100
   with_legacy: true
 # Target range for journal fullness
-- name: journal_throttle_low_threshhold
+- name: journal_throttle_low_threshold
   type: float
   level: dev
   default: 0.6
   with_legacy: true
-- name: journal_throttle_high_threshhold
+- name: journal_throttle_high_threshold
   type: float
   level: dev
   default: 0.9
   with_legacy: true
-# Multiple over expected at high_threshhold. Defaults to 0 (disabled).
+# Multiple over expected at high_threshold. Defaults to 0 (disabled).
 - name: journal_throttle_high_multiple
   type: float
   level: dev

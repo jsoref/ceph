@@ -642,7 +642,7 @@ struct ObjectOperation {
 	      decode(*ptruncated, p);
 	    } else {
 	      // The OSD did not provide this.  Since old OSDs do not
-	      // enfoce omap result limits either, we can infer it from
+	      // enforce omap result limits either, we can infer it from
 	      // the size of the result
 	      *ptruncated = (pattrs->size() == max_entries);
 	    }
@@ -1776,7 +1776,7 @@ public:
     ///< true if we have ever mapped to a valid pool
     bool pool_ever_existed = false;
 
-    ///< explcit pg target, if any
+    ///< explicit pg target, if any
     pg_t base_pgid;
 
     pg_t pgid; ///< last (raw) pg we mapped to
@@ -1788,8 +1788,8 @@ public:
     std::vector<int> acting; ///< set of acting osds for last pg we mapped to
     int up_primary = -1; ///< last up_primary we mapped to
     int acting_primary = -1;  ///< last acting_primary we mapped to
-    int size = -1; ///< the size of the pool when were were last mapped
-    int min_size = -1; ///< the min size of the pool when were were last mapped
+    int size = -1; ///< the size of the pool when were last mapped
+    int min_size = -1; ///< the min size of the pool when were last mapped
     bool sort_bitwise = false; ///< whether the hobject_t sort order is bitwise
     bool recovery_deletes = false; ///< whether the deletes are performed during recovery instead of peering
     uint32_t peering_crush_bucket_count = 0;
@@ -1919,7 +1919,7 @@ public:
     int priority = 0;
     using OpSig = void(boost::system::error_code);
     using OpComp = ceph::async::Completion<OpSig>;
-    // Due to an irregularity of cmpxattr, we actualy need the 'int'
+    // Due to an irregularity of cmpxattr, we actually need the 'int'
     // value for onfinish for legacy librados users. As such just
     // preserve the Context* in this one case. That way we can have
     // our callers just pass in a unique_ptr<OpComp> and not deal with
@@ -2830,7 +2830,7 @@ public:
     return init.result.get();
   }
 
-  void _get_latest_version(epoch_t oldest, epoch_t neweset,
+  void _get_latest_version(epoch_t oldest, epoch_t newest,
 			   std::unique_ptr<OpCompletion> fin,
 			   std::unique_lock<ceph::shared_mutex>&& ul);
 

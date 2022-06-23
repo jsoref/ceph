@@ -223,5 +223,5 @@ public:
     void resume(rgw::sal::Store* _store) override;
 };
 
-} //namepsace lua
+} //namespace lua
 

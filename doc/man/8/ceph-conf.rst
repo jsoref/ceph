@@ -35,7 +35,7 @@ daemons themselves to fetch effective config options (e.g.,
 ``ceph-osd -i 123 --show-config-value osd_data``).  The latter option
 has the advantages of drawing from compiled-in defaults (which
 occasionally vary between daemons), config files, and the monitor's
-config database, providing the exact value that that daemon would be
+config database, providing the exact value that daemon would be
 using if it were started.
 
 Actions

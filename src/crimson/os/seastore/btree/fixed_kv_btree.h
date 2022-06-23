@@ -827,7 +827,7 @@ public:
        * relative offset to correct them to block-relative offsets adjusted
        * for our new transaction location.
        *
-       * Upon commit, these now block relative addresses will be interpretted
+       * Upon commit, these now block relative addresses will be interpreted
        * against the real final address.
        */
       n_fixed_kv_extent->resolve_relative_addrs(
@@ -964,7 +964,7 @@ public:
         typename internal_node_t::Ref mparent = mut->cast<internal_node_t>();
         mparent->update(piter, new_addr);
 
-        /* Note, iter is now invalid as we didn't udpate either the parent
+        /* Note, iter is now invalid as we didn't update either the parent
          * node reference to the new mutable instance nor did we update the
          * child pointer to the new node.  Not a problem as we'll now just
          * destruct it.

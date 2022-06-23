@@ -75,7 +75,7 @@ def _parse_to_config_dict(values, config):
 
 def _parse_vm_description(specs):
     """
-    Parse's vm specfication description into configuration dictionary
+    Parse's vm specification description into configuration dictionary
     """
     kcli_config = Kcli_Config.copy()
     parsed_str = re.search(
@@ -104,7 +104,7 @@ def _parse_vm_description(specs):
 
 def _parse_ceph_description(specs):
     """
-    Parse the ceph boostrap script configuration descriptions.
+    Parse the ceph bootstrap script configuration descriptions.
     """
     bootstrap_script_config = Bootstrap_Config.copy()
     parsed_str = re.search(
@@ -124,7 +124,7 @@ def _handle_kcli_plan(command_type, plan_file_path=None):
     """
     op = None
     if command_type == "create":
-        # TODO : Before creating kcli plan check for exisitng kcli plans
+        # TODO : Before creating kcli plan check for existing kcli plans
         op, code = execute_kcli_cmd(
             f"create plan -f {plan_file_path} {KCLI_PLAN_NAME}"
         )
@@ -175,7 +175,7 @@ def before_feature(context, feature):
     )
     vm_config = _parse_vm_description("".join(vm_feature_specs))
     kcli_plan_path = os.path.join(kcli_plans_dir_path, "gen_kcli_plan.yml")
-    print(f"Kcli vm configureaton \n {vm_config}")
+    print(f"Kcli vm configuration \n {vm_config}")
     _write_file(
         kcli_plan_path,
         loaded_kcli.render(vm_config)
@@ -186,7 +186,7 @@ def before_feature(context, feature):
         "".join(ceph_description)
     ) if ceph_description else Bootstrap_Config
 
-    print(f"Bootstrap configuraton \n {ceph_config}\n")
+    print(f"Bootstrap configuration \n {ceph_config}\n")
     _write_file(
         os.path.join(kcli_plans_dir_path, "bootstrap_cluster_dev.sh"),
         loaded_script.render(ceph_config),

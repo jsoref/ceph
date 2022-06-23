@@ -101,7 +101,7 @@ private:
   seastar::future<> send_heartbeats();
   void heartbeat_check();
 
-  // osds we've reported to monior as failed ones, but they are not marked down
+  // osds we've reported to monitor as failed ones, but they are not marked down
   // yet
   crimson::common::Gated gate;
 
@@ -290,7 +290,7 @@ class Heartbeat::Session {
   };
   health_state do_health_screen(clock::time_point now) const {
     if (!pinged()) {
-      // we are not healty nor unhealty because we haven't sent anything yet
+      // we are not healthy nor unhealthy because we haven't sent anything yet
       return health_state::UNKNOWN;
     } else if (!ping_history.empty() && ping_history.begin()->second.deadline < now) {
       return health_state::UNHEALTHY;

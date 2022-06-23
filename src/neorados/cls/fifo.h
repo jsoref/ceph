@@ -226,7 +226,7 @@ class JournalProcessor;
 /// Operations given this CompletionToken return their results, modulo
 /// any leading error_code. A non-zero error code will be thrown, by
 /// default, but may be bound to a variable instead with the overload
-/// of the array-subscript oeprator.
+/// of the array-subscript operator.
 ///
 /// EXAMPLE:
 /// // Within a function with a yield_context parameter named y

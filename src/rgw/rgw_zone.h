@@ -589,7 +589,7 @@ struct RGWZone {
  */
   uint32_t bucket_index_max_shards;
 
-  // pre-shard buckets on creation to enable some write-parallism by default,
+  // pre-shard buckets on creation to enable some write-parallelism by default,
   // delay the need to reshard as the bucket grows, and (in multisite) get some
   // bucket index sharding where dynamic resharding is not supported
   static constexpr uint32_t default_bucket_index_max_shards = 11;
@@ -896,7 +896,7 @@ struct RGWZoneGroup : public RGWSystemMetaObj {
   // TODO: Maybe convert hostnames to a map<std::string,std::list<std::string>> for
   // endpoint_type->hostnames
 /*
-20:05 < _robbat21irssi> maybe I do someting like: if (hostname_map.empty()) { populate all map keys from hostnames; };
+20:05 < _robbat21irssi> maybe I do something like: if (hostname_map.empty()) { populate all map keys from hostnames; };
 20:05 < _robbat21irssi> but that's a later compatability migration planning bit
 20:06 < yehudasa> more like if (!hostnames.empty()) {
 20:06 < yehudasa> for (std::list<std::string>::iterator iter = hostnames.begin(); iter != hostnames.end(); ++iter) {
@@ -1090,7 +1090,7 @@ struct RGWPeriodConfig
 };
 WRITE_CLASS_ENCODER(RGWPeriodConfig)
 
-/* for backward comaptability */
+/* for backward compatibility */
 struct RGWRegionMap {
 
   std::map<std::string, RGWZoneGroup> regions;

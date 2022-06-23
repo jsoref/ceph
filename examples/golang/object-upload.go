@@ -31,7 +31,7 @@ func main() {
 	s3CustResolverFn := func(service, region string, optFns ...func(*endpoints.Options)) (endpoints.ResolvedEndpoint, error) {
 		if service == "s3" {
 			return endpoints.ResolvedEndpoint{
-				URL: "http://127.0.0.1:8000", //Variable substituing endpoint-url
+				URL: "http://127.0.0.1:8000", //Variable substituting endpoint-url
 			}, nil
 		}
 

@@ -187,7 +187,7 @@ seastar::future<> TMDriver::mkfs()
     return TransactionManager::mkfs_ertr::now();
   }).handle_error(
     crimson::ct_error::assert_all{
-      "Invalid errror during TMDriver::mkfs"
+      "Invalid error during TMDriver::mkfs"
     }
   );
 }
@@ -205,7 +205,7 @@ seastar::future<> TMDriver::mount()
     return tm->mount();
   }).handle_error(
     crimson::ct_error::assert_all{
-      "Invalid errror during TMDriver::mount"
+      "Invalid error during TMDriver::mount"
     }
   );
 };
@@ -217,7 +217,7 @@ seastar::future<> TMDriver::close()
     return device->close();
   }).handle_error(
     crimson::ct_error::assert_all{
-      "Invalid errror during TMDriver::close"
+      "Invalid error during TMDriver::close"
     }
   );
 }

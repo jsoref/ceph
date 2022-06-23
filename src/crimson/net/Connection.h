@@ -132,7 +132,7 @@ class Connection : public seastar::enable_shared_from_this<Connection> {
   /// handshake
   virtual seastar::future<> keepalive() = 0;
 
-  // close the connection and cancel any any pending futures from read/send,
+  // close the connection and cancel any pending futures from read/send,
   // without dispatching any reset event
   virtual void mark_down() = 0;
 

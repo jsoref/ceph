@@ -18,7 +18,7 @@ class TestFSRecovery(CephFSTestCase):
         metadata_pool = self.fs.get_metadata_pool_name()
         # write data in mount, and fsync
         self.mount_a.create_n_files('file_on_fs', 1, sync=True)
-        # faild MDSs to allow removing the file system in the next step
+        # failed MDSs to allow removing the file system in the next step
         self.fs.fail()
         # Remove file system to lose FSMap and keep the pools intact.
         # This mimics the scenario where the monitor store is rebuilt
@@ -33,6 +33,6 @@ class TestFSRecovery(CephFSTestCase):
         self.fs.set_joinable()
         # Check status of file system
         self.fs.wait_for_daemons()
-        # check data in file sytem is intact
+        # check data in file system is intact
         filepath = os_path_join(self.mount_a.hostfs_mntpt, 'file_on_fs_0')
         self.assertEqual(self.mount_a.read_file(filepath), "0")
