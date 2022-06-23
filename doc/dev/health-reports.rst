@@ -97,7 +97,7 @@ the consensus of information which is critical to keep the cluster function.
 Apparently, osdmap, mdsmap and monmap fall into this category. But what about the
 aggregated statistics of the cluster? They are crucial for the administrator to
 understand the status of the cluster, but they might not be that important to keep
-the cluster running. To address this scability issue,  we offloaded the work of
+the cluster running. To address this scalability issue,  we offloaded the work of
 collecting and aggregating the metrics to mgr.
 
 Now, mgr is responsible for receiving and processing the ``MPGStats`` messages from
