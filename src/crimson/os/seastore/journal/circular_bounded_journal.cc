@@ -15,7 +15,7 @@ namespace crimson::os::seastore::journal {
 std::ostream &operator<<(std::ostream &out,
     const CircularBoundedJournal::cbj_header_t &header)
 {
-  return out << "cbj_header_t(magin=" << header.magic
+  return out << "cbj_header_t(magic=" << header.magic
 	     << ", uuid=" << header.uuid
 	     << ", block_size=" << header.block_size
 	     << ", size=" << header.size
