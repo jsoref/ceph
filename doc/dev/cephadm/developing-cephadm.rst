@@ -127,7 +127,7 @@ main advantages:
     an almost "real" environment.
   - Safe and isolated. Does not depend of the things you have installed in
     your machine. And the vms are isolated from your environment.
-  - Easy to work "dev" environment. For "not compilated" software pieces,
+  - Easy to work "dev" environment. For "not compiled" software pieces,
     for example any mgr module. It is an environment that allow you to test your
     changes interactively.
 
