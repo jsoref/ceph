@@ -24,7 +24,7 @@ when any of these hits the soft limit and will block in throttle()
 while any has exceeded the hard limit.
 
 Tighter soft limits will cause writeback to happen more quickly,
-but may cause the OSD to miss oportunities for write coalescing.
+but may cause the OSD to miss opportunities for write coalescing.
 Tighter hard limits may cause a reduction in latency variance by
 reducing time spent flushing the journal, but may reduce writeback
 parallelism.
