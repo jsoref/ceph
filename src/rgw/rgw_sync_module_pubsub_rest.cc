@@ -119,7 +119,7 @@ public:
   }
 };
 
-// ceph specifc topics handler factory
+// ceph specific topics handler factory
 class RGWHandler_REST_PSTopic : public RGWHandler_REST_S3 {
 protected:
   int init_permissions(RGWOp* op, optional_yield) override {
