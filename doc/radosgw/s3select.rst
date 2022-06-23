@@ -53,7 +53,7 @@ Error Handling
     | Upon an error being detected, RGW returns 400-Bad-Request and a specific error message sends back to the client.
     | Currently, there are 2 main types of error.
     |
-    | **Syntax error**: the s3selecet parser rejects user requests that are not aligned with parser syntax definitions, as     
+    | **Syntax error**: the s3select parser rejects user requests that are not aligned with parser syntax definitions, as     
     | described in this documentation.
     | Upon Syntax Error, the engine creates an error message that points to the location of the error.
     | RGW sends back the error message in a specific error response. 
