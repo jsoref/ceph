@@ -178,7 +178,7 @@ enum class RGWObjCategory : uint8_t {
 
   Main      = 1,  // b-i entries for standard objs
 
-  Shadow    = 2,  // presumfably intended for multipart shadow
+  Shadow    = 2,  // presumably intended for multipart shadow
                   // uploads; not currently used in the codebase
 
   MultiMeta = 3,  // b-i entries for multipart upload metadata objs
