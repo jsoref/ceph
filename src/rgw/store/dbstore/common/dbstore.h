@@ -698,7 +698,7 @@ class InsertUserOp : virtual public DBOp {
     /* For existing entires, -
      * (1) INSERT or REPLACE - it will delete previous entry and then
      * inserts new one. Since it deletes previos entries, it will
-     * trigger all foriegn key cascade deletes or other triggers.
+     * trigger all foreign key cascade deletes or other triggers.
      * (2) INSERT or UPDATE - this will set NULL values to unassigned
      * fields.
      * more info: https://code-examples.net/en/q/377728
