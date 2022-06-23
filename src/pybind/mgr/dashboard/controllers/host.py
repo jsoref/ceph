@@ -119,7 +119,7 @@ def merge_hosts_by_hostname(ceph_hosts, orch_hosts):
 
     :param ceph_hosts: hosts returned from mgr
     :type ceph_hosts: list of dict
-    :param orch_hosts: hosts returned from ochestrator
+    :param orch_hosts: hosts returned from orchestrator
     :type orch_hosts: list of HostSpec
     :return list of dict
     """
