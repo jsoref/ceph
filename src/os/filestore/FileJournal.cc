@@ -658,7 +658,7 @@ void FileJournal::stop_writer()
   }
 
 #ifdef HAVE_LIBAIO
-  // stop aio completeion thread *after* writer thread has stopped
+  // stop aio completion thread *after* writer thread has stopped
   // and has submitted all of its io
   if (aio && !aio_stop) {
     aio_lock.lock();
