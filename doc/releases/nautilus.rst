@@ -3814,7 +3814,7 @@ Detailed Changelog
 * doc: docs: add Clay code plugin documentation (`pr#24422 <https://github.com/ceph/ceph/pull/24422>`_, Myna)
 * doc: docs: Fixed swift client authentication fail (`pr#23729 <https://github.com/ceph/ceph/pull/23729>`_, Dai Dang Van)
 * doc: docs: radosgw: ldap-auth: fixed option name 'rgw_ldap_searchfilter' (`issue#23081 <http://tracker.ceph.com/issues/23081>`_, `pr#20526 <https://github.com/ceph/ceph/pull/20526>`_, Konstantin Shalygin)
-* doc: doc/start: fix kube-helm.rst typo: docuiment -> document (`pr#23423 <https://github.com/ceph/ceph/pull/23423>`_, Zhou Peng)
+* doc: doc/start: fix kube-helm.rst typo: document -> document (`pr#23423 <https://github.com/ceph/ceph/pull/23423>`_, Zhou Peng)
 * doc: doc/SubmittingPatches.rst: use Google style guide for doc patches (`pr#22190 <https://github.com/ceph/ceph/pull/22190>`_, Nathan Cutler)
 * doc: Document correction (`pr#23926 <https://github.com/ceph/ceph/pull/23926>`_, Gangbiao Liu)
 * doc: Document mappings of S3 Operations to ACL grants (`pr#26827 <https://github.com/ceph/ceph/pull/26827>`_, Adam C. Emerson)
