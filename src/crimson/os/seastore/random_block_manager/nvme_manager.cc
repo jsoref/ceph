@@ -462,7 +462,7 @@ NVMeManager::write_ertr::future<> NVMeManager::sync_allocation(
 	  }
 	}
       }
-      logger().debug("complete_alloction: complete to allocate {} blocks",
+      logger().debug("complete_allocation: complete to allocate {} blocks",
 		     alloc_block_count);
       super.free_block_count -= alloc_block_count;
       return write_ertr::now();
