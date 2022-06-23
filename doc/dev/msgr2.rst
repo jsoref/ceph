@@ -556,7 +556,7 @@ Once the handshake is completed, both peers have setup their compression handler
     uint32_t  method
 
   - the server determines whether compression is possible according to its' configuration.
-  - if it is possible, it will pick its' most prioritizied compression method that is also supprorted by the client.
+  - if it is possible, it will pick its' most prioritized compression method that is also supprorted by the client.
   - if none exists, it will determine that session between the peers will be handled without compression.
 
 .. ditaa::
