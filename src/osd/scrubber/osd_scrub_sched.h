@@ -77,7 +77,7 @@
 └─────────────────────────────────┘
 
 
-SqrubQueue interfaces (main functions):
+ScrubQueue interfaces (main functions):
 
 <1> - OSD/PG resources management:
 
