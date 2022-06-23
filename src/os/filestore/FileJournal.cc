@@ -1254,7 +1254,7 @@ void FileJournal::write_thread_entry()
 
     bufferlist bl;
     int r = prepare_multi_write(bl, orig_ops, orig_bytes);
-    // Don't care about journal full if stoppping, so drop queue and
+    // Don't care about journal full if stopping, so drop queue and
     // possibly let header get written and loop above to notice stop
     if (r == -ENOSPC) {
       if (write_stop) {
