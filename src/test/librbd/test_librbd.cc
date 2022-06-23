@@ -9344,7 +9344,7 @@ TEST_F(TestLibRBD, WriteZeroesThickProvision) {
   ASSERT_EQ(0, image.close());
 }
 
-TEST_F(TestLibRBD, ConcurentOperations)
+TEST_F(TestLibRBD, ConcurrentOperations)
 {
   REQUIRE_FEATURE(RBD_FEATURE_EXCLUSIVE_LOCK);
 

@@ -79,7 +79,7 @@ int CLSRGWConcurrentIO::operator()() {
     cleanup();
   }
   return ret;
-} // CLSRGWConcurrintIO::operator()()
+} // CLSRGWConcurrentIO::operator()()
 
 
 /**
