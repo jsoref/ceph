@@ -771,7 +771,7 @@ public:
   // return 0 on success, error code otherwise
   int create_topic(const DoutPrefixProvider *dpp, const std::string& name, optional_yield y);
   // create a topic with push destination information and ARN
-  // if the topic already exists the destination and ARN values may be updated (considered succsess)
+  // if the topic already exists the destination and ARN values may be updated (considered success)
   // return 0 on success, error code otherwise
   int create_topic(const DoutPrefixProvider *dpp, const std::string& name, const rgw_pubsub_sub_dest& dest, const std::string& arn, const std::string& opaque_data, optional_yield y);
   // remove a topic according to its name

@@ -2846,7 +2846,7 @@ public:
     int r = completion->get_return_value();
     std::cout << num << ":  got " << cpp_strerror(r) << std::endl;
     if (r == 0) {
-      // sucess
+      // success
     } else if (r == -ENOENT && src_value.deleted()) {
       std::cout << num << ":  got expected ENOENT (src dne)" << std::endl;
     } else {
@@ -2940,7 +2940,7 @@ public:
     int r = completion->get_return_value();
     std::cout << num << ":  got " << cpp_strerror(r) << std::endl;
     if (r == 0) {
-      // sucess
+      // success
       context->update_object_tier_flushed(oid, snap);
       context->update_object_version(oid, completion->get_version64(), snap);
     } else if (r == -EBUSY) {
