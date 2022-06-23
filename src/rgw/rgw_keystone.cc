@@ -142,7 +142,7 @@ int Service::get_admin_token(const DoutPrefixProvider *dpp,
                              const Config& config,
                              std::string& token)
 {
-  /* Let's check whether someone uses the deprecated "admin token" feauture
+  /* Let's check whether someone uses the deprecated "admin token" feature
    * based on a shared secret from keystone.conf file. */
   const auto& admin_token = config.get_admin_token();
   if (! admin_token.empty()) {
