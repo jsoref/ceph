@@ -913,7 +913,7 @@ bool LogMonitor::preprocess_command(MonOpRequestRef op)
 	  } else {
 	    start = from;
 	  }
-	  dout(10) << __func__ << " channnel " << p.first
+	  dout(10) << __func__ << " channel " << p.first
 		   << " from " << from << " to " << to << dendl;
 	  for (version_t v = start; v < to; ++v) {
 	    bufferlist ebl;
