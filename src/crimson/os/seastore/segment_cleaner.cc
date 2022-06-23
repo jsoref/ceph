@@ -497,7 +497,7 @@ void SegmentCleaner::register_metrics()
     sm::make_counter("io_blocked_count_trim", stats.io_blocked_count_trim,
 		    sm::description("IOs that are blocked by trimming")),
     sm::make_counter("io_blocked_count_reclaim", stats.io_blocked_count_reclaim,
-		    sm::description("IOs that are blocked by reclaimming")),
+		    sm::description("IOs that are blocked by reclaiming")),
     sm::make_counter("io_blocked_sum", stats.io_blocked_sum,
 		     sm::description("the sum of blocking IOs")),
 
