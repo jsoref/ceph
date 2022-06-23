@@ -1116,7 +1116,7 @@ SegmentCleaner::scan_extents_ret SegmentCleaner::scan_nonfull_segment(
 	) mutable -> SegmentManagerGroup::scan_valid_records_ertr::future<> {
 	LOG_PREFIX(SegmentCleaner::scan_nonfull_segment);
 	if (segment_header.get_type() == segment_type_t::OOL) {
-	  DEBUG("out-of-line segment {}, decodeing {} records",
+	  DEBUG("out-of-line segment {}, decoding {} records",
 	    segment_id,
 	    header.records);
 	  auto maybe_headers = try_decode_record_headers(header, mdbuf);
@@ -1145,7 +1145,7 @@ SegmentCleaner::scan_extents_ret SegmentCleaner::scan_nonfull_segment(
 	    }
 	  }
 	} else {
-	  DEBUG("inline segment {}, decodeing {} records",
+	  DEBUG("inline segment {}, decoding {} records",
 	    segment_id,
 	    header.records);
 	  auto maybe_record_deltas_list = try_decode_deltas(
