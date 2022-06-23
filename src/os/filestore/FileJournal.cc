@@ -127,7 +127,7 @@ int FileJournal::_open(bool forwrite, bool create)
     ret = io_setup(128, &aio_ctx);
     if (ret < 0) {
       switch (ret) {
-	// Contrary to naive expectations -EAGIAN means ...
+	// Contrary to naive expectations -EAGAIN means ...
 	case -EAGAIN:
 	  derr << "FileJournal::_open: user's limit of aio events exceeded. "
 	       << "Try increasing /proc/sys/fs/aio-max-nr" << dendl;
