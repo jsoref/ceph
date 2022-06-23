@@ -827,7 +827,7 @@ public:
        * relative offset to correct them to block-relative offsets adjusted
        * for our new transaction location.
        *
-       * Upon commit, these now block relative addresses will be interpretted
+       * Upon commit, these now block relative addresses will be interpreted
        * against the real final address.
        */
       n_fixed_kv_extent->resolve_relative_addrs(
