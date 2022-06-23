@@ -18709,7 +18709,7 @@ void BlueStore::read_allocation_from_single_onode(
   read_alloc_stats_t&  stats)
 {
   // create a map holding all physical-extents of this Onode to prevent duplication from being added twice and more
-  std::unordered_map<uint64_t, uint32_t> lcl_extnt_map;
+  std::unordered_map<uint64_t, uint32_t> lcl_extent_map;
   unsigned blobs_count = 0;
   uint64_t pos = 0;
 
@@ -18744,14 +18744,14 @@ void BlueStore::read_allocation_from_single_onode(
 
       if (!blob.is_shared()) {
 	// skip repeating extents
-	auto lcl_itr = lcl_extnt_map.find(offset);
+	auto lcl_itr = lcl_extent_map.find(offset);
 	// extents using shared blobs might have different length
-	if (lcl_itr != lcl_extnt_map.end() ) {
+	if (lcl_itr != lcl_extent_map.end() ) {
 	  // repeated extents must have the same length!
-	  ceph_assert(lcl_extnt_map[offset] == length);
+	  ceph_assert(lcl_extent_map[offset] == length);
 	  stats.skipped_repeated_extent++;
 	} else {
-	  lcl_extnt_map[offset] = length;
+	  lcl_extent_map[offset] = length;
 	  set_allocation_in_simple_bmap(sbmap, offset, length);
 	  stats.extent_count++;
 	}
