@@ -715,7 +715,7 @@ void Elector::notify_rank_removed(int rank_removed)
      because it's not indexed anywhere (and adding indexing
      would also be annoying).
      In the case where we are removing any rank that is not the
-     higest, we start with the removed rank and examine the state
+     highest, we start with the removed rank and examine the state
      of the surrounding ranks.
      Everybody who remains with larger rank gets a new rank one lower
      than before, and we have to figure out the remaining scheduled
