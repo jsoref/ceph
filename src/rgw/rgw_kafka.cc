@@ -527,7 +527,7 @@ public:
 
     std::lock_guard lock(connections_lock);
     const auto it = connections.find(broker);
-    // note that ssl vs. non-ssl connection to the same host are two separate conenctions
+    // note that ssl vs. non-ssl connection to the same host are two separate connections
     if (it != connections.end()) {
       // connection found - return even if non-ok
       ldout(cct, 20) << "Kafka connect: connection found" << dendl;
