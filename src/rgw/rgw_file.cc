@@ -416,7 +416,7 @@ namespace rgw {
        * leaf object
        */
       if (! rgw_fh) {
-	/* XXX for now, peform a hard lookup to deduce the type of
+	/* XXX for now, perform a hard lookup to deduce the type of
 	 * object to be deleted ("foo" vs. "foo/")--also, ensures
 	 * atomicity at this endpoint */
 	struct rgw_file_handle *fh;
