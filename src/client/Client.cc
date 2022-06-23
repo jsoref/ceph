@@ -2511,7 +2511,7 @@ ref_t<MClientRequest> Client::build_client_request(MetaRequest *request)
    * is '__u8'. So in case the request retries exceeding 256
    * times, the MDS will receive a incorrect retry seq.
    *
-   * In this case it's ususally a bug in MDS and continue
+   * In this case it's usually a bug in MDS and continue
    * retrying the request makes no sense.
    *
    * In future this could be fixed in ceph code, so avoid
@@ -2593,7 +2593,7 @@ void Client::handle_client_request_forward(const MConstRef<MClientRequestForward
    * type is '__u8'. So in case the request bounces between
    * MDSes exceeding 256 times, the client will get stuck.
    *
-   * In this case it's ususally a bug in MDS and continue
+   * In this case it's usually a bug in MDS and continue
    * bouncing the request makes no sense.
    *
    * In future this could be fixed in ceph code, so avoid
