@@ -63,7 +63,7 @@ static string obj_to_aws_path(rgw::sal::Object* obj)
            
 
       # anything below here is for non trivial configuration 
-      # can be used in conjuction with the above
+      # can be used in conjunction with the above
 
       "default": {
         "connection": {
