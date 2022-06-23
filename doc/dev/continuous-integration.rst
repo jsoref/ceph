@@ -211,7 +211,7 @@ Uploading Dependencies
 
 To ensure that prebuilt packages are available by the jenkins agents, we need to
 upload them to either ``apt-mirror.front.sepia.ceph.com`` or `chacra`_. To upload
-packages to the former would require the help our our lab administrator, so if we
+packages to the former would require the help our lab administrator, so if we
 want to maintain the package repositories on regular basis, a better choice would be
 to manage them using `chacractl`_. `chacra`_ represents packages repositories using
 a resource hierarchy, like::
