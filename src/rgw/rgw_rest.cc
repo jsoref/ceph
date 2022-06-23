@@ -643,7 +643,7 @@ static void build_redirect_url(req_state *s, const string& redirect_base, string
   
   dest_uri = redirect_base;
   /*
-   * reqest_uri is always start with slash, so we need to remove
+   * request_uri is always start with slash, so we need to remove
    * the unnecessary slash at the end of dest_uri.
    */
   if (dest_uri[dest_uri.size() - 1] == '/') {
