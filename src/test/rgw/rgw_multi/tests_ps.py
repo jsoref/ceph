@@ -1142,7 +1142,7 @@ def test_ps_topic():
     # delete topic
     _, status = topic_conf.del_config()
     assert_equal(status/100, 2)
-    # verift topic is deleted
+    # verify topic is deleted
     result, status = topic_conf.get_config()
     assert_equal(status, 404)
     parsed_result = json.loads(result)
