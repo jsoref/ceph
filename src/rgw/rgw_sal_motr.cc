@@ -809,7 +809,7 @@ int MotrBucket::list_multiparts(const DoutPrefixProvider *dpp,
     if (prefix.size() &&
         (0 != ent.key.name.compare(0, prefix.size(), prefix))) {
       ldpp_dout(dpp, 20) << __PRETTY_FUNCTION__ <<
-        ": skippping \"" << ent.key <<
+        ": skipping \"" << ent.key <<
         "\" because doesn't match prefix" << dendl;
       continue;
     }
