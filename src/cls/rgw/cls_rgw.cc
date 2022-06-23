@@ -3132,7 +3132,7 @@ static int list_olh_entries(cls_method_context_t hctx,
  * Additionally, each of the three segment functions, if successful,
  * is expected to return the number of entries added to the output
  * list as a non-negative value. As per usual, negative return values
- * indicate error condtions.
+ * indicate error conditions.
  */
 static int rgw_bi_list_op(cls_method_context_t hctx,
 			  bufferlist *in,
