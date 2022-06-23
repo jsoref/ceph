@@ -563,7 +563,7 @@ shard_as_auth_t ScrubBackend::possible_auth_shard(const hobject_t& obj,
                                                   const pg_shard_t& srd,
                                                   shard_info_map_t& shard_map)
 {
-  //  'maps' (called with this_chunk->maps originaly): this_chunk->maps
+  //  'maps' (called with this_chunk->maps originally): this_chunk->maps
   //  'auth_oi' (called with 'auth_oi', which wasn't initialized at call site)
   //     - create and return
   //  'shard_map' - the one created in select_auth_object()
