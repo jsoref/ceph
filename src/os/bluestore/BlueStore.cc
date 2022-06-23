@@ -1650,7 +1650,7 @@ public:
 #endif
 };
 
-// BuferCacheShard
+// BufferCacheShard
 
 BlueStore::BufferCacheShard *BlueStore::BufferCacheShard::create(
     CephContext* cct,
