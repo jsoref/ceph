@@ -217,13 +217,13 @@ void rgw_rest_init(CephContext *cct, const rgw::sal::ZoneGroup& zone_group)
   hostnames_set.erase(""); // filter out empty hostnames
   ldout(cct, 20) << "RGW hostnames: " << hostnames_set << dendl;
   /* TODO: We should have a sanity check that no hostname matches the end of
-   * any other hostname, otherwise we will get ambigious results from
+   * any other hostname, otherwise we will get ambiguous results from
    * rgw_find_host_in_domains.
    * Eg: 
    * Hostnames: [A, B.A]
    * Inputs: [Z.A, X.B.A]
    * Z.A clearly splits to subdomain=Z, domain=Z
-   * X.B.A ambigously splits to both {X, B.A} and {X.B, A}
+   * X.B.A ambiguously splits to both {X, B.A} and {X.B, A}
    */
 
   zone_group.get_s3website_hostnames(names);
