@@ -70,9 +70,9 @@ struct bluefs_fnode_t {
   mempool::bluefs::vector<uint64_t> extents_index;
 
   uint64_t allocated;
-  uint64_t allocated_commited;
+  uint64_t allocated_committed;
 
-  bluefs_fnode_t() : ino(0), size(0), __unused__(0), allocated(0), allocated_commited(0) {}
+  bluefs_fnode_t() : ino(0), size(0), __unused__(0), allocated(0), allocated_committed(0) {}
 
   uint64_t get_allocated() const {
     return allocated;
@@ -85,7 +85,7 @@ struct bluefs_fnode_t {
       extents_index.emplace_back(allocated);
       allocated += p.length;
     }
-    allocated_commited = allocated;
+    allocated_committed = allocated;
   }
 
   DENC_HELPERS
@@ -113,7 +113,7 @@ struct bluefs_fnode_t {
   }
 
   void reset_delta() {
-    allocated_commited = allocated;
+    allocated_committed = allocated;
   }
   void claim_extents(mempool::bluefs::vector<bluefs_extent_t>& extents) {
     for (const auto& p : extents) {
@@ -148,13 +148,13 @@ struct bluefs_fnode_t {
     other.extents.swap(extents);
     other.extents_index.swap(extents_index);
     std::swap(allocated, other.allocated);
-    std::swap(allocated_commited, other.allocated_commited);
+    std::swap(allocated_committed, other.allocated_committed);
   }
   void clear_extents() {
     extents_index.clear();
     extents.clear();
     allocated = 0;
-    allocated_commited = 0;
+    allocated_committed = 0;
   }
 
   mempool::bluefs::vector<bluefs_extent_t>::iterator seek(

@@ -218,7 +218,7 @@ upstream repository.
 
 The second command (git checkout -b fix_1) creates a "bugfix branch" called
 "fix_1" in your local working copy of the repository. The changes that you make
-in order to fix the bug will be commited to this branch.
+in order to fix the bug will be committed to this branch.
 
 The third command (git push -u origin fix_1) pushes the bugfix branch from
 your local working repository to your fork of the upstream repository.

@@ -283,7 +283,7 @@ TEST_F(TestCls2PCQueue, CommitError)
   }
   cls_2pc_reservations reservations;
   ASSERT_EQ(0, cls_2pc_queue_list_reservations(ioctx, queue_name, reservations));
-  // 2 reservations were not comitted
+  // 2 reservations were not committed
   ASSERT_EQ(reservations.size(), 2);
 }
 
