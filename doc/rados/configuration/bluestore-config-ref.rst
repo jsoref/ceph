@@ -423,7 +423,7 @@ will allocate (6 * 4KB) = 24KB of device capacity.
 
 When an RGW bucket pool contains many relatively large user objects, the effect
 of this phenomenon is often negligible, but should be considered for deployments
-that expect a signficiant fraction of relatively small objects.
+that expect a significant fraction of relatively small objects.
 
 The 4KB default value aligns well with conventional HDD and SSD devices.  Some
 new coarse-IU (Indirection Unit) QLC SSDs however perform and wear best
