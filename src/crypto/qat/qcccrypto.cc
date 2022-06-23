@@ -276,7 +276,7 @@ bool QccCrypto::perform_op(unsigned char* out, const unsigned char* in,
     size_t size, uint8_t *iv, uint8_t *key, CpaCySymCipherDirection op_type)
 {
   if (!init_called) {
-    dout(10) << "QAT not intialized yet. Initializing now..." << dendl;
+    dout(10) << "QAT not initialized yet. Initializing now..." << dendl;
     if(!QccCrypto::init()) {
       derr << "QAT init failed" << dendl;
       return false;
