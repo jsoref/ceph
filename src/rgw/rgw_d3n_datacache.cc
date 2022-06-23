@@ -131,7 +131,7 @@ int D3nDataCache::d3n_io_write(bufferlist& bl, unsigned int len, std::string oid
 
   r = fclose(cache_file);
   if (r != 0) {
-    ldout(cct, 0) << "ERROR: D3nDataCache::fclsoe file has return error, errno=" << errno << dendl;
+    ldout(cct, 0) << "ERROR: D3nDataCache::fclose file has return error, errno=" << errno << dendl;
     return -errno;
   }
 
