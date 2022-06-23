@@ -128,7 +128,7 @@ Major Changes from Hammer
     associated with individual images.
   * The new deep-flatten features allows flattening of a clone and all
     of its snapshots.  (Previously snapshots could not be flattened.)
-  * The export-diff command command is now faster (it uses aio).  There is also
+  * The export-diff command is now faster (it uses aio).  There is also
     a new fast-diff feature.
   * The --size argument can be specified with a suffix for units
     (e.g., ``--size 64G``).
@@ -831,7 +831,7 @@ Major Changes from Hammer
     associated with individual images.
   * The new deep-flatten features allows flattening of a clone and all
     of its snapshots.  (Previously snapshots could not be flattened.)
-  * The export-diff command command is now faster (it uses aio).  There is also
+  * The export-diff command is now faster (it uses aio).  There is also
     a new fast-diff feature.
   * The --size argument can be specified with a suffix for units
     (e.g., ``--size 64G``).
