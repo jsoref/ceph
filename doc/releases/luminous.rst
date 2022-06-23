@@ -2046,7 +2046,7 @@ Major Changes from Kraken
     metadata. New APIs that allow control of custom metadata fields
     were also added.
   * RGW now supports *dynamic bucket index sharding*. This has to be enabled via
-    the `rgw dyamic resharding` configurable. As the number of objects in a
+    the `rgw dynamic resharding` configurable. As the number of objects in a
     bucket grows, RGW will automatically reshard the bucket index in response.
     No user intervention or bucket size capacity planning is required.
   * RGW introduces *server side encryption* of uploaded objects with
