@@ -577,7 +577,7 @@ CircularBoundedJournal::write_header()
   try {
     bl = encode_header();
   } catch (ceph::buffer::error &e) {
-    DEBUG("unable to encode header block from underlying deivce");
+    DEBUG("unable to encode header block from underlying device");
     return crimson::ct_error::input_output_error::make();
   }
   ceph_assert(bl.length() + sizeof(checksum_t) < get_block_size());
