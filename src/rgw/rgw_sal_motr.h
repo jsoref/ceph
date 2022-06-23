@@ -793,7 +793,7 @@ public:
 // object part index and for each part an entry is created in extended index.
 // The entry for the object is created in bucket (object list) index. The part
 // index is deleted and an entry removed from bucket_nnn_multipart_index. Like
-// bucket multipart index, bucket part extened metadata index is created during
+// bucket multipart index, bucket part extend metadata index is created during
 // bucket creation.
 //
 // The extended metadata index is used mainly due to fault tolerant
