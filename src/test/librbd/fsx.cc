@@ -103,7 +103,7 @@ int			logcount = 0;	/* total ops */
  * When mapped read/writes are disabled, they are simply converted to normal
  * reads and writes. When fallocate/fpunch calls are disabled, they are
  * converted to OP_SKIPPED. Hence OP_SKIPPED needs to have a number higher than
- * the operation selction matrix, as does the OP_CLOSEOPEN which is an
+ * the operation selection matrix, as does the OP_CLOSEOPEN which is an
  * operation modifier rather than an operation in itself.
  *
  * Because of the "lite" version, we also need to have different "maximum
