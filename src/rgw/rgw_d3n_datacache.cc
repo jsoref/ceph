@@ -135,7 +135,7 @@ int D3nDataCache::d3n_io_write(bufferlist& bl, unsigned int len, std::string oid
     return -errno;
   }
 
-  { // update cahce_map entries for new chunk in cache
+  { // update cache_map entries for new chunk in cache
     const std::lock_guard l(d3n_cache_lock);
     chunk_info->oid = oid;
     chunk_info->set_ctx(cct);
