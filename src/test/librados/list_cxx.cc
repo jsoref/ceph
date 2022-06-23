@@ -594,7 +594,7 @@ TEST_F(LibRadosListPP, ListObjectsFilterPP) {
 
   std::string target_str = "content";
 
-  // Write xattr bare, no ::encod'ing
+  // Write xattr bare, no ::encoding
   bufferlist target_val;
   target_val.append(target_str);
   bufferlist nontarget_val;
@@ -732,7 +732,7 @@ TEST_F(LibRadosListPP, EnumerateObjectsFilterPP) {
 
   std::string target_str = "content";
 
-  // Write xattr bare, no ::encod'ing
+  // Write xattr bare, no ::encoding
   bufferlist target_val;
   target_val.append(target_str);
   bufferlist nontarget_val;
