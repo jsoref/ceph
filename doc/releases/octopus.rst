@@ -1824,7 +1824,7 @@ Instructions
 
 
 #. If you are upgrading from Mimic, or did not already do so when you
-   upgraded to Nautlius, we recommened you enable the new :ref:`v2
+   upgraded to Nautlius, we recommended you enable the new :ref:`v2
    network protocol <msgr2>`, issue the following command::
 
      ceph mon enable-msgr2
