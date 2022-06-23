@@ -57,7 +57,7 @@ General
 
 * telemetry: Improved the opt-in flow so that users can keep sharing the same
   data, even when new data collections are available. A new 'perf' channel that
-  collects various performance metrics is now avaiable to opt into with:
+  collects various performance metrics is now available to opt into with:
   `ceph telemetry on`
   `ceph telemetry enable channel perf`
   See a sample report with `ceph telemetry preview`.
