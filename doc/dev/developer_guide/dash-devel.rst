@@ -1781,7 +1781,7 @@ To specify the grafana dashboard properties such as title, uid etc we can create
 
     local dashboardSchema(title, uid, time_from, refresh, schemaVersion, tags,timezone, timepicker)
 
-To add a graph panel we can spcify the graph schema in a local function such as -
+To add a graph panel we can specify the graph schema in a local function such as -
 
 ::
 
