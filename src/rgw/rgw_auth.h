@@ -222,7 +222,7 @@ public:
         reason(reason) {
     }
 
-    /* Allow only the reasonable combintations - returning just Completer
+    /* Allow only the reasonable combinations - returning just Completer
      * without accompanying IdentityApplier is strictly prohibited! */
     explicit AuthResult(IdentityApplier::aplptr_t&& applier)
       : result_pair(std::move(applier), nullptr) {
