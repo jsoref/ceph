@@ -2596,7 +2596,7 @@ CEPH_RADOS_API int rados_aio_unwatch(rados_ioctx_t io, uint64_t cookie,
                                      rados_completion_t completion);
 
 /**
- * Sychronously notify watchers of an object
+ * Synchronously notify watchers of an object
  *
  * This blocks until all watchers of the object have received and
  * reacted to the notify, or a timeout is reached.
@@ -2616,7 +2616,7 @@ CEPH_RADOS_API int rados_notify(rados_ioctx_t io, const char *o, uint64_t ver,
   __attribute__((deprecated));
 
 /**
- * Sychronously notify watchers of an object
+ * Synchronously notify watchers of an object
  *
  * This blocks until all watchers of the object have received and
  * reacted to the notify, or a timeout is reached.
