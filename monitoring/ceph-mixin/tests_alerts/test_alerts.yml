@@ -351,7 +351,7 @@ tests:
            severity: warning
            type: ceph_default
          exp_annotations:
-           summary: One or more platcment groups are marked unclean
+           summary: One or more placement groups are marked unclean
            description: >
               1 PGs haven't been clean for more than 15 minutes in pool
               device_health_metrics.
