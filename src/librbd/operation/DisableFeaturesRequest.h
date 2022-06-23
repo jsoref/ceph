@@ -56,7 +56,7 @@ private:
    *    v
    * STATE_ACQUIRE_EXCLUSIVE_LOCK (skip if not
    *    |                          required)
-   *    | (disbling journaling)
+   *    | (disabling journaling)
    *    \-------------------\
    *    |                    |
    *    |                    V
