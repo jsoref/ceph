@@ -54,7 +54,7 @@ You can read more about vstart in `Deploying a development cluster`_.
 Additional information for developers can also be found in the `Developer
 Guide`_.
 
-.. _Deploying a development cluster: https://docs.ceph.com/docs/master/dev/dev_cluster_deployement/
+.. _Deploying a development cluster: https://docs.ceph.com/docs/master/dev/dev_cluster_deployment/
 .. _Developer Guide: https://docs.ceph.com/docs/master/dev/quick_guide/
 
 Host-based vs Docker-based Development Environments
