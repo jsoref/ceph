@@ -210,7 +210,7 @@ public:
 
     // start offset of CircularBoundedJournal in the device
     rbm_abs_addr journal_tail = 0;
-    // address to represent where last appllied record is written
+    // address to represent where last applied record is written
     rbm_abs_addr applied_to = 0;
 
     device_id_t device_id;
