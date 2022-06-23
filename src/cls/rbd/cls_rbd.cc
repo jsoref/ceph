@@ -1134,7 +1134,7 @@ int get_protection_status(cls_method_context_t hctx, bufferlist *in,
 }
 
 /**
- * set the proctection status of a snapshot
+ * set the protection status of a snapshot
  *
  * Input:
  * @param snapid (uint64_t) which snapshot to set the status of
