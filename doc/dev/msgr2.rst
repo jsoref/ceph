@@ -622,7 +622,7 @@ an established session.
     shouldn't break any existing functionality.  implementation will
     likely want to mask this against what the authenticated credential
     allows.
-  - cookie is the client coookie used to identify a session, and can be used
+  - cookie is the client cookie used to identify a session, and can be used
     to reconnect to an existing session.
   - we've dropped the 'protocol_version' field from msgr1
 
