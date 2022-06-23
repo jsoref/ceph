@@ -616,7 +616,7 @@ int remove_persistent_topic(const std::string& topic_name, optional_yield y) {
   return s_manager->remove_persistent_topic(topic_name, y);
 }
 
-rgw::sal::Object* get_object_with_atttributes(
+rgw::sal::Object* get_object_with_attributes(
   const reservation_t& res, rgw::sal::Object* obj) {
   // in case of copy obj, the tags and metadata are taken from source
   const auto src_obj = res.src_object ? res.src_object : obj;
@@ -634,7 +634,7 @@ rgw::sal::Object* get_object_with_atttributes(
 static inline void metadata_from_attributes(
   reservation_t& res, rgw::sal::Object* obj) {
   auto& metadata = res.x_meta_map;
-  const auto src_obj = get_object_with_atttributes(res, obj);
+  const auto src_obj = get_object_with_attributes(res, obj);
   if (!src_obj) {
     return;
   }
@@ -651,7 +651,7 @@ static inline void metadata_from_attributes(
 
 static inline void tags_from_attributes(
   const reservation_t& res, rgw::sal::Object* obj, KeyMultiValueMap& tags) {
-  const auto src_obj = get_object_with_atttributes(res, obj);
+  const auto src_obj = get_object_with_attributes(res, obj);
   if (!src_obj) {
     return;
   }
