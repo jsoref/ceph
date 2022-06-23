@@ -231,7 +231,7 @@ def list_volumes(mgr):
 @contextmanager
 def open_volume(vc, volname):
     """
-    open a volume for exclusive access. This API is to be used as a contextr
+    open a volume for exclusive access. This API is to be used as a context
     manager.
 
     :param vc: volume client instance
