@@ -279,7 +279,7 @@ bool D3nDataCache::get(const string& oid, const off_t len)
     struct D3nChunkDataInfo* chdo = iter->second;
     struct stat st;
     int r = stat(location.c_str(), &st);
-    if ( r != -1 && st.st_size == len) { // file exists and containes required data range length
+    if ( r != -1 && st.st_size == len) { // file exists and contains required data range length
       exist = true;
       /*LRU*/
       /*get D3nChunkDataInfo*/
