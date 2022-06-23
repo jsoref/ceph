@@ -142,7 +142,7 @@ We reach a point where the MDS fills in `LockOpVec` and invokes `Locker::acquire
   2021-11-22T07:18:20.040-0500 7fa66a3bd700 20 mds.0.locker: client.94134 pending pAsLsXsFscr allowed pLsXsFscrl wanted -
   2021-11-22T07:18:20.040-0500 7fa66a3bd700  7 mds.0.locker: sending MClientCaps to client.94134 seq 2 new pending pLsXsFscr was pAsLsXsFscr
 
-As seen above, `client.94134` has `As` caps, which is getting revoked by the MDS. After the caps have been revoked, the MDS can continue to transition to further states: `LOCK_SYNC_LOCK` to `LOCK_LOCK`. Since the goal is to acquire `xlock`, the state transition conitnues (as per the lock transition state machine)::
+As seen above, `client.94134` has `As` caps, which is getting revoked by the MDS. After the caps have been revoked, the MDS can continue to transition to further states: `LOCK_SYNC_LOCK` to `LOCK_LOCK`. Since the goal is to acquire `xlock`, the state transition continues (as per the lock transition state machine)::
 
   LOCK_LOCK -> LOCK_LOCK_XLOCK
   LOCK_LOCK_XLOCK -> LOCK_PREXLOCK
