@@ -273,7 +273,7 @@ a branch named ``feature-x`` should be named ``wip-$yourname-feature-x``, where
 ``$yourname`` is replaced with your name. Identifying your branch with your
 name makes your branch easily findable on Shaman and Pulpito.
 
-If you are using one of the stable branches (for example, nautilis, mimic,
+If you are using one of the stable branches (for example, nautilus, mimic,
 etc.), include the name of that stable branch in your ceph-ci branch name.
 For example, the ``feature-x`` PR branch should be named 
 ``wip-feature-x-nautilus``. *This is not just a convention. This ensures that your branch is built in the correct environment.*
