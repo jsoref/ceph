@@ -162,7 +162,7 @@ using backref_cache_ref = std::unique_ptr<backref_cache_t>;
  * 1) construction: user calls Cache::get_transaction() and populates
  *    the returned transaction by calling Cache methods
  * 2) submission: user calls Cache::try_start_transaction().  If
- *    succcessful, the user may construct a record and submit the
+ *    successful, the user may construct a record and submit the
  *    transaction to the journal.
  * 3) completion: once the transaction is durable, the user must call
  *    Cache::complete_commit() with the block offset to complete

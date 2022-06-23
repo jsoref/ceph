@@ -859,7 +859,7 @@ TEST_F(TestCls2PCQueue, MultiProducerConsumer)
   std::for_each(producers.begin(), producers.end(), [](auto& p) { p.join(); });
   std::for_each(consumers.begin(), consumers.end(), [](auto& c) { c.join(); });
   if (!retry_happened) {
-      std::cerr << "Queue was never full - all reservations were successfull." <<
+      std::cerr << "Queue was never full - all reservations were successful." <<
           "Please decrease the amount of consumer threads" << std::endl;
   }
   // make sure that queue is empty and no reservations remain

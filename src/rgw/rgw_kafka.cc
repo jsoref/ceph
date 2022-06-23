@@ -436,7 +436,7 @@ private:
             // TODO: add error counter for failed retries
             // TODO: add exponential backoff for retries
           } else {
-            ldout(conn->cct, 10) << "Kafka run: connection (" << broker << ") retry successfull" << dendl;
+            ldout(conn->cct, 10) << "Kafka run: connection (" << broker << ") retry successful" << dendl;
           }
           INCREMENT_AND_CONTINUE(conn_it);
         }

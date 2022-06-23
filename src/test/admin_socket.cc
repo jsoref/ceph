@@ -288,7 +288,7 @@ TEST(AdminSocket, bind_and_listen) {
   std::unique_ptr<AdminSocket> asokc = std::make_unique<AdminSocket>(g_ceph_context);
 
   AdminSocketTest asoct(asokc.get());
-  // successfull bind
+  // successful bind
   {
     int fd = 0;
     string message;

@@ -160,7 +160,7 @@ class Manager : public DoutPrefixProvider {
   };
 
   // processing of a specific entry
-  // return whether processing was successfull (true) or not (false)
+  // return whether processing was successful (true) or not (false)
   bool process_entry(const cls_queue_entry& entry, yield_context yield) {
     event_entry_t event_entry;
     auto iter = entry.data.cbegin();
