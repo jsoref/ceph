@@ -5596,7 +5596,7 @@ def command_bootstrap(ctx):
                     if spec.get('service_type') == 'host':
                         _distribute_ssh_keys(ctx, spec, hostname)
             except ValueError:
-                logger.info('Unable to parse %s succesfully' % ctx.apply_spec)
+                logger.info('Unable to parse %s successfully' % ctx.apply_spec)
 
         mounts = {}
         mounts[pathify(ctx.apply_spec)] = '/tmp/spec.yml:ro'
