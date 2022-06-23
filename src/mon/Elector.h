@@ -191,7 +191,7 @@ class Elector : public ElectionOwner, RankProvider {
   void send_peer_ping(int peer, const utime_t *n=NULL);
   /**
    * Check the state of pinging the specified peer. This is our
-   * "tick" for heartbeating; scheduled by itself and begin_peer_ping().
+   * "tick" for heart beating; scheduled by itself and begin_peer_ping().
    */
   void ping_check(int peer);
   /**
