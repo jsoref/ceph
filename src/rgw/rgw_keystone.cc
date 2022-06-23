@@ -354,7 +354,7 @@ int TokenEnvelope::parse(const DoutPrefixProvider *dpp,
     } else if (version == rgw::keystone::ApiVersion::VER_3) {
       if (! token_iter.end()) {
         decode_v3(*token_iter);
-        /* v3 suceeded. We have to fill token.id from external input as it
+        /* v3 succeeded. We have to fill token.id from external input as it
          * isn't a part of the JSON response anymore. It has been moved
          * to X-Subject-Token HTTP header instead. */
         token.id = token_str;
