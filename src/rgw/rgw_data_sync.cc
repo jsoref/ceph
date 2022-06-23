@@ -5203,7 +5203,7 @@ int RGWSyncBucketCR::operate(const DoutPrefixProvider *dpp)
             return set_cr_error(retcode);
           }
           if (bucket_status.state != BucketSyncState::Stopped) {
-            // make sure that state is changed to stopped localy
+            // make sure that state is changed to stopped locally
             bucket_status.state = BucketSyncState::Stopped;
             yield call(new WriteCR(dpp, env->async_rados, env->svc->sysobj,
                   status_obj, bucket_status, &objv, false));
