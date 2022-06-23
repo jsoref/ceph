@@ -228,7 +228,7 @@ describe('HostsComponent', () => {
     expect(spans[7].textContent).toBe('N/A');
   });
 
-  it('should test if host facts are unavailable if get_fatcs orch feature is not available', () => {
+  it('should test if host facts are unavailable if get_facts orch feature is not available', () => {
     const payload = [
       {
         hostname: 'host_test',
