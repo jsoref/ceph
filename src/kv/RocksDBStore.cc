@@ -930,7 +930,7 @@ int RocksDBStore::update_column_family_options(const std::string& base_name,
   if (!block_cache_opt.empty()) {
     r = apply_block_cache_options(base_name, block_cache_opt, cf_opt);
     if (r != 0) {
-      // apply_block_cache_options already does all necessary douts
+      // apply_block_cache_options already does all necessary opts
       return r;
     }
   }
