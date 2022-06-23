@@ -2066,7 +2066,7 @@ static int do_period_pull(RGWRESTConn *remote_conn, const string& url,
   }
   ret = period->init(dpp(), g_ceph_context, static_cast<rgw::sal::RadosStore*>(store)->svc()->sysobj, null_yield, false);
   if (ret < 0) {
-    cerr << "faile to init period " << cpp_strerror(-ret) << std::endl;
+    cerr << "failed to init period " << cpp_strerror(-ret) << std::endl;
     return ret;
   }
   try {
