@@ -7644,10 +7644,10 @@ void RGWBulkUploadOp::execute(optional_yield y)
 
 RGWBulkUploadOp::AlignedStreamGetter::~AlignedStreamGetter()
 {
-  const size_t aligned_legnth = length + (-length % alignment);
+  const size_t aligned_length = length + (-length % alignment);
   ceph::bufferlist junk;
 
-  DecoratedStreamGetter::get_exactly(aligned_legnth - position, junk);
+  DecoratedStreamGetter::get_exactly(aligned_length - position, junk);
 }
 
 ssize_t RGWBulkUploadOp::AlignedStreamGetter::get_at_most(const size_t want,
