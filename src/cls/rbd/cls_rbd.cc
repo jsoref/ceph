@@ -3002,7 +3002,7 @@ static int dir_remove_image_helper(cls_method_context_t hctx,
  * Rename an image in the directory, updating both indexes
  * atomically. This can't be done from the client calling
  * dir_add_image and dir_remove_image in one transaction because the
- * results of the first method are not visibale to later steps.
+ * results of the first method are not visible to later steps.
  *
  * Input:
  * @param src original name of the image

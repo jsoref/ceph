@@ -2195,7 +2195,7 @@ int RGWRados::Bucket::List::list_objects_unordered(const DoutPrefixProvider *dpp
       if (!params.list_versions && !entry.is_visible()) {
         ldpp_dout(dpp, 20) << __PRETTY_FUNCTION__ <<
 	  ": skipping \"" << index_key <<
-	  "\" because not listing versions and entry not visibile" << dendl;
+	  "\" because not listing versions and entry not visible" << dendl;
         continue;
       }
 
