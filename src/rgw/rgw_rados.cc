@@ -8776,7 +8776,7 @@ int RGWRados::cls_bucket_list_ordered(const DoutPrefixProvider *dpp,
       ldpp_dout(dpp, 10) << __PRETTY_FUNCTION__ <<
 	": stopped accumulating results at count=" << count <<
 	", dirent=\"" << dirent.key <<
-	"\", because its shard is untruncated and exhaused" << dendl;
+	"\", because its shard is untruncated and exhausted" << dendl;
       break;
     }
   } // while we haven't provided requested # of result entries
