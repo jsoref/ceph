@@ -4339,7 +4339,7 @@ int RGWRados::copy_obj(RGWObjectCtx& obj_ctx,
   if (src_attrs.count(RGW_ATTR_CRYPT_MODE)) {
     // Current implementation does not follow S3 spec and even
     // may result in data corruption silently when copying
-    // multipart objects acorss pools. So reject COPY operations
+    // multipart objects across pools. So reject COPY operations
     //on encrypted objects before it is fully functional.
     ldpp_dout(dpp, 0) << "ERROR: copy op for encrypted object " << src_obj
                   << " has not been implemented." << dendl;
