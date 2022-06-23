@@ -2612,7 +2612,7 @@ TEST_F(TestClsRbd, group_snap_set_empty_name) {
   librados::IoCtx ioctx;
   ASSERT_EQ(0, _rados.ioctx_create(_pool_name.c_str(), ioctx));
 
-  string image_id = "image_id_snap_add_emtpy_name";
+  string image_id = "image_id_snap_add_empty_name";
 
   string group_id = "group_id_snap_add_empty_name";
   ASSERT_EQ(0, ioctx.create(group_id, true));
