@@ -395,7 +395,7 @@ Snap Trimmer Improvements
 This release greatly improves control and throttling of the snap trimmer. It
 introduces the "osd max trimming pgs" option (defaulting to 2), which limits
 how many PGs on an OSD can be trimming snapshots at a time. And it restores
-the safe use of the "osd snap trim sleep" option, wihch defaults to 0 but
+the safe use of the "osd snap trim sleep" option, which defaults to 0 but
 otherwise adds the given number of seconds in delay between every dispatch
 of trim operations to the underlying system.
 
