@@ -526,7 +526,7 @@ void PgScrubber::update_scrub_job(const requested_scrub_t& request_flags)
   dout(10) << __func__ << " flags: " << request_flags << dendl;
 
   {
-    // verify that the 'in_q' status matches our "Primariority"
+    // verify that the 'in_q' status matches our "Primary"
     if (m_scrub_job && is_primary() && !m_scrub_job->in_queues) {
       dout(1) << __func__ << " !!! primary but not scheduled! " << dendl;
     }
