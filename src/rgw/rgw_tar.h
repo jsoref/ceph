@@ -69,7 +69,7 @@ enum class FileType : char {
 
 class HeaderView {
 protected:
-  /* Everythng is char here (ASCII encoding), so we don't need to worry about
+  /* Everything is char here (ASCII encoding), so we don't need to worry about
    * the struct padding. */
   const struct header_t {
     char filename[100];
