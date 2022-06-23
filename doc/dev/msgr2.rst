@@ -614,7 +614,7 @@ an established session.
   - the target addr is who the client is trying to connect *to*, so
     that the server side can close the connection if the client is
     talking to the wrong daemon.
-  - type.gid (entity_name_t) is set here, by combinging the type shared in the hello
+  - type.gid (entity_name_t) is set here, by combining the type shared in the hello
     frame with the gid here.  this means we don't need it
     in the header of every message.  it also means that we can't send
     messages "from" other entity_name_t's.  the current
