@@ -4045,7 +4045,7 @@ Detailed Changelog
 * rgw: Fix typo in comment (`pr#21032 <https://github.com/ceph/ceph/pull/21032>`_, Simran Singhal)
 * rgw: fix typo in GetOmapKeysCR (`pr#19713 <https://github.com/ceph/ceph/pull/19713>`_, lvshanchun)
 * rgw: fix typo single to single (`pr#19517 <https://github.com/ceph/ceph/pull/19517>`_, Bingyin Zhang)
-* rgw: fix typo woild to would (`pr#19472 <https://github.com/ceph/ceph/pull/19472>`_, Bingyin Zhang)
+* rgw: fix typo would to would (`pr#19472 <https://github.com/ceph/ceph/pull/19472>`_, Bingyin Zhang)
 * rgw: Fix use after free in IAM policy parser (`pr#16823 <https://github.com/ceph/ceph/pull/16823>`_, Adam C. Emerson)
 * rgw: fix use of libcurl with empty header values (`issue#23663 <http://tracker.ceph.com/issues/23663>`_, `pr#21358 <https://github.com/ceph/ceph/pull/21358>`_, Casey Bodley)
 * rgw: format logs in file rgw_lc.cc (`pr#19615 <https://github.com/ceph/ceph/pull/19615>`_, Bingyin Zhang)
