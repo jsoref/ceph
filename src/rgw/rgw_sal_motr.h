@@ -67,7 +67,7 @@ protected:
   // of RGW instances under heavy use. If you would like to turn off cache expiry,
   // set this value to zero.
   //
-  // Currently POC hasn't implemented the watch-notify menchanism yet. So the
+  // Currently POC hasn't implemented the watch-notify mechanism yet. So the
   // current implementation is similar to cortx-s3server which is based on expiry
   // time. TODO: see comments on distribute_cache).
   //
