@@ -932,7 +932,7 @@ Unmap options:
   --soft-disconnect-timeout   Soft disconnect timeout in seconds. The soft
                               disconnect operation uses PnP to notify the
                               Windows storage stack that the device is going to
-                              be disconnectd. Storage drivers can block this
+                              be disconnected. Storage drivers can block this
                               operation if there are pending operations,
                               unflushed caches or open handles. Default: 15
 
