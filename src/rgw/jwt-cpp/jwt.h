@@ -1119,7 +1119,7 @@ namespace jwt {
 	 */
 	class decoded_jwt : public header, public payload {
 	protected:
-		/// Unmodifed token, as passed to constructor
+		/// Unmodified token, as passed to constructor
 		const std::string token;
 		/// Header part decoded from base64
 		std::string header;
