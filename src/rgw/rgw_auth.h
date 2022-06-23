@@ -238,7 +238,7 @@ public:
       /* Engine doesn't grant the access but also doesn't reject it. */
       DENIED,
 
-      /* Engine successfully authenicated requester. */
+      /* Engine successfully authenticated requester. */
       GRANTED,
 
       /* Engine strictly indicates that a request should be rejected
