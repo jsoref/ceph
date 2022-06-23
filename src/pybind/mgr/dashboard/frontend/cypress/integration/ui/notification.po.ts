@@ -17,7 +17,7 @@ export class NotificationSidebarPageHelper extends PageHelper {
     return this.getSidebar().find('.card.tc_notification');
   }
 
-  getClearNotficationsBtn() {
+  getClearNotificationsBtn() {
     return this.getSidebar().find('button.btn-block');
   }
 
@@ -33,7 +33,7 @@ export class NotificationSidebarPageHelper extends PageHelper {
   clearNotifications() {
     // It can happen that although notifications are cleared, by the time we check the notifications
     // amount, another notification can appear, so we check it more than once (if needed).
-    this.getClearNotficationsBtn().click();
+    this.getClearNotificationsBtn().click();
     this.getNotifications()
       .should('have.length.gte', 0)
       .then(($elems) => {

@@ -60,7 +60,7 @@ NO_HTTP_BODY = ''
 
 def make_request(conn, method, resource, parameters=None, sign_parameters=False, extra_parameters=None):
     """generic request sending to pubsub radogw
-    should cover: topics, notificatios and subscriptions
+    should cover: topics, notifications and subscriptions
     """
     url_params = ''
     if parameters is not None:
