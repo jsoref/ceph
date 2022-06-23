@@ -766,7 +766,7 @@ Upgrading from v0.72 Emperor
 * The 'osd pool create ...' syntax has changed for erasure pools.
 
 * The default CRUSH rules and layouts are now using the 'bobtail'
-  tunables and defaults.  Upgaded clusters using the old values will
+  tunables and defaults.  Upgraded clusters using the old values will
   now present with a health WARN state.  This can be disabled by
   adding 'mon warn on legacy crush tunables = false' to ceph.conf and
   restarting the monitors.  Alternatively, you can switch to the new
